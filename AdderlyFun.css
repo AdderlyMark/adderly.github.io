@@ -60,8 +60,114 @@
 .u-section-1 .u-btn-5 {
   font-size: 1.25rem;
   background-image: none;
-  margin: 11px auto 60px;
+  margin: 11px auto 0;
   padding: 10px 62px;
+}
+
+.u-section-1 .u-text-6 {
+  width: 486px;
+  margin: 92px auto 0;
+}
+
+.u-section-1 .u-countdown-1 {
+  margin: 0 auto 60px;
+  padding: 6px 22px;
+}
+
+.u-section-1 .u-countdown-counter-1 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-label-1 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.u-section-1 .u-countdown-separator-1 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-counter-2 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-label-2 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.u-section-1 .u-countdown-separator-2 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-counter-3 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-label-3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.u-section-1 .u-countdown-separator-3 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-counter-4 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-label-4 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.u-section-1 .u-countdown-separator-4 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-counter-5 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-label-5 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.u-section-1 .u-countdown-separator-5 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-counter-6 {
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+}
+
+.u-section-1 .u-countdown-label-6 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
 }
 
 @media (max-width: 991px) {
@@ -98,6 +204,10 @@
     margin-right: 0;
     width: 540px;
   }
+
+  .u-section-1 .u-countdown-1 {
+    margin-top: 7px;
+  }
 }
 
 @media (max-width: 575px) {
@@ -117,5 +227,17 @@
 
   .u-section-1 .u-text-5 {
     width: 340px;
+  }
+
+  .u-section-1 .u-text-6 {
+    width: 340px;
+  }
+
+  .u-section-1 .u-countdown-1 {
+    margin-top: 11px;
+    margin-bottom: 8px;
+    margin-left: -12px;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
