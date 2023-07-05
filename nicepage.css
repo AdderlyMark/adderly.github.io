@@ -17503,54 +17503,6 @@ div.u-video,
 .u-flip-horizontal.u-flip-vertical {
   transform: scaleX(-1) scaleY(-1);
 }
-.u-rotate-90 {
-  transform: rotate(90deg) translate(0, -100%);
-}
-.u-rotation-parent .u-rotate-90 {
-  transform: rotate(90deg) translate(0, -100%);
-  transform-origin: left top;
-}
-.u-flip-horizontal.u-rotate-90 {
-  transform: scaleX(-1) rotate(90deg);
-}
-.u-flip-vertical.u-rotate-90 {
-  transform: scaleY(-1) rotate(90deg) translate(-100%, -100%);
-}
-.u-flip-horizontal.u-flip-vertical.u-rotate-90 {
-  transform: scaleX(-1) scaleY(-1) rotate(90deg) translate(-100%, 0);
-}
-.u-rotate-180 {
-  transform: rotate(180deg) translate(-100%, -100%);
-}
-.u-rotation-parent .u-rotate-180 {
-  transform: rotate(180deg) translate(-100%, -100%);
-  transform-origin: left top;
-}
-.u-flip-horizontal.u-rotate-180 {
-  transform: scaleX(-1) rotate(180deg) translate(0, -100%);
-}
-.u-flip-vertical.u-rotate-180 {
-  transform: scaleY(-1) rotate(180deg) translate(-100%, 0);
-}
-.u-flip-horizontal.u-flip-vertical.u-rotate-180 {
-  transform: scaleX(-1) scaleY(-1) rotate(180deg);
-}
-.u-rotate-270 {
-  transform: rotate(270deg) translate(-100%, 0);
-}
-.u-rotation-parent .u-rotate-270 {
-  transform: rotate(270deg) translate(-100%, 0);
-  transform-origin: left top;
-}
-.u-flip-horizontal.u-rotate-270 {
-  transform: scaleX(-1) rotate(270deg) translate(-100%, -100%);
-}
-.u-flip-vertical.u-rotate-270 {
-  transform: scaleY(-1) rotate(270deg);
-}
-.u-flip-horizontal.u-flip-vertical.u-rotate-270 {
-  transform: scaleX(-1) scaleY(-1) rotate(270deg) translate(0, -100%);
-}
 html {
   font-size: 16px;
 }
@@ -21725,6 +21677,13 @@ a.pswp__share--download:hover {
     grid-template-columns: 1fr;
   }
 }
+.u-payment-services {
+  display: flex;
+  align-items: center;
+}
+.u-payment-services-inner {
+  width: 100%;
+}
 .u-dialog {
   display: flex;
   position: relative;
@@ -22146,6 +22105,19 @@ section.u-dialog-block:not(.u-dialog-open) {
   background: #07f;
   bottom: 0;
   right: 0;
+}
+.payment-error,
+.payment-success {
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  padding: 20px;
+}
+.payment-error {
+  background-color: #F95D51;
+}
+.payment-success {
+  background-color: #62C584;
 }
 .iti {
   position: relative;
