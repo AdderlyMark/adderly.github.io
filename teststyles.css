@@ -103,6 +103,7 @@ section {
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #fafafa;
+    overflow: hidden; /* Обрезает содержимое, если оно выходит за пределы контейнера */
 }
 
 .software-item h3 {
@@ -115,7 +116,8 @@ section {
 }
 
 .software-images {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
     gap: 10px;
     margin-bottom: 10px;
 }
@@ -144,7 +146,7 @@ section {
 }
 
 #soft {
-    min-height: 900px;
+    min-height: 600px;
     padding-bottom: 40px;
 }
 
@@ -155,7 +157,4 @@ footer {
     padding: 10px;
     position: fixed;
     bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000; /* Слой, чтобы футер был над остальными элементами */
-}
+    left:
