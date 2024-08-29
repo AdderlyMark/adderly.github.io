@@ -37,11 +37,15 @@
             <div class="software-item">
                 <h3>MakuTweaker</h3>
                 <p>MakuTweaker - это полезная программа, которая позволяет быстро настроить те вещи, которые не так легко найти, а также, если у вас не активирована Windows, вы все равно сможете настраивать панель задач и пуск!</p>
-                <div class="software-images">
-                    <img src="images/15.png" alt="MakuTweaker Image 1">
-                    <img src="images/51.png" alt="MakuTweaker Image 2">
-                    <img src="images/101.png" alt="MakuTweaker Image 3">
-                    <img src="images/71.png" alt="MakuTweaker Image 4">
+                <div class="carousel">
+                    <button class="carousel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                    <div class="carousel-slides">
+                        <img src="images/15.png" alt="MakuTweaker Image 1">
+                        <img src="images/51.png" alt="MakuTweaker Image 2">
+                        <img src="images/101.png" alt="MakuTweaker Image 3">
+                        <img src="images/71.png" alt="MakuTweaker Image 4">
+                    </div>
+                    <button class="carousel-btn next" onclick="moveSlide(1)">&#10095;</button>
                 </div>
                 <a href="https://github.com/AdderlyMark/adderly.github.io/raw/main/soft/Maku%20Tweaker%20Setup.exe" class="btn-download" target="_blank">Скачать MakuTweaker</a>
             </div>
@@ -66,5 +70,24 @@
     <footer>
         <p>© 2024 Сайт Марка Аддерли</p>
     </footer>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.carousel-slides img');
+
+        function showSlide(index) {
+            if (index >= slides.length) slideIndex = 0;
+            if (index < 0) slideIndex = slides.length - 1;
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${-(slideIndex * 100)}%)`;
+            });
+        }
+
+        function moveSlide(step) {
+            showSlide(slideIndex += step);
+        }
+
+        showSlide(slideIndex); // Show the first slide initially
+    </script>
 </body>
 </html>

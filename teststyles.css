@@ -115,46 +115,67 @@ section {
     margin: 10px 0;
 }
 
-.software-images {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
-    margin-bottom: 10px;
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto; /* Устанавливает высоту по содержимому */
 }
 
-.software-images img {
-    max-width: 100%;
+.carousel-slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slides img {
+    width: 100%;
     height: auto;
-    border-radius: 8px;
+    flex: 0 0 100%;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 100; /* Позиционирует кнопки поверх слайдов, но не перекрывает */
+}
+
+.carousel-btn.prev {
+    left: 10px;
+}
+
+.carousel-btn.next {
+    right: 10px;
 }
 
 .btn-download {
     display: inline-block;
+    margin-top: 10px;
     padding: 10px 20px;
+    background-color: #4CAF50;
     color: white;
     text-decoration: none;
-    font-weight: bold;
-    border: 2px solid #4CAF50;
     border-radius: 5px;
-    background-color: #4CAF50;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
 }
 
 .btn-download:hover {
-    background-color: white;
-    color: #4CAF50;
-}
-
-#soft {
-    min-height: 600px;
-    padding-bottom: 40px;
+    background-color: #45a049;
 }
 
 footer {
-    background-color: #333; /* Установлен серый фон для футера */
+    background-color: #4CAF50;
     color: white;
     text-align: center;
     padding: 10px;
     position: fixed;
     bottom: 0;
-    left:
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Слой, чтобы футер был над остальными элементами */
+}
