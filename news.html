@@ -40,7 +40,18 @@
                 'txts/news20.txt',
             ];
 
-            const fetchNewsFile = (file) => fetch(file).then(response => response.text());
+            const fetchNewsFile = (file) =>
+                fetch(file)
+                    .then(response => {
+                        if (!response.ok) {
+                            throw new Error('Network response was not ok');
+                        }
+                        return response.text();
+                    })
+                    .catch(error => {
+                        console.warn(`Не удалось загрузить ${file}: ${error.message}`);
+                        return ''; // Вернуть пустую строку в случае ошибки
+                    });
 
             Promise.all(newsFiles.map(fetchNewsFile))
                 .then(newsContents => {
@@ -48,6 +59,8 @@
                     newsContainer.innerHTML = '';
 
                     newsContents.forEach(content => {
+                        if (content.trim() === '') return; // Игнорировать пустой контент
+
                         const lines = content.split('\n');
                         const title = lines[0];
                         const body = lines.slice(1).join('\n');
@@ -68,8 +81,8 @@
                     });
                 })
                 .catch(error => {
-                    console.error('ашибка иди нафик', error);
-    		    document.getElementById('news-container').textContent = ' ';
+                    console.error('Ошибка при загрузке новостей:', error);
+                    document.getElementById('news-container').textContent = 'Не удалось загрузить новости.';
                 });
         }
 
