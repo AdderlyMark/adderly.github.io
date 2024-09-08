@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a1f44; /* Цвет фона как на главной */
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header, footer {
+    background-color: #002b5e; /* Цвет хедера и футера как на главной */
+    color: #ffffff;
+    text-align: center;
+    padding: 15px 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+footer {
+    background-color: #002b5e; /* Цвет футера */
+    color: #ffffff;
+    text-align: center;
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    z-index: 1000;
+    display: flex;
+    flex-wrap: wrap; /* Обеспечивает перенос элементов на новую строку при необходимости */
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Расстояние между ссылками */
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    color: #ffffff; /* Цвет текста ссылки */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.social-link:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.social-icon {
+    width: 20px; /* Размер иконки */
+    height: 20px; /* Размер иконки */
+    margin-right: 5px; /* Отступ между иконкой и текстом */
+}
+
+.telegram-link {
+    display: flex;
+    align-items: center;
+    color: #ffffff; /* Цвет текста ссылки */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.telegram-link:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.telegram-icon {
+    width: 20px; /* Размер иконки */
+    height: 20px; /* Размер иконки */
+    margin-right: 5px; /* Отступ между иконкой и текстом */
+}
+
+header {
+    top: 0;
+}
+
+footer {
+    bottom: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.first-row, .second-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px; /* Отступ между строками */
+}
+
+.first-row li, .second-row li {
+    margin: 0 1px; /* Устанавливаем отступ между кнопками */
+}
+
+header nav ul li {
+    margin: 0 15px; /* Этот отступ добавлен для вкладок, как на странице index */
+}
+
+nav a {
+    color: #ffffff; /* Цвет ссылок как на главной */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline; /* Добавлено подчеркивание при наведении, как на главной */
+}
+
+.first-row {
+    margin-bottom: 17px; /* Отступ между первым и вторым рядом */
+}
+
+.nav-button {
+    background-color: #005a8d;
+    color: #ffffff;
+    padding: 8px 15px; /* Немного уменьшены отступы */
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.nav-button:hover {
+    background-color: #0073aa;
+    text-decoration: none;
+}
+
+main {
+    margin-top: 120px; /* Увеличен отступ для фиксированного хедера */
+    padding: 20px;
+    text-align: center;
+}
+
+.program-section {
+    margin-bottom: 50px;
+}
+
+.program {
+    display: flex;
+    align-items: center; /* Выравнивание иконок по центру вертикально */
+    justify-content: center; /* Центрирование содержимого по горизонтали */
+    text-align: left; /* Выравнивание текста по левому краю */
+    margin-bottom: 30px; /* Увеличен отступ снизу для кнопок "Скачать" */
+}
+
+.program-icon {
+    width: 100px; /* Увеличена иконка */
+    height: 100px; /* Увеличена иконка */
+    margin-right: 30px; /* Отступ справа от иконки */
+}
+
+.program-description {
+    font-size: 1.75em; /* Увеличение размера шрифта для описаний */
+    line-height: 1.4; /* Увеличение межстрочного интервала */
+    max-width: 800px; /* Устанавливаем максимальную ширину для текстового блока */
+    margin: 0; /* Убираем внешние отступы для лучшего выравнивания */
+    text-align: left; /* Выравнивание текста по левому краю */
+    word-wrap: break-word; /* Позволяет тексту переноситься на несколько строк */
+    padding: 10px; /* Добавление отступов вокруг текста для улучшения восприятия */
+}
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* Два столбца */
+    gap: 20px; /* Отступ между изображениями */
+    margin: 0 auto; /* Центрируем галерею */
+    max-width: 1400px; /* Установлена максимальная ширина для центрального выравнивания */
+}
+
+.image-gallery img {
+    width: 100%;
+    height: auto; /* Сохранение пропорций */
+    border-radius: 8px; /* Добавляем скругление углов, если нужно */
+}
+
+.download-button {
+    display: inline-block;
+    background-color: #1c4ebf;
+    color: #ffffff;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 10px;
+    margin-top: 20px; /* Отступ сверху, чтобы кнопка "Скачать" была ниже */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Добавляем transition для transform */
+
+}
+
+.download-button:hover {
+    background-color: #1640a1;
+    transform: scale(1.1); /* Увеличиваем размер кнопки на 10% */
+
+}
