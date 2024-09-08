@@ -43,22 +43,12 @@
             margin-bottom: 10px;
         }
     </style>
-    <script>
-        function checkWidth() {
-            const header = document.querySelector('header');
 
-            if (window.innerWidth < 980) {
-                header.style.display = 'none'; // Скрыть header
-            } else {
-                header.style.display = 'block'; // Показать header
-            }
-        }
+    <meta property="og:title" content="Сайт Марка Аддерли">
+    <meta property="og:description" content="Донатеры Марка Аддерли, спасибо каждому!">
+    <meta property="og:image" content="images/favicon.png">
+    <link rel="icon" href="images/favicon.png">
 
-        window.addEventListener('resize', checkWidth);
-
-        // Initial check on page load
-        document.addEventListener("DOMContentLoaded", checkWidth);
-    </script>
 </head>
 <body>
 <header>
@@ -112,7 +102,7 @@
         <p>Донатеры в рублях:
         <ul class="donators-list">
             <li>SergShast - 4205 ₽</li>
-            <li>Okaride - 6300 ₽</li>
+            <li>Артур - 6300 ₽</li>
             <li>MrBaska - 2755 ₽</li>
             <li>Kirill Gorev - 1690 ₽</li>
             <li>Немец - 799 ₽</li>
