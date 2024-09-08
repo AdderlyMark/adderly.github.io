@@ -13,32 +13,39 @@
         }
 
         function loadNews() {
-            fetch('txts/news.txt')
-                .then(response => {
-                    if (!response.ok) {
-                        throw new Error('Сеть ответила с ошибкой');
-                    }
-                    return response.text();
-                })
-                .then(data => {
-                    const lines = data.split('\n');
-                    const title = lines[0]; // Первая строка - заголовок
-                    const content = lines.slice(1).join('\n'); // Остальные строки - описание
+            const newsFiles = [
+                'txts/news1.txt',
+                'txts/news2.txt',
+                'txts/news3.txt',
+                // Добавьте файлы по мере необходимости
+            ];
+
+            const fetchNewsFile = (file) => fetch(file).then(response => response.text());
+
+            Promise.all(newsFiles.map(fetchNewsFile))
+                .then(newsContents => {
                     const newsContainer = document.getElementById('news-container');
+                    newsContainer.innerHTML = '';
 
-                    const newsItem = document.createElement('div');
-                    newsItem.classList.add('news-item');
+                    newsContents.forEach(content => {
+                        const lines = content.split('\n');
+                        const title = lines[0]; // Первая строка - заголовок
+                        const body = lines.slice(1).join('\n'); // Остальные строки - описание
 
-                    const newsTitle = document.createElement('h2');
-                    newsTitle.textContent = title;
+                        const newsItem = document.createElement('div');
+                        newsItem.classList.add('news-item');
 
-                    const newsContent = document.createElement('p');
-                    newsContent.textContent = content;
+                        const newsTitle = document.createElement('h2');
+                        newsTitle.textContent = title;
 
-                    newsItem.appendChild(newsTitle);
-                    newsItem.appendChild(newsContent);
+                        const newsContent = document.createElement('p');
+                        newsContent.textContent = body;
 
-                    newsContainer.appendChild(newsItem);
+                        newsItem.appendChild(newsTitle);
+                        newsItem.appendChild(newsContent);
+
+                        newsContainer.appendChild(newsItem);
+                    });
                 })
                 .catch(error => {
                     console.error('Ошибка при загрузке новостей:', error);
