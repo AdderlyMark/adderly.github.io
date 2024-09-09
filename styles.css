@@ -24,15 +24,6 @@ header {
 }
 
 
-
-@media (max-width: 1175px) {
-            body > *:not(header):not(footer) {
-                position: relative;
-                top: +70px;
-                 padding_bottom: 140px;
-            }
-        }
-
 .youtube-section {
     margin-top: 20px;
 }
