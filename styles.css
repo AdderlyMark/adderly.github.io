@@ -86,6 +86,7 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+
 .first-row, .second-row {
     display: flex;
     justify-content: center;

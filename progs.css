@@ -108,6 +108,34 @@ nav ul {
     gap: 15px;
 }
 
+
+.repack-label {
+    position: absolute;
+    top: 3px;
+    right: -21px;
+    background-color: red;
+    color: white;
+    padding: 3px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    transform: rotate(15deg);
+}
+
+.audience-suggestion-label {
+    position: absolute;
+    top: 3px;
+    right: -29px;
+    background-color: blue;
+    color: white;
+    padding: 3px 10px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 5px;
+    transform: rotate(15deg);
+}
+
+
 .first-row, .second-row {
     display: flex;
     justify-content: center;
@@ -166,6 +194,7 @@ h2 {
     padding: 15px;
     background-color: #005a8d;
     border-radius: 10px;
+    position: relative;
 }
 
 .program-icon {
