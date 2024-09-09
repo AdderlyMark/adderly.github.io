@@ -26,9 +26,16 @@ header {
         @media (max-width: 1175px) {
             body > *:not(header):not(footer) {
                 position: relative;
+                top: -150px;
             }
+
             body {
-                padding-bottom: 70px;
+                padding-bottom: 220px;
+            }
+
+            footer {
+                position: relative;
+                top: 150px;
             }
         }
 
