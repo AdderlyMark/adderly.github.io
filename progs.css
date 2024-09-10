@@ -80,7 +80,17 @@ main {
     padding: 20px;
     display: flex;
     justify-content: center;
+    padding-bottom: 30px;
 }
+
+@media (max-width: 600px) {
+    main {
+        padding-left: 30px;
+        padding-right: 30px;
+    	padding-bottom: 140px;
+    }
+}
+
 
 .container {
     max-width: 1200px;

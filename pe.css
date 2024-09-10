@@ -26,35 +26,35 @@ header {
 }
 
 .youtube-section {
-    margin-top: 20px; /* Отступ сверху для секции с видео */
+    margin-top: 20px;
 }
 
 .donators-section {
-    margin-top: 20px; /* Отступ сверху для секции донатеров */
+    margin-top: 20px;
 }
 
 .donators-section h2 {
     font-size: 1.5em;
-    margin-bottom: 0px; /* Уменьшен отступ между заголовком и списком */
+    margin-bottom: 0px;
 }
 
 .donators-section ul {
-    list-style-type: none; /* Убираем маркеры списка */
+    list-style-type: none;
     padding: 0;
     margin: 0;
 }
 
 .donators-section li {
-    font-size: 1.2em; /* Размер шрифта для элементов списка */
-    margin-bottom: 10px; /* Отступ между элементами списка */
-    color: #ffffff; /* Цвет текста */
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .youtube-section iframe {
-    width: 700px; /* Увеличенный размер плеера на 25% */
-    height: 393px; /* Увеличенная высота плеера на 25% */
-    max-width: 100%; /* Чтобы плеер адаптировался под разные экраны */
-    margin-top: 00px; /* Отступ сверху для iframe, чтобы добавить пространство */
+    width: 700px;
+    height: 393px;
+    max-width: 100%;
+    margin-top: 00px;
     border-radius: 15px;
 }
 
@@ -71,7 +71,7 @@ nav ul {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin-bottom: 3px; /* Отступ между строками */
+    margin-bottom: 3px;
 }
 
 header nav ul li {
@@ -92,21 +92,21 @@ header nav ul li a:hover {
     display: flex;
     justify-content: center;
     margin: 0;
-    margin-bottom: 5px; /* Отступ между строками */
+    margin-bottom: 5px;
 }
 
 .first-row li, .second-row li {
-    margin: 0 1px; /* Устанавливаем отступ между кнопками */
+    margin: 0 1px;
 }
 
 .first-row {
-    margin-bottom: 17px; /* Отступ между первым и вторым рядом */
+    margin-bottom: 17px;
 }
 
 .nav-button {
     background-color: #005a8d;
     color: #ffffff;
-    padding: 8px 15px; /* Немного уменьшены отступы */
+    padding: 8px 15px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
@@ -119,33 +119,39 @@ header nav ul li a:hover {
 }
 
 main {
-    margin-top: 120px; /* Увеличен отступ для фиксированного хедера */
+    margin-top: 120px;
     padding: 0;
     text-align: center;
-    padding-bottom: 50px; /* Уменьшаем дополнительное пространство внизу */
+    padding-bottom: 50px;
+}
+
+@media (max-width: 600px) {
+    main {
+    	padding-bottom: 150px;
+    }
 }
 
 .button-section {
-    margin-top: 1px; /* Уменьшаем отступ сверху от основного содержимого */
+    margin-top: 1px;
 }
 
 .button-section a {
-    display: inline-block; /* Меняем на inline-block для горизонтального размещения */
-    margin: 5px; /* Уменьшаем отступы сверху и снизу от кнопок */
+    display: inline-block;
+    margin: 5px;
     padding: 10px 20px;
     background-color: #005a8d;
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease, transform 0.3s ease; /* Переходы для фона и размера */
-    max-width: 300px; /* Максимальная ширина кнопок */
-    transform: scale(1); /* Начальный масштаб кнопки */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    max-width: 300px;
+    transform: scale(1);
 }
 
 .button-section a:hover {
     background-color: #0073aa;
-    transform: scale(1.1); /* Увеличение кнопки при наведении */
+    transform: scale(1.1);
     text-decoration: none;
 }
 
@@ -155,7 +161,7 @@ main h1 {
 }
 
 footer {
-    background-color: #002b5e; /* Цвет футера */
+    background-color: #002b5e;
     color: #ffffff;
     text-align: center;
     padding: 10px 20px;
@@ -164,54 +170,54 @@ footer {
     bottom: 0;
     z-index: 1000;
     display: flex;
-    flex-wrap: wrap; /* Обеспечивает перенос элементов на новую строку при необходимости */
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    gap: 20px; /* Расстояние между ссылками */
+    gap: 20px;
 }
 
 .social-link {
     display: flex;
     align-items: center;
-    color: #ffffff; /* Цвет текста ссылки */
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
 
 .social-link:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
+    text-decoration: underline;
 }
 
 .description {
-    margin-bottom: 20px; /* Устанавливаем отступ между описанием и картинкой */
+    margin-bottom: 20px;
 }
 
-/* Если картинка размещается в отдельном контейнере, например, .image-container */
+
 .image-container img {
-    margin-top: 10px; /* Устанавливаем отступ между верхом контейнера и картинкой */
+    margin-top: 10px;
 }
 
 
 .social-icon {
-    width: 20px; /* Размер иконки */
-    height: 20px; /* Размер иконки */
-    margin-right: 5px; /* Отступ между иконкой и текстом */
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }
 
 .telegram-link {
     display: flex;
     align-items: center;
-    color: #ffffff; /* Цвет текста ссылки */
+    color: #ffffff;
     text-decoration: none;
     font-weight: bold;
 }
 
 .telegram-link:hover {
-    text-decoration: underline; /* Подчеркивание при наведении */
+    text-decoration: underline;
 }
 
 .telegram-icon {
-    width: 20px; /* Размер иконки */
-    height: 20px; /* Размер иконки */
-    margin-right: 5px; /* Отступ между иконкой и текстом */
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
 }

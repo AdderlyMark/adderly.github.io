@@ -23,7 +23,6 @@ header {
     z-index: 1000;
 }
 
-
 .youtube-section {
     margin-top: 20px;
 }
@@ -120,9 +119,16 @@ header nav ul li a:hover {
 
 main {
     margin-top: 120px;
-    padding: 00px;
     text-align: center;
     padding-bottom: 70px;
+}
+
+@media (max-width: 600px) {
+    main {
+        padding-left: 30px;
+        padding-right: 30px;
+    	padding-bottom: 180px;
+    }
 }
 
 .button-section {
