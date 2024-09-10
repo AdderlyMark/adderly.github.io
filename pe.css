@@ -176,9 +176,10 @@ main {
 
 @media (max-width: 600px) {
     main {
+    margin-top: 90px;
         padding-left: 30px;
         padding-right: 30px;
-        padding-bottom: 150px;
+        padding-bottom: 100px;
     }
 
     .button-section {

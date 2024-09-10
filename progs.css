@@ -134,9 +134,10 @@ main {
 
 @media (max-width: 600px) {
     main {
+    margin-top: 80px;
         padding-left: 30px;
         padding-right: 30px;
-    	padding-bottom: 140px;
+    	padding-bottom: 70px;
     }
 }
 
