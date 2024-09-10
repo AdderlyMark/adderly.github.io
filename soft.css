@@ -142,11 +142,85 @@ main {
     text-align: center;
 }
 
+.mobile-header {
+    display: none;
+}
+
 @media (max-width: 600px) {
+    header {
+        display: none;
+    }
+    
+    .mobile-header {
+        display: block;
+        background-color: #002b5e;
+        color: #ffffff;
+        padding: 15px 0;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .mobile-header nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile-header nav ul li {
+        margin: 0 5px;
+    }
+
+    .mobile-header nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        background-color: #005a8d;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .mobile-header nav ul li a:hover {
+        background-color: #0073aa;
+    }
+
     main {
-    	padding-bottom: 140px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 150px;
+    }
+
+    .button-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .button-section a {
+        flex: 1 1 calc(50% - 10px);
+        margin: 0;
+        padding: 8px 16px;
+        background-color: #005a8d;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        max-width: none;
+        transform: scale(1);
+    }
+
+    .button-section a:nth-child(3) {
+        flex-basis: 100%;
     }
 }
+
 
 .program-section {
     margin-bottom: 50px;
