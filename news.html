@@ -15,8 +15,7 @@
 <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
     <title>Новости Аддерли</title>
     <link rel="stylesheet" href="styles.css">
-    <script>
-
+<script>
     let headerHidden = false;
     let logoHidden = false;
 
@@ -24,6 +23,7 @@
         const header = document.querySelector('header');
         const logo = document.querySelector('.logo');
         const currentWidth = window.innerWidth;
+
         if (currentWidth < 1175) {
             if (!headerHidden) {
                 header.style.display = 'none';
@@ -35,6 +35,7 @@
                 headerHidden = false;
             }
         }
+
         const minWidthForLogo = 1700;
         if (currentWidth < minWidthForLogo) {
             if (!logoHidden) {
@@ -47,22 +48,37 @@
                 logoHidden = false;
             }
         }
-    window.addEventListener('load', updateLayout);
-    window.addEventListener('resize', updateLayout);
+    }
 
-        function loadNews() {
+    function loadNews() {
         const newsFiles = [
             'txts/news1.txt',
             'txts/news2.txt',
             'txts/news3.txt',
-            // Добавьте оставшиеся файлы
+            'txts/news4.txt',
+            'txts/news5.txt',
+            'txts/news6.txt',
+            'txts/news7.txt',
+            'txts/news8.txt',
+            'txts/news9.txt',
+            'txts/news10.txt',
+            'txts/news11.txt',
+            'txts/news12.txt',
+            'txts/news13.txt',
+            'txts/news14.txt',
+            'txts/news15.txt',
+            'txts/news16.txt',
+            'txts/news17.txt',
+            'txts/news18.txt',
+            'txts/news19.txt',
+            'txts/news20.txt',
         ];
 
         const fetchNewsFile = (file) =>
             fetch(file)
                 .then(response => {
                     if (!response.ok) {
-                        throw new Error('Ошибка при загрузке файла');
+                        throw new Error('Ошибка при загрузке файла.');
                     }
                     return response.text();
                 })
@@ -108,12 +124,13 @@
             });
     }
 
-        window.addEventListener('resize', checkWidth);
-        document.addEventListener("DOMContentLoaded", () => {
-            checkWidth();
-            loadNews();
-        });
-    </script>
+    window.addEventListener('resize', updateLayout);
+    document.addEventListener("DOMContentLoaded", () => {
+        updateLayout();
+        loadNews();
+    });
+</script>
+
 
     <meta property="og:title" content="Сайт Марка Аддерли">
     <meta property="og:description" content="Блог Марка Аддерли - самые важные новости на сайте">
