@@ -21,6 +21,35 @@ header {
     padding: 15px 0;
     text-align: center;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 40px;
+    position: absolute;
+    align-items: center;
+    display: flex;
+}
+
+.logo a {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    text-decoration: underline;
+}
+
+.site-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    position: relative;
+    top: 7.7px;
 }
 
 .mobile-header {
@@ -31,7 +60,6 @@ header {
     header {
         display: none;
     }
-    
 
     .mobile-header {
         display: block;
@@ -106,6 +134,12 @@ header {
     border-radius: 15px;
 }
 
+nav {
+    flex-grow: 1;
+    justify-content: center;
+    flex-direction: column;
+}
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -136,6 +170,27 @@ header nav ul li a:hover {
     text-decoration: underline;
 }
 
+
+.first-row, .second-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 3px;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
 
 .first-row, .second-row {
     display: flex;

@@ -16,19 +16,42 @@
     <title>Старые версии Windows</title>
     <link rel="stylesheet" href="styles.css">
 <script>
-    function checkWidth() {
-        const header = document.querySelector('header');
+    let headerHidden = false;
+    let logoHidden = false;
 
-        if (window.innerWidth < 1175) {
-            header.style.display = 'none';
+    function updateLayout() {
+        const header = document.querySelector('header');
+        const logo = document.querySelector('.logo');
+        const currentWidth = window.innerWidth;
+        if (currentWidth < 1175) {
+            if (!headerHidden) {
+                header.style.display = 'none';
+                headerHidden = true;
+            }
         } else {
-            header.style.display = 'block';
+            if (headerHidden) {
+                header.style.display = 'block';
+                headerHidden = false;
+            }
+        }
+        const minWidthForLogo = 1700;
+        if (currentWidth < minWidthForLogo) {
+            if (!logoHidden) {
+                logo.style.display = 'none';
+                logoHidden = true;
+            }
+        } else {
+            if (logoHidden) {
+                logo.style.display = 'flex';
+                logoHidden = false;
+            }
         }
     }
 
-    window.addEventListener('resize', checkWidth);
-    document.addEventListener("DOMContentLoaded", checkWidth);
+    window.addEventListener('load', updateLayout);
+    window.addEventListener('resize', updateLayout);
 </script>
+
 
     <meta property="og:title" content="Сайт Марка Аддерли">
     <meta property="og:description" content="Скачать старые версии Windows можно на этом сайте!">
@@ -38,6 +61,12 @@
 </head>
 <body>
 <header>
+        <div class="logo">
+            <a href="index.html">
+                <img src="icons/favicon.ico" alt="MakuT" class="site-icon">
+                Adderly.Fun
+            </a>
+        </div>
     <nav>
         <ul class="first-row">
             <li><a href="index.html" class="nav-button">Главная</a></li>

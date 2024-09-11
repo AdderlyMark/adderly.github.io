@@ -14,13 +14,42 @@ body {
 header {
     background-color: #002b5e;
     color: #ffffff;
-    text-align: center;
-    padding: 15px 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
+    padding: 15px 0;
+    text-align: center;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin-left: 40px;
+    position: absolute;
+    align-items: center;
+    display: flex;
+}
+
+.logo a {
+    color: #ffffff;
+    font-size: 32px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    text-decoration: underline;
+}
+
+.site-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    position: relative;
+    top: 7.7px;
 }
 
 footer {
@@ -81,6 +110,12 @@ header {
 
 footer {
     bottom: 0;
+}
+
+nav {
+    flex-grow: 1;
+    justify-content: center;
+    flex-direction: column;
 }
 
 nav ul {
