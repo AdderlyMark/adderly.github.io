@@ -51,74 +51,62 @@
     window.addEventListener('resize', updateLayout);
 
         function loadNews() {
-            const newsFiles = [
-                'txts/news1.txt',
-                'txts/news2.txt',
-                'txts/news3.txt',
-                'txts/news4.txt',
-                'txts/news5.txt',
-                'txts/news6.txt',
-                'txts/news7.txt',
-                'txts/news8.txt',
-                'txts/news9.txt',
-                'txts/news10.txt',
-                'txts/news11.txt',
-                'txts/news12.txt',
-                'txts/news13.txt',
-                'txts/news14.txt',
-                'txts/news15.txt',
-                'txts/news16.txt',
-                'txts/news17.txt',
-                'txts/news18.txt',
-                'txts/news19.txt',
-                'txts/news20.txt',
-            ];
+        const newsFiles = [
+            'txts/news1.txt',
+            'txts/news2.txt',
+            'txts/news3.txt',
+            // Добавьте оставшиеся файлы
+        ];
 
-            const fetchNewsFile = (file) =>
-                fetch(file)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('эту ошибку вообще реально получить? XD');
-                        }
-                        return response.text();
-                    })
-                    .catch(error => {
-                        console.warn(`Не удалось загрузить ${file}: ${error.message}`);
-                        return '';
-                    });
-
-            Promise.all(newsFiles.map(fetchNewsFile))
-                .then(newsContents => {
-                    const newsContainer = document.getElementById('news-container');
-                    newsContainer.innerHTML = '';
-
-                    newsContents.forEach(content => {
-                        if (content.trim() === '') return;
-
-                        const lines = content.split('\n');
-                        const title = lines[0];
-                        const body = lines.slice(1).join('\n');
-
-                        const newsItem = document.createElement('div');
-                        newsItem.classList.add('news-item');
-
-                        const newsTitle = document.createElement('h2');
-                        newsTitle.textContent = title;
-
-                        const newsContent = document.createElement('p');
-                        newsContent.textContent = body;
-
-                        newsItem.appendChild(newsTitle);
-                        newsItem.appendChild(newsContent);
-
-                        newsContainer.appendChild(newsItem);
-                    });
+        const fetchNewsFile = (file) =>
+            fetch(file)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Ошибка при загрузке файла');
+                    }
+                    return response.text();
                 })
                 .catch(error => {
-                    console.error('Ошибка при загрузке новостей', error);
-                    document.getElementById('news-container').textContent = 'Не удалось загрузить новости';
+                    console.warn(`Не удалось загрузить ${file}: ${error.message}`);
+                    return '';
                 });
-        }
+
+        Promise.all(newsFiles.map(fetchNewsFile))
+            .then(newsContents => {
+                const newsContainer = document.getElementById('news-container');
+                newsContainer.innerHTML = '';
+
+                newsContents.forEach(content => {
+                    if (content.trim() === '') return;
+
+                    const lines = content.split('\n');
+                    const title = lines[0];
+                    const body = lines.slice(1).join('\n');
+
+                    const newsItem = document.createElement('div');
+                    newsItem.classList.add('news-item');
+
+                    const newsTitle = document.createElement('h2');
+                    newsTitle.textContent = title;
+
+                    const newsContent = document.createElement('p');
+                    newsContent.textContent = body;
+
+                    newsItem.appendChild(newsTitle);
+                    newsItem.appendChild(newsContent);
+
+                    newsContainer.appendChild(newsItem);
+                });
+
+                if (newsContainer.innerHTML === '') {
+                    newsContainer.textContent = 'Новостей нет или произошла ошибка при их загрузке.';
+                }
+            })
+            .catch(error => {
+                console.error('Ошибка при загрузке новостей', error);
+                document.getElementById('news-container').textContent = 'Не удалось загрузить новости';
+            });
+    }
 
         window.addEventListener('resize', checkWidth);
         document.addEventListener("DOMContentLoaded", () => {
