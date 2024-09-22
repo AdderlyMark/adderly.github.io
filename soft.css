@@ -298,6 +298,7 @@ main {
     width: 100%;
     height: auto;
     border-radius: 8px;
+    box-shadow: 0px 0px 4px 0.1px black;
 }
 
 .download-button {
