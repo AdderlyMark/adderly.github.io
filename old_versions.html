@@ -77,49 +77,56 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     const colorOptions = document.querySelectorAll('.color-option');
-    colorOptions.forEach(option => {
-        option.addEventListener('click', () => {
-            const chosenColor = option.getAttribute('data-color');
-            document.body.style.backgroundColor = chosenColor;
+colorOptions.forEach(option => {
+    option.addEventListener('click', () => {
+        const chosenColor = option.getAttribute('data-color');
+        document.body.style.backgroundColor = chosenColor;
 
-            let headerFooterColor;
-            let buttonColor;
-            if (chosenColor === "#0a1f44") {
-                headerFooterColor = "#002b5e";
-                buttonColor = "#005e92";
-            } else if (chosenColor === "#44280a") {
-                headerFooterColor = "#a65805";
-                buttonColor = "#7a3c02";
-            } else if (chosenColor === "#1c440a") {
-                headerFooterColor = "#4caf50";
-                buttonColor = "#388e3c";
-            } else if (chosenColor === "#052021") {
-                headerFooterColor = "#00796b";
-                buttonColor = "#004d40";
-            } else if (chosenColor === "#0a4441") {
-                headerFooterColor = "#009688";
-                buttonColor = "#00796b";
-            } else if (chosenColor === "#300a44") {
-                headerFooterColor = "#6a1b9a";
-                buttonColor = "#4a0072";
-            } else if (chosenColor === "#440a34") {
-                headerFooterColor = "#630549";
-                buttonColor = "#8a0665";
-            } else if (chosenColor === "#440a0a") {
-                headerFooterColor = "#c62828";
-                buttonColor = "#780d0d";
-            }
-            header.style.backgroundColor = headerFooterColor;
-            footer.style.backgroundColor = headerFooterColor;
-            mobileHeader.style.backgroundColor = headerFooterColor;
-            buttons.forEach(button => {
-                button.style.backgroundColor = buttonColor;
-                button.style.color = "#ffffff";
-            });
-            colorPicker.classList.add('hidden');
-            localStorage.setItem('themeColor', chosenColor);
+        let headerFooterColor;
+        let buttonColor;
+        if (chosenColor === "#0a1f44") {
+            headerFooterColor = "#002b5e";
+            buttonColor = "#005e92";
+        } else if (chosenColor === "#44280a") {
+            headerFooterColor = "#a65805";
+            buttonColor = "#7a3c02";
+        } else if (chosenColor === "#1c440a") {
+            headerFooterColor = "#4caf50";
+            buttonColor = "#388e3c";
+        } else if (chosenColor === "#052021") {
+            headerFooterColor = "#00796b";
+            buttonColor = "#004d40";
+        } else if (chosenColor === "#0a4441") {
+            headerFooterColor = "#009688";
+            buttonColor = "#00796b";
+        } else if (chosenColor === "#300a44") {
+            headerFooterColor = "#6a1b9a";
+            buttonColor = "#4a0072";
+        } else if (chosenColor === "#440a34") {
+            headerFooterColor = "#630549";
+            buttonColor = "#8a0665";
+        } else if (chosenColor === "#440a0a") {
+            headerFooterColor = "#c62828";
+            buttonColor = "#780d0d";
+        }
+
+        header.style.backgroundColor = headerFooterColor;
+        footer.style.backgroundColor = headerFooterColor;
+        mobileHeader.style.backgroundColor = headerFooterColor;
+        buttons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
         });
+        const buttonSectionLinks = document.querySelectorAll('.button-section a');
+        buttonSectionLinks.forEach(link => {
+            link.style.backgroundColor = buttonColor;
+            link.style.color = "#ffffff";
+        });
+
+        colorPicker.classList.add('hidden');
+        localStorage.setItem('themeColor', chosenColor);
     });
+});
 
     const savedColor = localStorage.getItem('themeColor');
     if (savedColor) {
@@ -156,10 +163,16 @@ document.addEventListener('DOMContentLoaded', () => {
         header.style.backgroundColor = headerFooterColor;
         footer.style.backgroundColor = headerFooterColor;
         mobileHeader.style.backgroundColor = headerFooterColor; 
-        buttons.forEach(button => {
-            button.style.backgroundColor = buttonColor;
-            button.style.color = "#ffffff";
-        });
+    buttons.forEach(button => {
+        button.style.backgroundColor = buttonColor;
+        button.style.color = "#ffffff";
+    });
+
+    const buttonSectionLinks = document.querySelectorAll('.button-section a');
+    buttonSectionLinks.forEach(link => {
+        link.style.backgroundColor = buttonColor;
+        link.style.color = "#ffffff"; // Цвет текста кнопок
+    });
     }
 });
 

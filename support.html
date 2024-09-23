@@ -115,6 +115,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.style.backgroundColor = buttonColor;
                 button.style.color = "#ffffff";
             });
+        const buttonSectionLinks = document.querySelectorAll('.button-section a');
+        buttonSectionLinks.forEach(link => {
+            link.style.backgroundColor = buttonColor;
+            link.style.color = "#ffffff";
+        });
             colorPicker.classList.add('hidden');
             localStorage.setItem('themeColor', chosenColor);
         });
@@ -159,6 +164,12 @@ document.addEventListener('DOMContentLoaded', () => {
             button.style.backgroundColor = buttonColor;
             button.style.color = "#ffffff";
         });
+
+    const buttonSectionLinks = document.querySelectorAll('.button-section a');
+    buttonSectionLinks.forEach(link => {
+        link.style.backgroundColor = buttonColor;
+        link.style.color = "#ffffff"; // Цвет текста кнопок
+    });
     }
 });
 
