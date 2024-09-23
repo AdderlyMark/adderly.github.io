@@ -60,7 +60,7 @@ header {
     header {
         display: none;
     }
-    
+
     .mobile-header {
         display: block;
         background-color: #002b5e;
@@ -117,7 +117,7 @@ footer {
     gap: 20px;
 }
 
-.social-link {
+.social-link, .telegram-link {
     display: flex;
     align-items: center;
     color: #ffffff;
@@ -125,29 +125,11 @@ footer {
     font-weight: bold;
 }
 
-.social-link:hover {
+.social-link:hover, .telegram-link:hover {
     text-decoration: underline;
 }
 
-.social-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 5px;
-}
-
-.telegram-link {
-    display: flex;
-    align-items: center;
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.telegram-link:hover {
-    text-decoration: underline;
-}
-
-.telegram-icon {
+.social-icon, .telegram-icon {
     width: 20px;
     height: 20px;
     margin-right: 5px;
@@ -163,13 +145,12 @@ main {
 
 @media (max-width: 600px) {
     main {
-    margin-top: 80px;
+        margin-top: 80px;
         padding-left: 30px;
         padding-right: 30px;
-    	padding-bottom: 70px;
+        padding-bottom: 70px;
     }
 }
-
 
 .container {
     max-width: 1200px;
@@ -180,20 +161,11 @@ main {
     margin-bottom: 50px;
 }
 
-header {
-    top: 0;
-}
-
-footer {
-    bottom: 0;
-}
-
 nav {
     flex-grow: 1;
     justify-content: center;
     flex-direction: column;
 }
-
 
 nav ul {
     list-style: none;
@@ -204,33 +176,25 @@ nav ul {
     gap: 15px;
 }
 
-
-.repack-label {
+.repack-label, .audience-suggestion-label {
     position: absolute;
     top: 3px;
     right: -21px;
-    background-color: red;
     color: white;
     padding: 3px 10px;
     font-size: 14px;
     font-weight: bold;
     border-radius: 5px;
     transform: rotate(15deg);
+}
+
+.repack-label {
+    background-color: red;
 }
 
 .audience-suggestion-label {
-    position: absolute;
-    top: 3px;
-    right: -29px;
     background-color: blue;
-    color: white;
-    padding: 3px 10px;
-    font-size: 14px;
-    font-weight: bold;
-    border-radius: 5px;
-    transform: rotate(15deg);
 }
-
 
 .first-row, .second-row {
     display: flex;
@@ -268,14 +232,12 @@ nav a:hover {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
 .nav-button:hover {
     background-color: #0073aa;
     text-decoration: none;
 }
-
 
 h2 {
     text-align: center;
@@ -288,7 +250,7 @@ h2 {
     align-items: center;
     margin-bottom: 30px;
     padding: 15px;
-    background-color: #005a8d;
+    background-color: var(--header-color, #005a8d);
     border-radius: 10px;
     position: relative;
 }
@@ -309,13 +271,12 @@ h2 {
 
 .download-button {
     display: inline-block;
-    background-color: #012987;
+    background-color: var(--button-color, #005a8d);
     color: #ffffff;
     padding: 8px 20px;
     margin: 0 4px;
-  position: relative;
-  left: -4px;
-
+    position: relative;
+    left: -4px;
     text-decoration: none;
     font-weight: bold;
     border-radius: 10px;

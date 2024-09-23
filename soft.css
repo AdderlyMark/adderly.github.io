@@ -163,7 +163,6 @@ nav a:hover {
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-    transition: background-color 0.3s ease;
 }
 
 .nav-button:hover {
