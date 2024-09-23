@@ -93,19 +93,16 @@ document.addEventListener("DOMContentLoaded", () => {
         header.style.backgroundColor = headerFooterColor;
         footer.style.backgroundColor = headerFooterColor;
 
-        // Установка цвета для кнопок навигации
         buttons.forEach(button => {
             button.style.backgroundColor = buttonColor;
             button.style.color = "#ffffff"; // Цвет текста кнопок
         });
 
-        // Установка цвета для кнопок "Скачать"
         downloadButtons.forEach(button => {
             button.style.backgroundColor = buttonColor;
             button.style.color = "#ffffff"; // Цвет текста кнопок "Скачать"
         });
 
-        // Установка переменных CSS для фонов
         document.documentElement.style.setProperty('--header-color', headerFooterColor);
         document.documentElement.style.setProperty('--button-color', buttonColor);
     }
@@ -140,23 +137,6 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="support" class="nav-button">Поддержать</a></li>
         </ul>
 </nav>
-<div class="palette-container">
-    <button id="palette-button" class="palette-button">
-        <img src="icons/color.png" alt="Palette Icon" class="palette-icon">
-    </button>
-    <div id="color-picker" class="color-picker hidden">
-        <h4>Выбрать тему:</h4>
-        <div class="color-options">
-            <div class="color-option" style="background-color: #0a1f44;" data-color="#0a1f44"></div>
-            <div class="color-option" style="background-color: #44280a;" data-color="#44280a"></div>
-            <div class="color-option" style="background-color: #1c440a;" data-color="#1c440a"></div>
-            <div class="color-option" style="background-color: #052021;" data-color="#052021"></div>
-            <div class="color-option" style="background-color: #0a4441;" data-color="#0a4441"></div>
-            <div class="color-option" style="background-color: #300a44;" data-color="#300a44"></div>
-            <div class="color-option" style="background-color: #440a34;" data-color="#440a34"></div>
-            <div class="color-option" style="background-color: #440a0a;" data-color="#440a0a"></div>
-        </div>
-    </div>
 </div>
 </header>
 
