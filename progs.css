@@ -287,3 +287,62 @@ h2 {
     background-color: #1640a1;
     transform: scale(1.1);
 }
+
+.palette-container {
+    position: relative;
+}
+
+.palette-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 40px;
+    position: absolute; 
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+}
+
+.palette-icon {
+    width: 100%;
+    height: auto;
+}
+
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 1px;
+    padding: 11px;
+    position: absolute;
+    top: calc(100% + 32px);
+    right: calc(0px + 40px);
+    z-index: 1001;
+}
+
+.color-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.color-option {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border: 1px solid #dddddd;
+}
+
+.hidden {
+    display: none;
+}
+
+.color-picker h4 {
+    color: #000000;
+    margin: 0;
+}
