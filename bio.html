@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = document.querySelector('header');
     const footer = document.querySelector('footer');
     const buttons = document.querySelectorAll('.nav-button');
+    const mobileHeader = document.querySelector('.mobile-header');
 
     colorPicker.classList.add('hidden');
 
@@ -109,6 +110,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             header.style.backgroundColor = headerFooterColor;
             footer.style.backgroundColor = headerFooterColor;
+            mobileHeader.style.backgroundColor = headerFooterColor;
             buttons.forEach(button => {
                 button.style.backgroundColor = buttonColor;
                 button.style.color = "#ffffff";
@@ -152,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         header.style.backgroundColor = headerFooterColor;
         footer.style.backgroundColor = headerFooterColor;
+        mobileHeader.style.backgroundColor = headerFooterColor; 
         buttons.forEach(button => {
             button.style.backgroundColor = buttonColor;
             button.style.color = "#ffffff";

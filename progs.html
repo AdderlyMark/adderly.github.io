@@ -59,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const footer = document.querySelector('footer');
     const buttons = document.querySelectorAll('.nav-button');
     const savedColor = localStorage.getItem('themeColor');
+    const mobileHeader = document.querySelector('.mobile-header');
     if (savedColor) {
         let headerFooterColor;
         let buttonColor;
@@ -94,6 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const footer = document.querySelector('footer');
         const buttons = document.querySelectorAll('.nav-button');
         const downloadButtons = document.querySelectorAll('.download-button');
+            mobileHeader.style.backgroundColor = headerFooterColor;
 
         header.style.backgroundColor = headerFooterColor;
         footer.style.backgroundColor = headerFooterColor;
