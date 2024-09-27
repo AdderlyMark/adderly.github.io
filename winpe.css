@@ -101,39 +101,6 @@ header {
     }
 }
 
-.youtube-section {
-    margin-top: 20px;
-}
-
-.donators-section {
-    margin-top: 10px;
-}
-
-.donators-section h2 {
-    font-size: 1.5em;
-    margin-bottom: 0px; 
-}
-
-.donators-section ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.donators-section li {
-    font-size: 1.2em; 
-    margin-bottom: 10px;
-    color: #ffffff;
-}
-
-.youtube-section iframe {
-    width: 700px;
-    height: 393px;
-    max-width: 100%;
-    margin-top: 00px;
-    border-radius: 15px;
-}
-
 nav {
     flex-grow: 1;
     justify-content: center;
@@ -240,28 +207,25 @@ main {
     }
 }
 
-.button-section {
-    margin-top: 20px;
-}
-
-.button-section a {
-    display: block;
-    margin: 10px auto;
-    padding: 10px 20px;
-    background-color: #005a8d;
+.download-button {
+    display: inline-block;
+    background-color: #1c4ebf;
     color: #ffffff;
+    padding: 10px 30px;
     text-decoration: none;
-    border-radius: 5px;
     font-weight: bold;
+    border-radius: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    margin: 3px;
     transition: background-color 0.3s ease, transform 0.3s ease;
-    max-width: 300px;
-    transform: scale(1);
+
 }
 
-.button-section a:hover {
-    background-color: #0073aa;
-    transform: scale(1.1);
-    text-decoration: none;
+.button-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 main h1 {
@@ -380,55 +344,15 @@ footer {
     margin: 0;
 }
 
-.container {
-    max-width: 1200px;
-    width: 100%;
-}
-
-.news-section {
-    margin-bottom: 20px;
-    transition: transform 0.2s ease;
-}
-
-.news-section:hover {
-    transform: scale(1.05);
-}
-
-
-.news {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-    padding: 15px;
-    background-color: var(--header-color, #005a8d);
-    border-radius: 7px;
-    position: relative;
-}
-
-.news-icon {
-    width: 80px;
-    height: 80px;
-    margin-right: 20px;
-}
-
-.news-text {
-    margin-right: 20px;
-    text-align: left;
-}
-
-.news-title {
-    font-size: 24px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #ffffff;
-}
-
-.news-title:hover {
-    text-decoration: underline;
-}
-
 .nav-button:hover {
     text-decoration: none;
     transform: scale(1.2);
 }
 
+.download-button {
+    transition: transform 0.3s ease;
+}
+
+.download-button:hover {
+    transform: scale(1.07);
+}

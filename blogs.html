@@ -16,20 +16,14 @@
     <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
     <title>Новости Аддерли</title>
     <link rel="stylesheet" href="styles.css">
-
     <script>
         const toggleDisplay = (el, condition, display) => el.style.display = condition ? display : 'none';
         let existingNews = new Map();
-
-        function checkWidth() {
-            if (window.innerWidth < 1175) {
-                window.location.href = "indexm.html";
-            }
-        }
-
         function checkScreenWidth() {
             const logo = document.querySelector('.logo');
             const minWidth = 1700;
+
+            console.log(window.innerWidth);
 
             if (window.innerWidth < minWidth) {
                 logo.style.display = 'none';
@@ -38,19 +32,21 @@
             }
         }
         window.addEventListener('load', checkScreenWidth);
-        window.addEventListener('resize', () => {
-            checkScreenWidth();
-            checkWidth();
-        });
+        window.addEventListener('resize', checkScreenWidth);
+        
+        function updateLayout() {
+            const width = window.innerWidth;
+            toggleDisplay(document.querySelector('header'), width >= 1175, 'block');
+            toggleDisplay(document.querySelector('.logo'), width >= 1700, 'flex');
+        }
 
         async function fetchNews() {
             const newsContainer = document.getElementById('news-container');
             const today = new Date();
-            const startDate = new Date(2024, 8, 20);
+            const startDate = new Date(2024, 8, 1);
             const requests = [];
-            const maxNewsCount = 21;
 
-            for (let d = new Date(startDate); d.getDate() <= today.getDate() + 1; d.setDate(d.getDate() + 1)) {
+            for (let d = new Date(startDate); d.getDate() <= today.getDate() + 2; d.setDate(d.getDate() + 1)) {
                 const formattedDate = d.toISOString().split('T')[0];
                 console.log(formattedDate);
                 const request = fetch(`blogs/${formattedDate}.html`)
@@ -82,11 +78,10 @@
 
             newsContainer.innerHTML = '';
 
-            const newsToDisplay = newsData.slice(0, 21);
-            newsToDisplay.forEach((news, index) => {
+            newsData.forEach((news, index) => {
 
                 const newsDiv = document.createElement('section');
-                newsDiv.className = 'news-section';
+                newsDiv.className = 'program-section';
                 const iconPath = `blogs/${news.formattedDate}.png`;
                 let iconExists = false;
 
@@ -103,11 +98,11 @@
                     iconExists = exists;
 
                     newsDiv.innerHTML = `
-                        <div class="news">
-                            ${iconExists ? `<img src="${iconPath}" alt="${news.title}" class="news-icon">` : ''}
-                            <div class="news-text">
-                                <a href="blogs/${news.formattedDate}.html" class="news-title" target="_blank">${news.title}</a>
-                                <p class="news-subtitle">${news.shortDescription || 'no description'}</p>
+                        <div class="program">
+                            ${iconExists ? `<img src="${iconPath}" alt="${news.title}" class="program-icon">` : ''}
+                            <div class="program-text">
+                                <a href="blogs/${news.formattedDate}.html" class="program-title" target="_blank">${news.title}</a>
+                                <p class="program-subtitle">${news.shortDescription || 'no description'}</p>
                             </div>
                         </div>`;
 
@@ -115,18 +110,17 @@
                 });
 
                 newsDiv.innerHTML = `
-                <div class="news">
-                    ${iconExists ? `<img src="${iconPath}" alt="${news.title}" class="news-icon">` : ''}
-                    <div class="news-text">
-                        <a href="blogs/${news.formattedDate}.html" class="news-title" target="_blank">${news.title}</a>
-                        <p class=news-subtitle">${news.shortDescription || 'no description'}</p>
+                <div class="program">
+                    ${iconExists ? `<img src="${iconPath}" alt="${news.title}" class="program-icon">` : ''}
+                    <div class="program-text">
+                        <a href="blogs/${news.formattedDate}.html" class="program-title" target="_blank">${news.title}</a>
+                        <p class="program-subtitle">${news.shortDescription || 'no description'}</p>
                     </div>
                 </div>`;
                 newsContainer.appendChild(newsDiv);
 
             });
         }
-
         document.addEventListener("DOMContentLoaded", () => { fetchNews(); });
     </script>
 
@@ -141,45 +135,70 @@
     <link rel="icon" href="images/favicon.png">
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const setThemeColor = (color, headerFooterColor, buttonColor) => {
-                document.body.style.backgroundColor = color;
-                ['header', 'footer', '.mobile-header'].forEach(selector => document.querySelector(selector).style.backgroundColor = headerFooterColor);
-                document.querySelectorAll('.nav-button').forEach(btn => {
-                    btn.style.backgroundColor = buttonColor;
-                    btn.style.color = "#ffffff";
-                });
-                localStorage.setItem('themeColor', color);
-                document.getElementById('color-picker').classList.add('hidden');
-            };
-
-            const colors = {
-                "#0a1f44": ["#002b5e", "#005e92"], "#44280a": ["#a65805", "#7a3c02"],
-                "#1c440a": ["#4caf50", "#388e3c"], "#052021": ["#00796b", "#004d40"],
-                "#0a4441": ["#009688", "#00796b"], "#300a44": ["#6a1b9a", "#4a0072"],
-                "#440a34": ["#630549", "#8a0665"], "#440a0a": ["#c62828", "#780d0d"]
-            };
-
+        document.addEventListener("DOMContentLoaded", () => {
+            const paletteButton = document.getElementById('palette-button');
+            const colorPicker = document.getElementById('color-picker');
+            const header = document.querySelector('header');
+            const footer = document.querySelector('footer');
+            const buttons = document.querySelectorAll('.nav-button');
             const savedColor = localStorage.getItem('themeColor');
-            if (savedColor && colors[savedColor]) setThemeColor(savedColor, ...colors[savedColor]);
+            const mobileHeader = document.querySelector('.mobile-header');
 
-            const colorPicker = document.querySelector('.color-options');
-            Object.keys(colors).forEach(color => {
-                const option = document.createElement('div');
-                option.className = 'color-option';
-                option.style.backgroundColor = color;
-                option.setAttribute('data-color', color);
-                option.addEventListener('click', () => {
-                    if (colors[color]) setThemeColor(color, ...colors[color]);
+            if (savedColor) {
+                let headerFooterColor;
+                let buttonColor;
+                document.body.style.backgroundColor = savedColor;
+        
+                if (savedColor === "#0a1f44") {
+                    headerFooterColor = "#002b5e";
+                    buttonColor = "#005e92";
+                } else if (savedColor === "#44280a") {
+                    headerFooterColor = "#a65805";
+                    buttonColor = "#7a3c02";
+                } else if (savedColor === "#1c440a") {
+                    headerFooterColor = "#4caf50";
+                    buttonColor = "#388e3c";
+                } else if (savedColor === "#052021") {
+                    headerFooterColor = "#00796b";
+                    buttonColor = "#004d40";
+                } else if (savedColor === "#0a4441") {
+                    headerFooterColor = "#009688";
+                    buttonColor = "#00796b";
+                } else if (savedColor === "#300a44") {
+                    headerFooterColor = "#6a1b9a";
+                    buttonColor = "#4a0072";
+                } else if (savedColor === "#440a34") {
+                    headerFooterColor = "#630549";
+                    buttonColor = "#8a0665";
+                } else if (savedColor === "#440a0a") {
+                    headerFooterColor = "#c62828";
+                    buttonColor = "#780d0d";
+                }
+        
+                const header = document.querySelector('header');
+                const footer = document.querySelector('footer');
+                const buttons = document.querySelectorAll('.nav-button');
+                const downloadButtons = document.querySelectorAll('.download-button');
+                    mobileHeader.style.backgroundColor = headerFooterColor;
+        
+                header.style.backgroundColor = headerFooterColor;
+                footer.style.backgroundColor = headerFooterColor;
+        
+                buttons.forEach(button => {
+                    button.style.backgroundColor = buttonColor;
+                    button.style.color = "#ffffff";
                 });
-                colorPicker.appendChild(option);
-            });
-
-            document.getElementById('palette-button').addEventListener('click', () => {
-                document.getElementById('color-picker').classList.toggle('hidden');
-            });
+        
+                downloadButtons.forEach(button => {
+                    button.style.backgroundColor = buttonColor;
+                    button.style.color = "#ffffff";
+                });
+        
+                document.documentElement.style.setProperty('--header-color', headerFooterColor);
+                document.documentElement.style.setProperty('--button-color', buttonColor);
+            }
         });
-    </script>
+            </script>
 
     <style>
         .news-item {
@@ -216,13 +235,6 @@
                 <li><a href="support" class="nav-button">Поддержать</a></li>
             </ul>
         </nav>
-        <div class="palette-container"></div>
-        <button id="palette-button" class="palette-button"><img src="icons/color.png" alt="Palette Icon"
-                class="palette-icon"></button>
-        <div id="color-picker" class="color-picker hidden">
-            <h4>Выбрать тему:</h4>
-            <div class="color-options"></div>
-        </div>
     </header>
 
     <header class="mobile-header">
@@ -238,39 +250,12 @@
 
     <main>
         <main>
-            <section>
-                <h1>Добро пожаловать на Adderly.Fun!</h1>
-                <p>Это сайт Марка Аддерли - техноблогера на YouTube, и в целом довольно занятой персоны.<br>
-                    Здесь вы можете скачать мои приложения, сборки Windows, Windows PE, разные программы, и многое
-                    другое!</p>
-            </section>
-            <section class="youtube-section">
-                <h2>Последнее видео на YouTube канале</h2>
-                <iframe width="700" height="393"
-                    src="https://www.youtube.com/embed/videoseries?si=EL7VwKSGH9gmIKnk&amp;list=UULFsS9QFVkkxhF0zYwf1QP2ZA"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </section>
-            <section class="donators-section">
-                <h2>Лучшие донатеры за всё время!</h2>
-                <ul>
-                    <h3>
-                        <li>Vanya8899 - 3500₴<br>
-                            Okaride - 6300₽<br>
-                            MrBaska - 2755₽<br>
-                            Kirill Gorev - 1690₽
-                    </h3>
-                </ul>
-                <h2>Последние обновления сайта</h2>
-                <ul>
-                    <h3>Появилась поддержка тем!<br>
-                        Нажав на новую палитру, вы сможете под себя настроить сайт с помощью восьми красивых тем!</h3>
-                </ul>
+            <section style="max-width: 800px; margin: 0 auto; padding: 00px; text-align: justify;">
+                <h1 style="text-align: center;">Блог Аддерли</h1>
+                <div id="news-container"></div>
             </section>
         </main>
         <section style="max-width: 800px; margin: 0 auto; padding: 00px; text-align: justify;">
-            <h1 style="text-align: center;">Последние новости</h1>
             <div id="news-container"></div>
         </section>
     </main>

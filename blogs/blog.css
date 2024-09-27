@@ -171,9 +171,10 @@ nav a:hover {
 }
 
 main {
-    margin-top: 100px;
+    margin-top: 40px;
     padding: 20px;
     text-align: center;
+    margin-bottom: 30px;
 }
 
 .mobile-header {
@@ -225,10 +226,10 @@ main {
     }
 
     main {
-    	margin-top: 60px;
+    	margin-top: 20px;
         padding-left: 30px;
         padding-right: 30px;
-        padding-bottom: 90px;
+        padding-bottom: 2px;
     }
 
     .button-section {
@@ -256,15 +257,6 @@ main {
     }
 }
 
-.palette-icon {
-    width: 100%;
-    height: auto;
-}
-
-
-.bootleg-section {
-    margin-bottom: 50px;
-}
 
 .bootleg {
     display: flex;
@@ -274,7 +266,7 @@ main {
     margin-bottom: 20px;
 }
 
-.bootleg-description {
+.description {
     margin-top: 30px;
     font-size: 1.75em;
     line-height: 1.4;
@@ -292,6 +284,7 @@ main {
     margin: 0 auto;
     max-width: 1600px;
     margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .image-gallery img {
@@ -301,7 +294,21 @@ main {
     box-shadow: 0px 0px 4px 0.1px black;
 }
 
-.download-button {
+.image-gallery1 {
+    margin: 0 auto;
+    max-width: 1100px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.image-gallery1 img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0px 0px 4px 0.1px black;
+}
+
+.button {
     display: inline-block;
     background-color: #1c4ebf;
     color: #ffffff;
@@ -322,70 +329,8 @@ main {
     gap: 20px;
 }
 
+.button:hover {
+    background-color: #1640a1;
+    transform: scale(1.1);
 
-.palette-container {
-    position: relative;
-}
-
-.palette-button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    margin-right: 40px;
-    position: absolute; 
-    top: 50%;
-    right: 0;
-    transform: translateY(-50%);
-    width: 30px;
-    height: 30px;
-}
-
-.palette-icon {
-    width: 100%;
-    height: auto;
-}
-
-.color-picker {
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
-    border: 1px solid #cccccc;
-    border-radius: 1px;
-    padding: 11px;
-    position: absolute;
-    top: calc(100% + 32px);
-    right: calc(0px + 40px);
-    z-index: 1001;
-}
-
-.color-options {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-    margin-top: 10px;
-}
-
-.color-option {
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    border: 1px solid #dddddd;
-}
-
-.hidden {
-    display: none;
-}
-
-.color-picker h4 {
-    color: #000000;
-    margin: 0;
-}
-
-.download-button {
-    transition: transform 0.3s ease;
-}
-
-.download-button:hover {
-    transform: scale(1.07);
 }
