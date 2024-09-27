@@ -250,7 +250,7 @@ h2 {
     align-items: center;
     margin-bottom: 30px;
     padding: 15px;
-    background-color: var(--header-color, #005a8d);
+    background-color: var(--header-color, #002b5e);
     border-radius: 10px;
     position: relative;
 }
@@ -271,7 +271,7 @@ h2 {
 
 .download-button {
     display: inline-block;
-    background-color: var(--button-color, #005a8d);
+    background-color: var(--button-color, #005e92);
     color: #ffffff;
     padding: 8px 20px;
     margin: 0 4px;
