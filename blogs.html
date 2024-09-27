@@ -81,7 +81,7 @@
             newsData.forEach((news, index) => {
 
                 const newsDiv = document.createElement('section');
-                newsDiv.className = 'program-section';
+                newsDiv.className = 'news-section';
                 const iconPath = `blogs/${news.formattedDate}.png`;
                 let iconExists = false;
 
@@ -98,11 +98,11 @@
                     iconExists = exists;
 
                     newsDiv.innerHTML = `
-                        <div class="program">
-                            ${iconExists ? `<img src="${iconPath}" alt="${news.title}" class="program-icon">` : ''}
-                            <div class="program-text">
-                                <a href="blogs/${news.formattedDate}.html" class="program-title" target="_blank">${news.title}</a>
-                                <p class="program-subtitle">${news.shortDescription || 'no description'}</p>
+                        <div class="news">
+                            ${iconExists ? `<img src="${iconPath}" alt="${news.title}" class="news-icon">` : ''}
+                            <div class="news-text">
+                                <a href="blogs/${news.formattedDate}.html" class="news-title" target="_blank">${news.title}</a>
+                                <p class="news-subtitle">${news.shortDescription || 'no description'}</p>
                             </div>
                         </div>`;
 
@@ -110,11 +110,11 @@
                 });
 
                 newsDiv.innerHTML = `
-                <div class="program">
-                    ${iconExists ? `<img src="${iconPath}" alt="${news.title}" class="program-icon">` : ''}
-                    <div class="program-text">
-                        <a href="blogs/${news.formattedDate}.html" class="program-title" target="_blank">${news.title}</a>
-                        <p class="program-subtitle">${news.shortDescription || 'no description'}</p>
+                <div class="news">
+                    ${iconExists ? `<img src="${iconPath}" alt="${news.title}" class="news-icon">` : ''}
+                    <div class="news-text">
+                        <a href="blogs/${news.formattedDate}.html" class="news-title" target="_blank">${news.title}</a>
+                        <p class="news-subtitle">${news.shortDescription || 'no description'}</p>
                     </div>
                 </div>`;
                 newsContainer.appendChild(newsDiv);
