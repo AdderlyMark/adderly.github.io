@@ -180,82 +180,6 @@ main {
     display: none;
 }
 
-@media (max-width: 1170px) {
-    header {
-        display: none;
-    }
-    
-    .mobile-header {
-        display: block;
-        background-color: #002b5e;
-        color: #ffffff;
-        padding: 15px 0;
-        text-align: center;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
-    }
-
-    .mobile-header nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-        justify-content: center;
-    }
-
-    .mobile-header nav ul li {
-        margin: 0 5px;
-    }
-
-    .mobile-header nav ul li a {
-        color: #ffffff;
-        text-decoration: none;
-        font-weight: bold;
-        padding: 8px 12px;
-        background-color: #005a8d;
-        border-radius: 5px;
-        transition: background-color 0.3s ease;
-    }
-
-    .mobile-header nav ul li a:hover {
-        background-color: #0073aa;
-    }
-
-    main {
-    	margin-top: 60px;
-        padding-left: 30px;
-        padding-right: 30px;
-        padding-bottom: 90px;
-    }
-
-    .button-section {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
-    }
-
-    .button-section a {
-        flex: 1 1 calc(50% - 10px);
-        margin: 0;
-        padding: 8px 16px;
-        background-color: #005a8d;
-        color: #ffffff;
-        text-decoration: none;
-        border-radius: 5px;
-        font-weight: bold;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-        max-width: none;
-        transform: scale(1);
-    }
-
-    .button-section a:nth-child(3) {
-        flex-basis: 100%;
-    }
-}
-
 .palette-icon {
     width: 100%;
     height: auto;
@@ -388,4 +312,212 @@ main {
 
 .download-button:hover {
     transform: scale(1.07);
+}
+
+.floating-panel {
+    position: fixed;
+    top: 120px;
+    left: 20px;
+    background-color: rgba(240, 240, 240, 0.9); 
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    width: 240px;
+}
+
+.panel-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 10px;
+}
+
+.panel-header span {
+    flex-grow: 1;
+    margin-left: 3px;
+    color: black;
+    white-space: nowrap;
+}
+
+.panel-header .close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 14px; 
+    padding: 0;
+    line-height: 1;
+    margin-left: 20px;
+    color: black;
+}
+
+.floating-panel button {
+    display: block;
+    width: 100%;
+    margin: 2px 0;
+    padding: 5px 10px;
+    background-color: #003a69;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: left; 
+}
+
+@media (max-width: 1170px) {
+    header {
+        display: none;
+    }
+    
+    .mobile-header {
+        display: block;
+        background-color: #002b5e;
+        color: #ffffff;
+        padding: 15px 0;
+        text-align: center;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+
+    .mobile-header nav ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .mobile-header nav ul li {
+        margin: 0 5px;
+    }
+
+    .mobile-header nav ul li a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        padding: 8px 12px;
+        background-color: #005a8d;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .mobile-header nav ul li a:hover {
+        background-color: #0073aa;
+    }
+
+    main {
+    	margin-top: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-bottom: 90px;
+    }
+
+    .button-section {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .button-section a {
+        flex: 1 1 calc(50% - 10px);
+        margin: 0;
+        padding: 8px 16px;
+        background-color: #005a8d;
+        color: #ffffff;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+        max-width: none;
+        transform: scale(1);
+    }
+
+    .button-section a:nth-child(3) {
+        flex-basis: 100%;
+    }
+
+    .floating-panel {
+        position: fixed;
+        top: 70px;
+        left: 20px;
+        background-color: rgba(240, 240, 240, 0.9); 
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        z-index: 1000;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        width: 240px;
+    }
+    
+    .panel-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; 
+        margin-bottom: 10px;
+    }
+    
+    .panel-header span {
+        flex-grow: 1;
+        margin-left: 3px;
+        color: black;
+        white-space: nowrap;
+    }
+    
+    .panel-header .close-button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 14px; 
+        padding: 0;
+        line-height: 1;
+        margin-left: 20px;
+        color: black;
+    }
+    
+    .floating-panel button {
+        display: block;
+        width: 100%;
+        margin: 2px 0;
+        padding: 5px 10px;
+        background-color: #003a69;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 12px;
+        text-align: left; 
+    }
+}
+
+@media (max-width: 1000px)
+{
+    .floating-panel {
+        display: none;
+        top: 0px;
+    }
+    
+    .panel-header {
+        display: none;
+    }
+    
+    .panel-header span {
+        display: none;
+    }
+    
+    .panel-header .close-button {
+        display: none;
+    }
+    
+    .floating-panel button {
+        display: none;
+    }
 }

@@ -51,71 +51,178 @@
 <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
     <link rel="icon" href="images/favicon.png">
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-    const paletteButton = document.getElementById('palette-button');
-    const colorPicker = document.getElementById('color-picker');
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-    const buttons = document.querySelectorAll('.nav-button');
-    const savedColor = localStorage.getItem('themeColor');
-    const mobileHeader = document.querySelector('.mobile-header');
-    if (savedColor) {
-        let headerFooterColor;
-        let buttonColor;
-        document.body.style.backgroundColor = savedColor;
-
-        if (savedColor === "#0a1f44") {
-            headerFooterColor = "#002b5e";
-            buttonColor = "#005e92";
-        } else if (savedColor === "#44280a") {
-            headerFooterColor = "#a65805";
-            buttonColor = "#7a3c02";
-        } else if (savedColor === "#1c440a") {
-            headerFooterColor = "#4caf50";
-            buttonColor = "#388e3c";
-        } else if (savedColor === "#052021") {
-            headerFooterColor = "#00796b";
-            buttonColor = "#004d40";
-        } else if (savedColor === "#0a4441") {
-            headerFooterColor = "#009688";
-            buttonColor = "#00796b";
-        } else if (savedColor === "#300a44") {
-            headerFooterColor = "#6a1b9a";
-            buttonColor = "#4a0072";
-        } else if (savedColor === "#440a34") {
-            headerFooterColor = "#630549";
-            buttonColor = "#8a0665";
-        } else if (savedColor === "#440a0a") {
-            headerFooterColor = "#c62828";
-            buttonColor = "#780d0d";
-        }
-
-        const header = document.querySelector('header');
-        const footer = document.querySelector('footer');
-        const buttons = document.querySelectorAll('.nav-button');
-        const downloadButtons = document.querySelectorAll('.download-button');
-            mobileHeader.style.backgroundColor = headerFooterColor;
-
-        header.style.backgroundColor = headerFooterColor;
-        footer.style.backgroundColor = headerFooterColor;
-
-        buttons.forEach(button => {
-            button.style.backgroundColor = buttonColor;
-            button.style.color = "#ffffff";
-        });
-        downloadButtons.forEach(button => {
-            button.style.backgroundColor = buttonColor;
-            button.style.color = "#ffffff";
-        });
-        document.documentElement.style.setProperty('--header-color', headerFooterColor);
-        document.documentElement.style.setProperty('--button-color', buttonColor);
-    }
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paletteButton = document.getElementById('palette-button');
+            const colorPicker = document.getElementById('color-picker');
+            const header = document.querySelector('header');
+            const footer = document.querySelector('footer');
+            const buttons = document.querySelectorAll('.nav-button');
+            const mobileHeader = document.querySelector('.mobile-header');
+            const floatingButtons = document.querySelectorAll('.floating-button');
+        
+            colorPicker.classList.add('hidden');
+        
+            paletteButton.addEventListener('click', () => {
+                colorPicker.classList.toggle('hidden');
+            });
+        
+            const colorOptions = document.querySelectorAll('.color-option');
+            colorOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const chosenColor = option.getAttribute('data-color');
+                    document.body.style.backgroundColor = chosenColor;
+        
+                    let headerFooterColor;
+                    let buttonColor;
+                    if (chosenColor === "#0a1f44") {
+                        headerFooterColor = "#002b5e";
+                        buttonColor = "#005e92";
+                    } else if (chosenColor === "#44280a") {
+                        headerFooterColor = "#a65805";
+                        buttonColor = "#7a3c02";
+                    } else if (chosenColor === "#1c440a") {
+                        headerFooterColor = "#4caf50";
+                        buttonColor = "#388e3c";
+                    } else if (chosenColor === "#052021") {
+                        headerFooterColor = "#00796b";
+                        buttonColor = "#004d40";
+                    } else if (chosenColor === "#0a4441") {
+                        headerFooterColor = "#009688";
+                        buttonColor = "#00796b";
+                    } else if (chosenColor === "#300a44") {
+                        headerFooterColor = "#6a1b9a";
+                        buttonColor = "#4a0072";
+                    } else if (chosenColor === "#440a34") {
+                        headerFooterColor = "#630549";
+                        buttonColor = "#8a0665";
+                    } else if (chosenColor === "#440a0a") {
+                        headerFooterColor = "#c62828";
+                        buttonColor = "#9c0202";
+                    }
+                    document.documentElement.style.setProperty('--header-color', headerFooterColor);
+                    document.documentElement.style.setProperty('--button-color', buttonColor);
+                    header.style.backgroundColor = headerFooterColor;
+                    footer.style.backgroundColor = headerFooterColor;
+                    mobileHeader.style.backgroundColor = headerFooterColor;
+                    floatingButtons.forEach(button => {
+    button.style.backgroundColor = buttonColor;
+    button.style.color = "#ffffff";
 });
-    </script>
+                    buttons.forEach(button => {
+                        button.style.backgroundColor = buttonColor;
+                        button.style.color = "#ffffff";
+                    });
+                    colorPicker.classList.add('hidden');
+                    localStorage.setItem('themeColor', chosenColor);
+                });
+            });
+        
+            const savedColor = localStorage.getItem('themeColor');
+            if (savedColor) {
+                document.body.style.backgroundColor = savedColor;
+                let headerFooterColor;
+                let buttonColor;
+                document.body.style.backgroundColor = savedColor;
+        
+                if (savedColor === "#0a1f44") {
+                    headerFooterColor = "#002b5e";
+                    buttonColor = "#005e92";
+                } else if (savedColor === "#44280a") {
+                    headerFooterColor = "#a65805";
+                    buttonColor = "#7a3c02";
+                } else if (savedColor === "#1c440a") {
+                    headerFooterColor = "#4caf50";
+                    buttonColor = "#388e3c";
+                } else if (savedColor === "#052021") {
+                    headerFooterColor = "#00796b";
+                    buttonColor = "#004d40";
+                } else if (savedColor === "#0a4441") {
+                    headerFooterColor = "#009688";
+                    buttonColor = "#00796b";
+                } else if (savedColor === "#300a44") {
+                    headerFooterColor = "#6a1b9a";
+                    buttonColor = "#4a0072";
+                } else if (savedColor === "#440a34") {
+                    headerFooterColor = "#630549";
+                    buttonColor = "#8a0665";
+                } else if (savedColor === "#440a0a") {
+                    headerFooterColor = "#c62828";
+                    buttonColor = "#9c0202";
+                }
+        
+                header.style.backgroundColor = headerFooterColor;
+                footer.style.backgroundColor = headerFooterColor;
+                mobileHeader.style.backgroundColor = headerFooterColor; 
+                floatingButtons.forEach(button => {
+    button.style.backgroundColor = buttonColor;
+    button.style.color = "#ffffff";
+});
+                buttons.forEach(button => {
+                    button.style.backgroundColor = buttonColor;
+                    button.style.color = "#ffffff";
+                });
+                document.documentElement.style.setProperty('--header-color', headerFooterColor);
+                document.documentElement.style.setProperty('--button-color', buttonColor);
+            }
+        });
+        
+            </script>
 
 </head>
 <body>
+
+    <div class="floating-panel">
+        <div class="panel-header">
+            <span>Категории...</span>
+            <button class="close-button" onclick="togglePanel()">✖</button>
+        </div>
+        <button class="floating-button" onclick="scrollToSection('top')">Браузеры</button>
+        <button class="floating-button" onclick="scrollToSection('medias')">Социальные сети</button>
+        <button class="floating-button" onclick="scrollToSection('players')">Плееры</button>
+        <button class="floating-button" onclick="scrollToSection('runtimes')">Библиотеки</button>
+        <button class="floating-button" onclick="scrollToSection('games')">Игры</button>
+        <button class="floating-button" onclick="scrollToSection('edit')">Редакторы</button>
+        <button class="floating-button" onclick="scrollToSection('tools')">Утилиты</button>
+        <button class="floating-button" onclick="scrollToSection('dev')">Для разработчиков</button>
+        <button class="floating-button" onclick="scrollToSection('vms')">Виртуальные машины</button>
+        <button class="floating-button" onclick="scrollToSection('tweaks')">Твики</button>
+        <button class="floating-button" onclick="scrollToSection('flash')">Работа с флешками</button>
+        <button class="floating-button" onclick="scrollToSection('diag')">Диагностика</button>
+        <button class="floating-button" onclick="scrollToSection('vpn')">VPN Клиенты</button>
+        <button class="floating-button" onclick="scrollToSection('drv')">Драйвера</button>
+    </div>
+    
+    <script>
+        function scrollToSection(sectionId) {
+            if (sectionId === 'top') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const offsetPosition = section.getBoundingClientRect().top + window.pageYOffset - 125;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        function togglePanel() {
+    const panel = document.querySelector('.floating-panel');
+    panel.style.display = panel.style.display === 'none' ? 'flex' : 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const panel = document.querySelector('.floating-panel');
+    panel.style.display = 'flex';
+});
+    </script>
+
 <header>
         <div class="logo">
             <a href="index.html">
@@ -142,6 +249,24 @@ document.addEventListener("DOMContentLoaded", () => {
             <li><a href="support" class="nav-button">Поддержать</a></li>
         </ul>
     </nav>
+    <div class="palette-container">
+        <button id="palette-button" class="palette-button">
+            <img src="icons/color.png" alt="Palette Icon" class="palette-icon">
+        </button>
+        <div id="color-picker" class="color-picker hidden">
+            <h4>Выбрать тему:</h4>
+            <div class="color-options">
+                <div class="color-option" style="background-color: #0a1f44;" data-color="#0a1f44"></div>
+                <div class="color-option" style="background-color: #44280a;" data-color="#44280a"></div>
+                <div class="color-option" style="background-color: #1c440a;" data-color="#1c440a"></div>
+                <div class="color-option" style="background-color: #052021;" data-color="#052021"></div>
+                <div class="color-option" style="background-color: #0a4441;" data-color="#0a4441"></div>
+                <div class="color-option" style="background-color: #300a44;" data-color="#300a44"></div>
+                <div class="color-option" style="background-color: #440a34;" data-color="#440a34"></div>
+                <div class="color-option" style="background-color: #440a0a;" data-color="#440a0a"></div>
+            </div>
+        </div>
+    </div>
 </header>
 
 <header class="mobile-header">
@@ -159,7 +284,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <div class="container">
 <h4 style="text-align: center;">Все программы скачиваются из официальных источников. Исключением являются только приложения с отметкой "Repack!".<br></h4>
 
-            <section class="program-section">
+            <section id="top" class="program-section">
 <h2>Браузеры</h2>
                 <div class="program">
                     <img src="icons/apps/1.png" alt="Vivaldi" class="program-icon">
@@ -198,7 +323,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="medias" class="program-section">
                 <h2>Социальные сети</h2>
                 <div class="program">
                     <img src="icons/apps/5.png" alt="Telegram" class="program-icon">
@@ -237,7 +362,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="players" class="program-section">
                 <h2>Плееры</h2>
                 <div class="program">
                     <img src="icons/apps/9.png" alt="VLC" class="program-icon">
@@ -270,7 +395,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="runtimes" class="program-section">
                 <h2>Библиотеки</h2>
                 <div class="program">
                     <img src="icons/apps/12.png" alt="Java 8" class="program-icon">
@@ -309,7 +434,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="games" class="program-section">
                 <h2>Игры</h2>
                 <div class="program">
                     <img src="icons/apps/17.png" alt="Steam" class="program-icon">
@@ -327,7 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="edit" class="program-section">
                 <h2>Редакторы</h2>
                 <div class="program">
                     <img src="icons/apps/18.png" alt="Audacity" class="program-icon">
@@ -376,7 +501,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="tools" class="program-section">
                 <h2>Утилиты</h2>
                 <div class="program">
                     <img src="icons/apps/21.png" alt="7-Zip" class="program-icon">
@@ -503,7 +628,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="dev" class="program-section">
                 <h2>Для разработчиков</h2>
                 <div class="program">
                     <img src="icons/apps/51.png" alt="VSCODE" class="program-icon">
@@ -528,7 +653,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="vms" class="program-section">
                 <h2>Виртуальные машины</h2>
                 <div class="program">
                     <img src="icons/apps/32.png" alt="VirtualBox" class="program-icon">
@@ -547,7 +672,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="tweaks" class="program-section">
                 <h2>Твики</h2>
                 <div class="program">
 			<span class="repack-label">Repack!</span>
@@ -573,7 +698,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="flash" class="program-section">
                 <h2>Работа с флешками</h2>
                 <div class="program">
                     <img src="icons/apps/40.png" alt="Rufus" class="program-icon">
@@ -598,7 +723,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="diag" class="program-section">
                 <h2>Диагностика</h2>
                 <div class="program">
                     <img src="icons/apps/25.png" alt="CPUZ" class="program-icon">
@@ -638,7 +763,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="vpn" class="program-section">
                 <h2>VPN Клиенты</h2>
                 <div class="program">
                     <img src="icons/apps/49.png" alt="Outline" class="program-icon">
@@ -656,7 +781,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 </div>
             </section>
 
-            <section class="program-section">
+            <section id="drv" class="program-section">
                 <h2>Драйвера</h2>
                 <div class="program">
                     <img src="icons/apps/34.png" alt="AMD" class="program-icon">

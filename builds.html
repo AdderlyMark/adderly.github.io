@@ -69,6 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const footer = document.querySelector('footer');
     const buttons = document.querySelectorAll('.nav-button');
     const mobileHeader = document.querySelector('.mobile-header');
+    const floatingButtons = document.querySelectorAll('.floating-button');
 
     colorPicker.classList.add('hidden');
 
@@ -107,11 +108,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 buttonColor = "#8a0665";
             } else if (chosenColor === "#440a0a") {
                 headerFooterColor = "#c62828";
-                buttonColor = "#780d0d";
+                buttonColor = "#9c0202";
             }
             header.style.backgroundColor = headerFooterColor;
             footer.style.backgroundColor = headerFooterColor;
             mobileHeader.style.backgroundColor = headerFooterColor;
+            floatingButtons.forEach(button => {
+    button.style.backgroundColor = buttonColor;
+    button.style.color = "#ffffff";
+});
             buttons.forEach(button => {
                 button.style.backgroundColor = buttonColor;
                 button.style.color = "#ffffff";
@@ -150,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             buttonColor = "#8a0665";
         } else if (savedColor === "#440a0a") {
             headerFooterColor = "#c62828";
-            buttonColor = "#780d0d";
+            buttonColor = "#9c0202";
         }
 
         header.style.backgroundColor = headerFooterColor;
@@ -160,6 +165,10 @@ document.addEventListener('DOMContentLoaded', () => {
             button.style.backgroundColor = buttonColor;
             button.style.color = "#ffffff";
         });
+        floatingButtons.forEach(button => {
+    button.style.backgroundColor = buttonColor;
+    button.style.color = "#ffffff";
+});
     }
 });
 
@@ -167,6 +176,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </head>
 <body>
+
+    <div class="floating-panel">
+        <div class="panel-header">
+            <span>Навигация по сборкам...</span>
+            <button class="close-button" onclick="togglePanel()">✖</button>
+        </div>
+        <button class="floating-button" onclick="scrollToSection('top')">MakuOS 11 (Windows 11 24H2)</button>
+        <button class="floating-button" onclick="scrollToSection('makuos-10-lite')">MakuOS 10 Lite (Windows 10 21H2)</button>
+        <button class="floating-button" onclick="scrollToSection('makuos-10-yuki')">MakuOS 10 Yuki (Windows 10 22H2)</button>
+    </div>
+    
+    <script>
+        function scrollToSection(sectionId) {
+            if (sectionId === 'top') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const offsetPosition = section.getBoundingClientRect().top + window.pageYOffset - 125;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+
+        function togglePanel() {
+    const panel = document.querySelector('.floating-panel');
+    panel.style.display = panel.style.display === 'none' ? 'flex' : 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const panel = document.querySelector('.floating-panel');
+    panel.style.display = 'flex';
+});
+    </script>
+
 <header>
         <div class="logo">
             <a href="index">
@@ -225,7 +275,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 <main>
         <h1>Сборки от Аддерли</h1>
-        <section class="bootleg-section">
+        <section id="top" class="bootleg-section">
             <div class="bootleg">
             <h2>MakuOS 11 (Windows 11 24H2, 26100.1742)</h2><br>
             </div>
@@ -243,6 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     Outlook for Windows, RAW Image Extension, Microsoft Todos, DevHome, Feedback Hub, Your Phone,<br>
                     Удалён Windows Defender.
             <h1>Применённые настройки:</h1>
+	Удалён SmartScreen<br>
             Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
             Из панели задач убраны все иконки<br>
             Включён DirectPlay.
@@ -253,14 +304,11 @@ document.addEventListener('DOMContentLoaded', () => {
     Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
     <p><br>
             <h1>Скачать:</h1>
-            <a href="https://pixeldrain.com/u/rkaJJKpF" class="download-button">PixelDrain</a>
-            <a href="https://drive.google.com/file/d/1iv1XSQMMqmCzEjfbE7ced1nJnOI-Bq_P/view?usp=sharing" class="download-button">Google Drive</a>
-            <a href="https://www.mediafire.com/file/si16mxo564xz3z9/MakuOS+11.iso/file" class="download-button">MediaFire</a>
-            <a href="https://gofile.io/d/yVzfpJ" class="download-button">GoFile</a>
-            <a href="https://wormhole.app/LLEoP#D0yjPjdVbeVlCLOBLaCp4g" class="download-button">Wormhole</a>
-            <a href="https://t.me/adderly324" class="download-button">Telegram</a>
+            <a href="https://pixeldrain.com/u/zbUAPjhJ" class="download-button">PixelDrain</a>
+            <a href="https://drive.google.com/file/d/1MERuGywt-3DmRMuCxPl1l8rZJD6kQStq/view?usp=sharing" class="download-button">Google Drive</a>
+            <a href="https://www.mediafire.com/file/0se6caa13z8o9mz/MakuOS+11.iso/file" class="download-button">MediaFire</a>
         </section>
-    <section class="bootleg-section">
+        <section id="makuos-10-lite" class="bootleg-section">
         <div class="bootleg">
         <h2>MakuOS 10 Lite (Windows 10 21H2, 19044.1288)</h2><br>
         </div>
@@ -302,7 +350,7 @@ PDF Reader, компоненты печати, Microsoft Edge Dev Kit.<br><br>
         <a href="https://adderly.fun/builds" class="download-button">СКОРО</a>
     </section>
 
-    <section class="bootleg-section">
+    <section id="makuos-10-yuki" class="bootleg-section">
         <div class="bootleg">
         <h2>MakuOS 10 Yuki (Windows 10 22H2, 19045.4894)</h2><br>
         </div>
