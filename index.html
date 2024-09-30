@@ -66,7 +66,7 @@
                         const title = mainContent?.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1]?.replace(/<!--[\s\S]*?-->/g, '').trim() ?? '';
                         const description = mainContent?.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1]?.replace(/<!--[\s\S]*?-->/g, '').trim() ?? '';
 
-                        const shortDescription = description ? description.trim().substring(0, 200).replace(/\s+$/, '') + '...' : 'no description';
+                        const shortDescription = description ? description.trim().substring(0, 150).replace(/\s+$/, '') + '...' : 'no description';
 
                         return title ? { date: new Date(formattedDate), formattedDate, title, shortDescription } : null;
                     })
