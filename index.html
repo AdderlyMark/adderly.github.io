@@ -50,7 +50,7 @@
             const requests = [];
             const maxNewsCount = 21;
 
-            for (let d = new Date(startDate); d.getDate() <= today.getDate() + 1; d.setDate(d.getDate() + 1)) {
+            for (let d = new Date(startDate); d.getDate() <= today.getDate(); d.setDate(d.getDate() + 1)) {
                 const formattedDate = d.toISOString().split('T')[0];
                 console.log(formattedDate);
                 const request = fetch(`blogs/${formattedDate}.html`)
