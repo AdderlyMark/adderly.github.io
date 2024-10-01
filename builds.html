@@ -347,11 +347,12 @@ PDF Reader, компоненты печати, Microsoft Edge Dev Kit.<br><br>
 Было удалено начальное OOBE. Вместо него используется самописный .bat файл, который запрашивает имя пользователя и пароль.<br>
 Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
 <p><br>
-        <h1>Скачать на русском:</h1>
+        <h1>Скачать:</h1>
         <a href="https://pixeldrain.com/u/oNaCDdNG" class="download-button">PixelDrain</a>
         <a href="https://drive.google.com/file/d/1uu8O1dWKnx9k0qAfrzpExLUWrl0ULdsH/view?usp=sharing" class="download-button">Google Drive</a>
         <a href="https://www.mediafire.com/file/lnydq07b833wboe/MakuOS+Lite.iso/file" class="download-button">MediaFire</a>
         <a href="https://terabox.com/s/1W2VyfZZmTUGXSG7xrhNj-Q" class="download-button">TeraBox</a>
+        <a href="https://gofile.io/d/AevyiR" class="download-button">GoFile</a>
     </section>
 
     <section id="makuos-10-yuki" class="bootleg-section">
@@ -398,6 +399,8 @@ Microsoft Solitaire Collection, Mixed Reality Portal, Sticky Notes, Диктоф
         <a href="https://pixeldrain.com/u/qYgaJ9jX" class="download-button">PixelDrain</a>
         <a href="https://drive.google.com/file/d/1JHxRgFj8FkISQ4jJHRoi5kV3QNW6taXn/view?usp=sharing" class="download-button">Google Drive</a>
         <a href="https://www.mediafire.com/file/3cu5wb7eu6v1061/MakuOS_Yuki.iso/file" class="download-button">MediaFire</a>
+        <a href="https://gofile.io/d/UTCRb2" class="download-button">GoFile</a>
+        <a href="Привет" class="download-button">Archive.org</a>
     </section>
 
     <section id="makuos-10-ltsb" class="bootleg-section">
@@ -468,11 +471,35 @@ Microsoft Solitaire Collection, Mixed Reality Portal, Sticky Notes, Диктоф
         <a href="https://pixeldrain.com/u/xSAEYDMK" class="download-button">PixelDrain</a>
         <a href="https://drive.google.com/file/d/1xjDQZHGwCi2Px5WQ8bC-qUPpXWYvgKWi/view?usp=sharing" class="download-button">Google Drive</a>
         <a href="https://www.mediafire.com/file/h2v9r9vn3ma0z19/Windows+8.1+V7+by+Adderly.iso/file" class="download-button">MediaFire</a>
-        <a href="https://t.me/Maku_Library/6" class="download-button">Telegram</a>
+        <a href="https://t.me/Maku_Library/9" class="download-button">Telegram</a>
         <a href="https://terabox.com/s/1527Mph7ElikwMMFYGwFH8g" class="download-button">TeraBox</a>
     </section>
 
 </main>
+
+    <div class="modal" id="modal">
+        <img id="modalImage" src="" alt="Увеличенное изображение">
+    </div>
+
+    <script>
+        // Получаем все изображения галереи
+        const images = document.querySelectorAll('.image-gallery img');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+
+        // Добавляем событие на каждое изображение
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                modal.style.display = 'flex'; // Показываем модальное окно
+                modalImage.src = this.src; // Устанавливаем источник изображения
+            });
+        });
+
+        // Закрытие модального окна при клике на изображение
+        modal.addEventListener('click', function() {
+            modal.style.display = 'none'; // Скрываем модальное окно
+        });
+    </script>
 
 <footer>
     <a href="https://t.me/adderly324" class="social-link" target="_blank" rel="noopener noreferrer">
