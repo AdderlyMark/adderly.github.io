@@ -50,7 +50,7 @@
             const requests = [];
             const maxNewsCount = 21;
 
-            for (let d = new Date(startDate); d.getDate() <= today.getDate(); d.setDate(d.getDate() + 1)) {
+            for (let d = new Date(startDate); d.getDate() <= today.getDate() || d.getMonth() <= today.getMonth(); d.setDate(d.getDate() + 1)) {
                 const formattedDate = d.toISOString().split('T')[0];
                 console.log(formattedDate);
                 const request = fetch(`blogs/${formattedDate}.html`)
@@ -344,11 +344,6 @@
                             MrBaska - 2755₽<br>
                             Kirill Gorev - 1690₽
                     </h3>
-                </ul>
-                <h2>Последние обновления сайта</h2>
-                <ul>
-                    <h3>Появилась поддержка тем!<br>
-                        Нажав на новую палитру, вы сможете под себя настроить сайт с помощью восьми красивых тем!</h3>
                 </ul>
             </section>
         </main>
