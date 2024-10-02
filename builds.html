@@ -184,7 +184,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>Навигация по сборкам...</span>
             <button class="close-button" onclick="togglePanel()">✖</button>
         </div>
-        <button class="floating-button" onclick="scrollToSection('top')">MakuOS 11 (Windows 11 24H2)</button>
+        <button class="floating-button" onclick="scrollToSection('top')">MakuOS 11 22H2 (Windows 11 22H2)</button>
+        <button class="floating-button" onclick="scrollToSection('makuos-11')">MakuOS 11 24H2 (Windows 11 24H2)</button>
         <button class="floating-button" onclick="scrollToSection('makuos-10-lite')">MakuOS 10 Lite (Windows 10 21H2)</button>
         <button class="floating-button" onclick="scrollToSection('makuos-10-yuki')">MakuOS 10 Yuki (Windows 10 22H2)</button>
         <button class="floating-button" onclick="scrollToSection('makuos-10-ltsb')">MakuOS 10 LTSB (Windows 10 1607)</button>
@@ -281,7 +282,70 @@ document.addEventListener('DOMContentLoaded', () => {
         <h1>Сборки от Аддерли</h1>
         <section id="top" class="bootleg-section">
             <div class="bootleg">
-            <h2>MakuOS 11 (Windows 11 24H2, 26100.1742)</h2><br>
+            <h2>MakuOS 11 22H2 (Windows 11 22H2, 22621.4249)</h2><br>
+            </div>
+            <div class="image-gallery">
+                <img src="images/bootlegs/makuos22h2_1.png" alt="MakuOS 11 22H2 Image 1">
+                <img src="images/bootlegs/14.gif" alt="MakuOS 11 22H2 Image 2">
+                <img src="images/bootlegs/makuos22h2_2.png" alt="MakuOS 11 22H2 Image 3">
+                <img src="images/bootlegs/makuos22h2_3.png" alt="MakuOS 11 22H2 Image 4">
+                <img src="images/bootlegs/makuos22h2_4.png" alt="MakuOS 11 22H2 Image 5">
+                <img src="images/bootlegs/makuos22h2_5.png" alt="MakuOS 11 22H2 Image 6">
+            </div>
+                <p>        <h1>Удалённые приложения:</h1>
+                    Удалён Windows Defender,<br>
+                    Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
+                    Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD, Power Automate Desktop,<br>
+                    Outlook for Windows, RAW Image Extension, Microsoft Todos, DevHome, Feedback Hub, Your Phone,<br>
+                    Заставки экрана, Windows Mail, OneDrive, Remote Assistance, Live Captions, Wordpad, Windows To Go,<br>
+                    Windows Subsystem For Linux Windows Mixed Reality, Skype, Eye Control, Map Control, Microsoft Family,<br>
+                    Content Delivery Manager, Retail Demo Content, SmartScreen, Windows Reader.<br><br>
+            <h1>Применённые настройки:</h1>
+            <h3>Основное:</h3>
+                    Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
+                    Скрыты ненужные и неиспользуемые настройки в параметрах системы<br>
+                    Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                    В Windows Update обновления заблокированы на канале 22H2<br>
+                    Из панели задач убраны все иконки<br>
+                    Удалён SmartScreen<br>
+                    Включён DirectPlay.<br>
+                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+
+                    <h3>Телеметрия:</h3>
+Отключена реклама на экране блокировке<br>
+Запрещена диагностика установленных приложений<br>
+Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
+Запрещена телеметрия за активацией системы<br>
+Запрещена публикация активности пользователя<br>
+Запрещён сбор информации о пользователе<br>
+Запрещён сбор информации об устройстве пользователя<br>
+Запрещён сбор информации о письменном вводе пользователя<br>
+Запрещён сбор информации о вводе текста пользователем с клавиатуры<br>
+Запрещён автоматической вход в аккаунт OneDrive<br>
+Запрещён сбор информации о производительности системы<br>
+Запрещено эксперементирование над системой пользователя<br>
+Отключена отправка сведений о сбоях приложений при их зависании<br>
+Отключена отправка результатов поиска пользователя<br>
+Отключена активация управления голосом<br>
+Отключена тихая установка рекламных приложений<br>
+Отключён сбор информации о голосе пользователя при использовании функций ввода голосом<br><br>
+
+    <h1>Прочие изменения:</h1>
+    В сборке присутствует три языка: Английский, Русский и Украинский.<br>
+    Убрана проверка на железо при установке системы.<br>
+    В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
+    Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
+    <p><br>
+            <h1>Скачать:</h1>
+            <a href="https://adderly.fun/404" class="download-button">PixelDrain</a>
+            <a href="https://drive.google.com/file/d/1V1MU_KPpV5_M80YjewQC-xOdu966P03l/view?usp=sharing" class="download-button">Google Drive</a>
+            <a href="https://www.mediafire.com/file/iz7rll3fr1rmzhz/MakuOS+22H2.iso/file" class="download-button">MediaFire</a>
+            <a href="https://adderly.fun/404" class="download-button">GoFile</a>
+            <a href="https://adderly.fun/404" class="download-button">Archive.org</a>
+        </section>
+        <section id="makuos-11" class="bootleg-section">
+            <div class="bootleg">
+            <h2>MakuOS 11 24H2 (Windows 11 24H2, 26100.1742)</h2><br>
             </div>
             <div class="image-gallery">
                 <img src="images/bootlegs/15.png" alt="MakuOS 11 Image 1">
@@ -295,12 +359,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
                     Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD, Power Automate Desktop, Microsoft Family сервисы,<br>
                     Outlook for Windows, RAW Image Extension, Microsoft Todos, DevHome, Feedback Hub, Your Phone,<br>
-                    Удалён Windows Defender.
+                    Удалён Windows Defender.<br><br>
             <h1>Применённые настройки:</h1>
 	Удалён SmartScreen<br>
             Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
             Из панели задач убраны все иконки<br>
-            Включён DirectPlay.
+            Включён DirectPlay.<br><br>
     <h1>Прочие изменения:</h1>
     В сборке присутствует три языка: Английский, Русский и Украинский.<br>
     Убрана проверка на железо при установке системы.<br>
@@ -400,7 +464,7 @@ Microsoft Solitaire Collection, Mixed Reality Portal, Sticky Notes, Диктоф
         <a href="https://drive.google.com/file/d/1JHxRgFj8FkISQ4jJHRoi5kV3QNW6taXn/view?usp=sharing" class="download-button">Google Drive</a>
         <a href="https://www.mediafire.com/file/3cu5wb7eu6v1061/MakuOS_Yuki.iso/file" class="download-button">MediaFire</a>
         <a href="https://gofile.io/d/UTCRb2" class="download-button">GoFile</a>
-        <a href="Привет" class="download-button">Archive.org</a>
+        <a href="https://archive.org/details/maku-os-yuki" class="download-button">Archive.org</a>
     </section>
 
     <section id="makuos-10-ltsb" class="bootleg-section">
