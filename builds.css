@@ -264,6 +264,15 @@ main {
 
 }
 
+.download-button img.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    transform: translateY(4px);
+
+
+}
+
 .button-container {
     display: flex;
     flex-direction: column;
