@@ -113,32 +113,11 @@ header {
     margin-top: 20px;
 }
 
-.donators-section {
-    margin-top: 10px;
-}
-
-.donators-section h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px; 
-}
-
-.donators-section ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.donators-section li {
-    font-size: 1.2em; 
-    margin-bottom: -40px;
-    color: #ffffff;
-}
-
 .youtube-section iframe {
     width: 700px;
     height: 393px;
     max-width: 100%;
-    margin-top: 00px;
+    margin-bottom: -60px;
     border-radius: 15px;
 }
 
