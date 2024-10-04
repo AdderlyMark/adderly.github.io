@@ -432,3 +432,8 @@ footer {
     transform: scale(1.2);
 }
 
+@media (max-width: 600px) {
+    footer p {
+        display: none;
+    }
+}
