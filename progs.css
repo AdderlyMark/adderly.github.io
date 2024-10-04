@@ -430,3 +430,9 @@ h2 {
         display: none;
     }
 }
+
+@media (max-width: 600px) {
+    footer p {
+        display: none;
+    }
+}
