@@ -584,6 +584,7 @@ main {
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.4s ease;
+    border-radius: 10px;
 }
 
 .accordion::after {
@@ -598,6 +599,7 @@ main {
 }
 
 .panel {
+    border-radius: 10px;
     background-color: #002b5e;
     padding: 0 18px;
     max-height: 0;
