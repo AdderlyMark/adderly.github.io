@@ -387,7 +387,7 @@ footer {
     align-items: center;
     margin-bottom: 20px;
     padding: 15px;
-    background-color: var(--header-color, #005a8d);
+    background-color: var(--header-color, #002b5e);
     border-radius: 7px;
     position: relative;
 }
