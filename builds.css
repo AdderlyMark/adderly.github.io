@@ -562,6 +562,60 @@ main {
     }
 }
 
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.accordion-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.accordion {
+    background-color: #005e92;
+    color: #444;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.4s ease;
+}
+
+.accordion::after {
+    content: '\002B';
+    color: white;
+    font-size: 24px;
+}
+
+.accordion.active::after {
+    content: "\2212";
+    color: white;
+}
+
+.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.panel.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
 @media (max-width: 600px) {
     footer p {
         display: none;

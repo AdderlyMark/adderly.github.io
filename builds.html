@@ -73,6 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const mobileHeader = document.querySelector('.mobile-header');
     const floatingButtons = document.querySelectorAll('.floating-button');
     const downloadButtons = document.querySelectorAll('.download-button');
+    const accordionButtons = document.querySelectorAll('.accordion');
+    const accordionPanels = document.querySelectorAll('.panel');
 
     colorPicker.classList.add('hidden');
 
@@ -129,6 +131,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 button.style.backgroundColor = buttonColor;
                 button.style.color = "#ffffff";
             });
+            accordionButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+            accordionPanels.forEach(panel => {
+            panel.style.backgroundColor = headerFooterColor;
+        });
             colorPicker.classList.add('hidden');
             localStorage.setItem('themeColor', chosenColor);
         });
@@ -177,6 +186,13 @@ document.addEventListener('DOMContentLoaded', () => {
         downloadButtons.forEach(button => {
             button.style.backgroundColor = buttonColor;
             button.style.color = "#ffffff";
+        });
+        accordionButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+        accordionPanels.forEach(panel => {
+            panel.style.backgroundColor = headerFooterColor;
         });
         floatingButtons.forEach(button => {
     button.style.backgroundColor = buttonColor;
@@ -301,35 +317,41 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="images/bootlegs/makuos24h2_4.png" alt="MakuOS 11 Image 5">
                 <img src="images/bootlegs/makuos24h2_5.png" alt="MakuOS 11 Image 6">
             </div>
-            <p>        <h1>Удалённые приложения:</h1>
-                Удалён Windows Defender,<br>
-                Clipchamp, AV1 кодек, VP9 кодек, MP2 Кодек для DVD, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
-                Microsoft Solitaire Collection, Sticky Notes, Power Automate Desktop, Outlook for Windows, RAW Image Extension, <br>
-                DevHome, Feedback Hub, Your Phone, Windows Mail, OneDrive, Live Captions, Wordpad, Windows Mixed Reality, Skype,<br>
-                Microsoft Family, Content Delivery Manager, SmartScreen, Windows Reader.<br><br>
-        <h1>Применённые настройки:</h1>
-        <h3>Основное:</h3>
-                Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
-                Скрыты ненужные и неиспользуемые настройки в параметрах системы<br>
-                Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
-                Из панели задач убраны рекламные иконки<br>
-                Отключён SmartScreen и Включён DirectPlay.<br><br>
+            <div class="accordion-container">
+                <button class="accordion">Изменения в сборке</button>
+                <div class="panel panel1">
+                <br>
+                    <h1>Удалённые приложения:</h1>
+                    Удалён Windows Defender,<br>
+                    Clipchamp, AV1 кодек, VP9 кодек, MP2 Кодек для DVD, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
+                    Microsoft Solitaire Collection, Sticky Notes, Power Automate Desktop, Outlook for Windows, RAW Image Extension, <br>
+                    DevHome, Feedback Hub, Your Phone, Windows Mail, OneDrive, Live Captions, Wordpad, Windows Mixed Reality, Skype,<br>
+                    Microsoft Family, Content Delivery Manager, SmartScreen, Windows Reader.<br><br>
+                    
+                    <h1>Применённые настройки:</h1>
+                    <h3>Основное:</h3>
+                    Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
+                    Скрыты ненужные и неиспользуемые настройки в параметрах системы<br>
+                    Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                    Из панели задач убраны рекламные иконки<br>
+                    Отключён SmartScreen и Включён DirectPlay.<br><br>
+            
+                    <h3>Телеметрия:</h3>
+                    Отключена реклама на экране блокировки, отправка сведений о сбоях приложений при их зависании,<br>
+                    Отправка результатов поиска пользователя, активация управления голосом, тихая установка рекламных приложений,<br>
+                    Запрещён сбор информации о пользователе, о его устройстве, о вводе текста с клавиатуры,<br>
+                    О производительности системы, и экспериментирование над системой пользователя,<br>
+                    Запрещена диагностика установленных приложений, установка стандартных мусорных UWP приложений после обновления системы,<br>
+                    Сбор информации о голосе пользователя при использовании функций ввода голосом и телеметрия за активацией системы и публикация активности пользователя.<br><br>
+            
+                    <h1>Прочие изменения:</h1>
+                    В сборке присутствует три языка: Английский, Русский и Украинский.<br>
+                    Убрана проверка на железо при установке системы.<br>
+                    В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
+                    Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br><br>
+                </div>
+            </div>
 
-                <h3>Телеметрия:</h3>
-                Отключена реклама на экране блокировки, отправка сведений о сбоях приложений при их зависании,<br>
-                Отправка результатов поиска пользователя, активация управления голосом, тихая установка рекламных приложений,<br>
-                Запрещён сбор информации о пользователе, о его устройстве, о вводе текста с клавиатуры,<br>
-                О производительности системы, и экспериментирование над системой пользователя,<br>
-                Запрещена диагностика установленных приложений, установка стандартных мусорных UWP приложений после обновления системы,<br>
-                Сбор информации о голосе пользователя при использовании функций ввода голосом и телеметрия за активацией системы и публикация активности пользователя.<br><br>
-
-
-            <h1>Прочие изменения:</h1>
-            В сборке присутствует три языка: Английский, Русский и Украинский.<br>
-            Убрана проверка на железо при установке системы.<br>
-            В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
-            Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
-    <p><br>
             <h1>Скачать:</h1>
             <a href="https://pixeldrain.com/u/TUyWJc8w" class="download-button" target="_blank">
                 <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
@@ -359,6 +381,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 <img src="images/bootlegs/makuos22h2_4.png" alt="MakuOS 11 22H2 Image 5">
                 <img src="images/bootlegs/makuos22h2_5.png" alt="MakuOS 11 22H2 Image 6">
             </div>
+            <div class="accordion-container">
+                <button class="accordion">Изменения в сборке</button>
+                <div class="panel panel1">
+                <br>
                 <p>        <h1>Удалённые приложения:</h1>
                     Удалён Windows Defender,<br>
                     Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
@@ -391,6 +417,8 @@ document.addEventListener('DOMContentLoaded', () => {
     В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
     Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
     <p><br>
+                </div>
+            </div>
             <h1>Скачать:</h1>
             <a href="https://pixeldrain.com/u/KQuV97kW" class="download-button" target="_blank">
                 <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
@@ -415,36 +443,42 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="images/bootlegs/makuos1022h2_4.png" alt="MakuOS Yuki Image 5">
             <img src="images/bootlegs/3.gif" alt="MakuOS Yuki Image 6">
         </div>
-        <p>        <h1>Удалённые приложения:</h1>
-            Удалён Windows Defender,<br>
-            Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
-            Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD,<br>
-            Outlook for Windows, RAW Image Extension, Microsoft Todos, DevHome, Feedback Hub,<br>
-            Windows Mail, OneDrive, Remote Assistance, Wordpad, Windows To Go, Your Phone,<br>
-            Windows Mixed Reality, Skype, Eye Control, Map Control, Microsoft Family,<br>
-            Content Delivery Manager, Retail Demo Content, SmartScreen, Windows Reader.<br><br>
-    <h1>Применённые настройки:</h1>
-    <h3>Основное:</h3>
-            Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
-            Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
-            Из панели задач убраны рекламные иконки<br>
-            Отключён SmartScreen и Включён DirectPlay.<br>
-            Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
-
-            <h3>Телеметрия:</h3>
-            Отключена реклама на экране блокировки, отправка сведений о сбоях приложений при их зависании,<br>
-            Отправка результатов поиска пользователя, активация управления голосом, тихая установка рекламных приложений,<br>
-            Запрещён сбор информации о пользователе, о его устройстве, о вводе текста с клавиатуры,<br>
-            О производительности системы, и экспериментирование над системой пользователя,<br>
-            Запрещена диагностика установленных приложений, установка стандартных мусорных UWP приложений после обновления системы,<br>
-            Сбор информации о голосе пользователя при использовании функций ввода голосом и телеметрия за активацией системы и публикация активности пользователя.<br><br>
-
-<h1>Прочие изменения:</h1>
-В сборке присутствует три языка: Английский, Русский и Украинский.<br>
-Убрана проверка на железо при установке системы.<br>
-В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
-Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
-<p><br>
+        <div class="accordion-container">
+            <button class="accordion">Изменения в сборке</button>
+            <div class="panel panel2">
+            <br>
+            <p>        <h1>Удалённые приложения:</h1>
+                Удалён Windows Defender,<br>
+                Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
+                Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD,<br>
+                Outlook for Windows, RAW Image Extension, Microsoft Todos, DevHome, Feedback Hub,<br>
+                Windows Mail, OneDrive, Remote Assistance, Wordpad, Windows To Go, Your Phone,<br>
+                Windows Mixed Reality, Skype, Eye Control, Map Control, Microsoft Family,<br>
+                Content Delivery Manager, Retail Demo Content, SmartScreen, Windows Reader.<br><br>
+        <h1>Применённые настройки:</h1>
+        <h3>Основное:</h3>
+                Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
+                Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                Из панели задач убраны рекламные иконки<br>
+                Отключён SmartScreen и Включён DirectPlay.<br>
+                Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+    
+                <h3>Телеметрия:</h3>
+                Отключена реклама на экране блокировки, отправка сведений о сбоях приложений при их зависании,<br>
+                Отправка результатов поиска пользователя, активация управления голосом, тихая установка рекламных приложений,<br>
+                Запрещён сбор информации о пользователе, о его устройстве, о вводе текста с клавиатуры,<br>
+                О производительности системы, и экспериментирование над системой пользователя,<br>
+                Запрещена диагностика установленных приложений, установка стандартных мусорных UWP приложений после обновления системы,<br>
+                Сбор информации о голосе пользователя при использовании функций ввода голосом и телеметрия за активацией системы и публикация активности пользователя.<br><br>
+    
+    <h1>Прочие изменения:</h1>
+    В сборке присутствует три языка: Английский, Русский и Украинский.<br>
+    Убрана проверка на железо при установке системы.<br>
+    В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
+    Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
+    <p><br>
+            </div>
+        </div>
         <h1>Скачать:</h1>
         <a href="https://pixeldrain.com/u/NHFV2Yoz" class="download-button" target="_blank">
             <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
@@ -477,6 +511,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="images/bootlegs/ltsb_1.png" alt="Winodws 10 LTSB Image 3">
             <img src="images/bootlegs/ltsb_4.png" alt="Winodws 10 LTSB Image 4">
         </div>
+        <div class="accordion-container">
+            <button class="accordion">Изменения в сборке</button>
+            <div class="panel panel3">
+            <br>
             <p>        <h1>Удалённые приложения:</h1>
                 Так как сборка основана на Windows 10 LTSB, в ней изначально нет UWP приложений.<br><br>
         <h1>Применённые настройки:</h1>
@@ -489,6 +527,8 @@ document.addEventListener('DOMContentLoaded', () => {
 На рабочем столе есть папка "от Марка Аддерли", в которой находятся браузеры, реги, и авторские программы.<br>
 Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
 <p><br>
+            </div>
+        </div>
         <h1>Скачать:</h1>
         <a href="https://pixeldrain.com/u/y5gtVRkH" class="download-button" target="_blank">
             <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
@@ -518,6 +558,10 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="images/bootlegs/win8_3.png" alt="Winodws 8.1 Image 3">
             <img src="images/bootlegs/win8_4.png" alt="Winodws 8.1 Image 4">
         </div>
+        <div class="accordion-container">
+            <button class="accordion">Изменения в сборке</button>
+            <div class="panel">
+            <br>
             <p>        <h1>Удалённые приложения:</h1>
                 Финансы, Еда, Здоровье, Карты, Новости, Спорт, Путешествия, Погода,<br>
                 Помощь и советы, Почта, Календарь, Сканер, PDF Reader, Skype, OneNote, Xbox<br><br>
@@ -542,6 +586,8 @@ document.addEventListener('DOMContentLoaded', () => {
 Специально в этой сборке присутствует 3DP Net. Это программа для установки Wi-Fi драйверов на старых ПК.<br>  
 Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
 <p><br>
+            </div>
+        </div>
         <h1>Скачать:</h1>
         <a href="https://pixeldrain.com/u/xSAEYDMK" class="download-button" target="_blank">
             <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
@@ -584,6 +630,22 @@ document.addEventListener('DOMContentLoaded', () => {
             modal.style.display = 'none'; 
         });
     </script>
+
+<script>
+    document.querySelectorAll('.accordion').forEach((accordion, index) => {
+        accordion.addEventListener('click', function() {
+            const panel = this.nextElementSibling;
+            panel.classList.toggle('open');
+            this.classList.toggle('active');
+            
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    });
+                </script>
 
 <footer>
     <a href="https://t.me/adderly324" class="social-link" target="_blank" rel="noopener noreferrer">
