@@ -572,7 +572,7 @@ main {
 
 .accordion {
     background-color: #005e92;
-    color: #444;
+    color: white;
     cursor: pointer;
     padding: 10px;
     width: 100%;
@@ -598,8 +598,8 @@ main {
 }
 
 .panel {
+    background-color: #002b5e;
     padding: 0 18px;
-    background-color: white;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease;
