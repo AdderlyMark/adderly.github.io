@@ -214,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <button class="floating-button" onclick="scrollToSection('top')">MakuOS 11 24H2 (Windows 11 24H2)</button>
         <button class="floating-button" onclick="scrollToSection('maku-os-22h2')">MakuOS 11 22H2 (Windows 11 22H2)</button>
         <button class="floating-button" onclick="scrollToSection('makuos-10-22H2')">MakuOS 10 22H2 (Windows 10 22H2)</button>
-        <button class="floating-button" onclick="scrollToSection('makuos-10-ltsb')">MakuOS 10 LTSB (Windows 10 1607)</button>
+        <button class="floating-button" onclick="scrollToSection('makuos-10-1709')">MakuOS 10 1709 (Windows 10 1709)</button>
         <button class="floating-button" onclick="scrollToSection('win81v')">Windows 8.1 V7 by Adderly</button>
     </div>
     
@@ -324,27 +324,37 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h1>Удалённые приложения:</h1>
                     Удалён Windows Defender,<br>
                     Clipchamp, AV1 кодек, VP9 кодек, MP2 Кодек для DVD, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
-                    Microsoft Solitaire Collection, Sticky Notes, Power Automate Desktop, Outlook for Windows, RAW Image Extension, <br>
-                    DevHome, Feedback Hub, Your Phone, Windows Mail, OneDrive, Live Captions, Wordpad, Windows Mixed Reality, Skype,<br>
-                    Microsoft Family, Content Delivery Manager, SmartScreen, Windows Reader.<br><br>
+                    Microsoft Solitaire Collection, Sticky Notes, Microsoft Family, Outlook for Windows, RAW Image Extension, <br>
+                    DevHome, Feedback Hub, Your Phone, Windows Mail, OneDrive, Live Captions, Wordpad, Windows Mixed Reality, Skype.<br><br>
                     
                     <h1>Применённые настройки:</h1>
                     <h3>Основное:</h3>
                     Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
                     Скрыты ненужные и неиспользуемые настройки в параметрах системы<br>
                     Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                    Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
                     Из панели задач убраны рекламные иконки<br>
                     Отключён SmartScreen и Включён DirectPlay.<br><br>
             
                     <h3>Телеметрия:</h3>
-                    Отключена реклама на экране блокировки, отправка сведений о сбоях приложений при их зависании,<br>
-                    Отправка результатов поиска пользователя, активация управления голосом, тихая установка рекламных приложений,<br>
-                    Запрещён сбор информации о пользователе, о его устройстве, о вводе текста с клавиатуры,<br>
-                    О производительности системы, и экспериментирование над системой пользователя,<br>
-                    Запрещена диагностика установленных приложений, установка стандартных мусорных UWP приложений после обновления системы,<br>
-                    Сбор информации о голосе пользователя при использовании функций ввода голосом и телеметрия за активацией системы и публикация активности пользователя.<br><br>
+                    Запрещена диагностика установленных приложений<br>
+                    Запрещена телеметрия за активацией системы<br>
+                    Запрещена публикация активности пользователя<br>
+                    Запрещён сбор информации о пользователе<br>
+                    Запрещён сбор информации об устройстве пользователя<br>
+                    Запрещён сбор информации о письменном вводе пользователя<br>
+                    Запрещён сбор информации о вводе текста пользователем с клавиатуры<br>
+                    Запрещён автоматической вход в аккаунт OneDrive<br>
+                    Запрещён сбор информации о производительности системы<br>
+                    Запрещено эксперементирование над системой пользователя<br>
+                    Отключена отправка сведений о сбоях приложений при их зависании<br>
+                    Отключена отправка результатов поиска пользователя<br>
+                    Отключена активация управления голосом<br>
+                    Отключена тихая установка рекламных приложений<br>
+                    Отключён сбор информации о голосе пользователя при использовании функций ввода голосом<br><br>
             
                     <h1>Прочие изменения:</h1>
+                    Интегрированны все обновления по октябрь 2024 года.<br>
                     В сборке присутствует три языка: Английский, Русский и Украинский.<br>
                     Убрана проверка на железо при установке системы.<br>
                     В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
@@ -353,6 +363,9 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <h1>Скачать:</h1>
+            <a href="https://rutracker.org/forum/viewtopic.php?t=6582315" class="download-button" target="_blank">
+                <img src="icons/rut.png" alt="Rutracker" class="icon"> Скачать на Rutracker
+            </a>
             <a href="https://pixeldrain.com/u/TUyWJc8w" class="download-button" target="_blank">
                 <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
             </a>
@@ -388,30 +401,40 @@ document.addEventListener('DOMContentLoaded', () => {
                 <p>        <h1>Удалённые приложения:</h1>
                     Удалён Windows Defender,<br>
                     Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
-                    Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD, Power Automate Desktop,<br>
+                    Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD, Retail Demo Content,<br>
                     Outlook for Windows, RAW Image Extension, Microsoft Todos, DevHome, Feedback Hub, Your Phone,<br>
                     Заставки экрана, Windows Mail, OneDrive, Remote Assistance, Live Captions, Wordpad, Windows To Go,<br>
-                    Windows Subsystem For Linux, Windows Mixed Reality, Skype, Eye Control, Map Control, Microsoft Family,<br>
-                    Content Delivery Manager, Retail Demo Content, SmartScreen, Windows Reader.<br><br>
+                    Windows Subsystem For Linux, Windows Mixed Reality, Skype, Eye Control, Map Control, Microsoft Family.<br><br>
             <h1>Применённые настройки:</h1>
             <h3>Основное:</h3>
                     Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
                     Скрыты ненужные и неиспользуемые настройки в параметрах системы<br>
                     Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                    Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
                     В Windows Update обновления заблокированы на канале 22H2<br>
                     Из панели задач убраны рекламные иконки<br>
                     Отключён SmartScreen и Включён DirectPlay.<br>
                     Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
 
                     <h3>Телеметрия:</h3>
-                    Отключена реклама на экране блокировки, отправка сведений о сбоях приложений при их зависании,<br>
-                    Отправка результатов поиска пользователя, активация управления голосом, тихая установка рекламных приложений,<br>
-                    Запрещён сбор информации о пользователе, о его устройстве, о вводе текста с клавиатуры,<br>
-                    О производительности системы, и экспериментирование над системой пользователя,<br>
-                    Запрещена диагностика установленных приложений, установка стандартных мусорных UWP приложений после обновления системы,<br>
-                    Сбор информации о голосе пользователя при использовании функций ввода голосом и телеметрия за активацией системы и публикация активности пользователя.<br><br>
+                    Запрещена диагностика установленных приложений<br>
+                    Запрещена телеметрия за активацией системы<br>
+                    Запрещена публикация активности пользователя<br>
+                    Запрещён сбор информации о пользователе<br>
+                    Запрещён сбор информации об устройстве пользователя<br>
+                    Запрещён сбор информации о письменном вводе пользователя<br>
+                    Запрещён сбор информации о вводе текста пользователем с клавиатуры<br>
+                    Запрещён автоматической вход в аккаунт OneDrive<br>
+                    Запрещён сбор информации о производительности системы<br>
+                    Запрещено эксперементирование над системой пользователя<br>
+                    Отключена отправка сведений о сбоях приложений при их зависании<br>
+                    Отключена отправка результатов поиска пользователя<br>
+                    Отключена активация управления голосом<br>
+                    Отключена тихая установка рекламных приложений<br>
+                    Отключён сбор информации о голосе пользователя при использовании функций ввода голосом<br><br>
 
     <h1>Прочие изменения:</h1>
+    Интегрированны все обновления по октябрь 2024 года.<br>
     В сборке присутствует три языка: Английский, Русский и Украинский.<br>
     Убрана проверка на железо при установке системы.<br>
     В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
@@ -450,30 +473,38 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>        <h1>Удалённые приложения:</h1>
                 Удалён Windows Defender,<br>
                 Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
-                Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD,<br>
+                Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD, Retail Demo Content,<br>
                 Outlook for Windows, RAW Image Extension, Microsoft Todos, DevHome, Feedback Hub,<br>
                 Windows Mail, OneDrive, Remote Assistance, Wordpad, Windows To Go, Your Phone,<br>
-                Windows Mixed Reality, Skype, Eye Control, Map Control, Microsoft Family,<br>
-                Content Delivery Manager, Retail Demo Content, SmartScreen, Windows Reader.<br><br>
+                Windows Mixed Reality, Skype, Eye Control, Map Control, Microsoft Family.<br><br>
         <h1>Применённые настройки:</h1>
         <h3>Основное:</h3>
                 Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
                 Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
                 Из панели задач убраны рекламные иконки<br>
                 Отключён SmartScreen и Включён DirectPlay.<br>
                 Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
     
                 <h3>Телеметрия:</h3>
-                Отключена реклама на экране блокировки, отправка сведений о сбоях приложений при их зависании,<br>
-                Отправка результатов поиска пользователя, активация управления голосом, тихая установка рекламных приложений,<br>
-                Запрещён сбор информации о пользователе, о его устройстве, о вводе текста с клавиатуры,<br>
-                О производительности системы, и экспериментирование над системой пользователя,<br>
-                Запрещена диагностика установленных приложений, установка стандартных мусорных UWP приложений после обновления системы,<br>
-                Сбор информации о голосе пользователя при использовании функций ввода голосом и телеметрия за активацией системы и публикация активности пользователя.<br><br>
+                Запрещена диагностика установленных приложений<br>
+                Запрещена телеметрия за активацией системы<br>
+                Запрещена публикация активности пользователя<br>
+                Запрещён сбор информации о пользователе<br>
+                Запрещён сбор информации об устройстве пользователя<br>
+                Запрещён сбор информации о письменном вводе пользователя<br>
+                Запрещён сбор информации о вводе текста пользователем с клавиатуры<br>
+                Запрещён автоматической вход в аккаунт OneDrive<br>
+                Запрещён сбор информации о производительности системы<br>
+                Запрещено эксперементирование над системой пользователя<br>
+                Отключена отправка сведений о сбоях приложений при их зависании<br>
+                Отключена отправка результатов поиска пользователя<br>
+                Отключена активация управления голосом<br>
+                Отключена тихая установка рекламных приложений<br><br>
     
     <h1>Прочие изменения:</h1>
+    Интегрированны все обновления по октябрь 2024 года.<br>
     В сборке присутствует три языка: Английский, Русский и Украинский.<br>
-    Убрана проверка на железо при установке системы.<br>
     В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
     Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
     <p><br>
@@ -501,48 +532,71 @@ document.addEventListener('DOMContentLoaded', () => {
         
     </section>
 
-    <section id="makuos-10-ltsb" class="bootleg-section">
+    <section id="makuos-10-1709" class="bootleg-section">
         <div class="bootleg">
-        <h2>MakuOS 10 LTSB (Windows 10 1607)</h2><br>
+        <h2>MakuOS 10 1709 (Windows 10 1709, 16299.2166)</h2><br>
         </div>
         <div class="image-gallery">
-            <img src="images/bootlegs/ltsb_3.png" alt="Winodws 10 LTSB Image 1">
-            <img src="images/bootlegs/ltsb_2.png" alt="Winodws 10 LTSB Image 2">
-            <img src="images/bootlegs/ltsb_1.png" alt="Winodws 10 LTSB Image 3">
-            <img src="images/bootlegs/ltsb_4.png" alt="Winodws 10 LTSB Image 4">
+            <img src="images/bootlegs/1709_1.png" alt="Winodws 10 1709 Image 1">
+            <img src="images/bootlegs/1709_2.png" alt="Winodws 10 1709 Image 2">
+            <img src="images/bootlegs/1709_3.png" alt="Winodws 10 1709 Image 3">
+            <img src="images/bootlegs/1709_4.png" alt="Winodws 10 1709 Image 4">
         </div>
         <div class="accordion-container">
             <button class="accordion">Изменения в сборке</button>
             <div class="panel panel3">
             <br>
             <p>        <h1>Удалённые приложения:</h1>
-                Так как сборка основана на Windows 10 LTSB, в ней изначально нет UWP приложений.<br><br>
+                Удалён Windows Defender, Xbox и Microsoft Store.<br>
+                Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Фотографии, Погода, Диктофон, Сообщения,<br>
+                Календарь, Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD,<br>
+                RAW Image Extension, Feedback Hub, Get Help, 3D Viewer, Print 3D, OneDrive,<br>
+                OneDrive, Remote Assistance, Your Phone, Skype, Windows Mixed Reality.<br><br>
         <h1>Применённые настройки:</h1>
-Удалён Windows Defender<br>
-Отключён SmartScreen<br><br>
-<h1>Прочие изменения:</h1>
-В сборке используется самописное OOBE, в котором можно выбрать нужные твики.<br>
-Отключены компоненты печати, Hyper-V виртуализации, и PowerShell<br>
-Интегрированны DirectPlay и NET Framework 2.0, 3.0, 3.5.<br><br>
-На рабочем столе есть папка "от Марка Аддерли", в которой находятся браузеры, реги, и авторские программы.<br>
-Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
-<p><br>
+        <h3>Основное:</h3>
+                Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                Из панели задач убраны рекламные иконки<br>
+                Отключён SmartScreen и Включён DirectPlay.<br>
+                Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+    
+                <h3>Телеметрия:</h3>
+                Запрещена диагностика установленных приложений<br>
+                Запрещена телеметрия за активацией системы<br>
+                Запрещена публикация активности пользователя<br>
+                Запрещён сбор информации о пользователе<br>
+                Запрещён сбор информации об устройстве пользователя<br>
+                Запрещён сбор информации о письменном вводе пользователя<br>
+                Запрещён сбор информации о вводе текста пользователем с клавиатуры<br>
+                Запрещён сбор информации о производительности системы<br>
+                Запрещено эксперементирование над системой пользователя<br>
+                Отключена отправка сведений о сбоях приложений при их зависании<br>
+                Отключена отправка результатов поиска пользователя<br>
+                Отключена активация управления голосом<br>
+                Отключена тихая установка рекламных приложений<br><br>
+    
+    <h1>Прочие изменения:</h1>
+    Интегрированны все обновления по октябрь 2024 года.<br>
+    Отключены компоненты печати и PowerShell.<br>
+    В сборке присутствует три языка: Английский, Русский и Украинский.<br>
+    В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
+    Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
+    <p><br>
             </div>
         </div>
         <h1>Скачать:</h1>
-        <a href="https://pixeldrain.com/u/y5gtVRkH" class="download-button" target="_blank">
+        <a href="Скоро" class="download-button" target="_blank">
             <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
         </a>
-        <a href="https://drive.google.com/file/d/1B-m_bmVhljU8rr9oUpdxqtW0ECDfJZxM/view?usp=sharing" class="download-button" target="_blank">
+        <a href="https://drive.google.com/file/d/1FjS2huazwEg6HD07sGxOiO0GlAr4KcU0/view?usp=sharing" class="download-button" target="_blank">
             <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
         </a>
-        <a href="https://www.mediafire.com/file/kca6qabwudskj2y/MakuOS+10+LTSB.iso/file" class="download-button" target="_blank">
+        <a href="https://www.mediafire.com/file/72e3fzwdi2lbw8w/MakuOS+10+1709.iso/file" class="download-button" target="_blank">
             <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
         </a>
-        <a href="https://t.me/Maku_Library/7" class="download-button" target="_blank">
+        <a href="https://t.me/Maku_Library/13" class="download-button" target="_blank">
             <img src="icons/tg.png" alt="Telegram" class="icon"> Telegram
         </a>
-        <a href="https://terabox.com/s/1QKIZdHY_mdGY66OBdDB9Cw" class="download-button" target="_blank">
+        <a href="https://terabox.com/s/1-0x1zC9yd9pV33buFdkWtA" class="download-button" target="_blank">
             <img src="icons/terabox.png" alt="TeraBox" class="icon"> TeraBox
         </a>
         
@@ -580,7 +634,7 @@ document.addEventListener('DOMContentLoaded', () => {
 Таймер проверки дисков увеличен с 8 секунд до 1 минуты</p><br>
 <h1>Прочие изменения:</h1>
 Было добавлено 11 красивых и нескучных тем с обоями из Windows Vista, Windows 7, Windows 8 и Windows 10.<br>
-Отключены компоненты печати и PowerShell<br>
+Отключены компоненты печати и PowerShell.<br>
 Интегрированны DirectPlay и NET Framework 2.0, 3.0, 3.5.<br>
 На рабочем столе есть папка "от Марка Аддерли", в которой находятся браузеры, реги, и авторские программы.<br>
 Специально в этой сборке присутствует 3DP Net. Это программа для установки Wi-Fi драйверов на старых ПК.<br>  
