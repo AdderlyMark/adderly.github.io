@@ -4,10 +4,17 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'sf';
+    src: url('fonts/sf.ttf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 body {
     background-color: #0a1f44;
     color: #ffffff;
-    font-family: Arial, sans-serif;
+    font-family: 'sf', sans-serif;
     line-height: 1.6;
 }
 
