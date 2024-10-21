@@ -579,18 +579,24 @@ main {
     text-align: center;
     border: none;
     outline: none;
-    font-size: 18px;
+    font-size: 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     transition: background-color 0.4s ease;
     border-radius: 10px;
+    justify-content: center;
+    position: relative;
+
 }
 
 .accordion::after {
     content: '\002B';
     color: white;
-    font-size: 24px;
+    right: 20px;
+    position: absolute;
+
+
 }
 
 .accordion.active::after {

@@ -213,8 +213,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <button class="floating-button" onclick="scrollToSection('top')">MakuOS 11 24H2 (Windows 11 24H2)</button>
         <button class="floating-button" onclick="scrollToSection('makuos-10-22H2')">MakuOS 10 22H2 (Windows 10 22H2)</button>
-        <button class="floating-button" onclick="scrollToSection('maku-os-22h2')">MakuOS 11 22H2 (Windows 11 22H2)</button>
-        <button class="floating-button" onclick="scrollToSection('makuos-10-1709')">MakuOS 10 1709 (Windows 10 1709)</button>
+        <button class="floating-button" onclick="scrollToSection('makuos-10-1809')">MakuOS 10 Lite (Windows 10 1809)</button>
         <button class="floating-button" onclick="scrollToSection('win81v')">Windows 8.1 V7 by Adderly</button>
     </div>
     
@@ -330,11 +329,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h1>Применённые настройки:</h1>
                     <h3>Основное:</h3>
                     Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
-                    Скрыты ненужные и неиспользуемые настройки в параметрах системы<br>
                     Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
                     Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
                     Из панели задач убраны рекламные иконки<br>
-                    Отключён SmartScreen и Включён DirectPlay.<br><br>
+                    На панели задач добавлена кнопка "Завершить задачу" в ПКМ по программе<br>
+                    Отключён SmartScreen и Включён DirectPlay.<br>
+                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
             
                     <h3>Телеметрия:</h3>
                     Запрещена диагностика установленных приложений<br>
@@ -360,6 +360,57 @@ document.addEventListener('DOMContentLoaded', () => {
                     В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
                     В системе предустановлен MakuTweaker. Это моя самописная программа. Подробнее о ней можно <a href="https://adderly.fun/soft" style="text-decoration: underline;"> Узнать здесь.</a><br>
                     Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br><br>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion">Краткое описание изменений в сборке</button>
+                <div class="panel panel2">
+                    <br>
+                    <h1>Удалённые приложения:</h1>
+                    Удалён Windows Defender, Кодеки AV1, VP9, MP2, RAW.<br>
+                    Были удалены все UWP приложения, кроме Фотографий, Калькулятора, Будильников и Блокнота.<br><br>
+
+                    <h1>Применённые настройки:</h1>
+                    <h3>Основное:</h3>
+                    Удалена предустановка мусорных UWP приложений.<br>
+                    На панели задач добавлена кнопка "Завершить задачу" в ПКМ по программе<br>
+                    Отключён SmartScreen и Включён DirectPlay.<br>
+                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+
+                    <h3>Телеметрия:</h3>
+                    Была отключена, запрещена, и удалена какая либо телеметрия.<br><br>
+
+                    <h1>Прочие изменения:</h1>
+                    Интегрированны все обновления по конец октября 2024 года.<br>
+                    В сборке присутствует два языка: Английский и Русский.<br>
+                    Убрана проверка на железо при установке системы.<br>
+                    В сборке используется самописное OOBE с твиками.<br>
+                    Предустановлен MakuTweaker.<br><br> 
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion">Что нового в V2 версии сборки?</button>
+                <div class="panel panel3">
+                    <br>
+                    Было с нуля переделано OOBE. Была исправлена критическая проблема с выдачей прав администратора,<br>
+                    И была исправлена проблема с выдачей пароля. Больше ввода пароля в OOBE нет, его надо добавлять вручную.<br>
+                    В системе больше никакие параметры не скрыты.<br>
+                    Были Интегрированны обновления по конец октября 2024 года.<br>
+                    Теперь предустановлен MakuTweaker.<br><br> 
+                </div>
+            </div>
+
+
+            <div class="accordion-container">
+                <button class="accordion">Контрольные суммы</button>
+                <div class="panel panel4">
+                    <br>
+                    <h1>CRC32: CBFA283A</h1><br>
+                    <h1>MD5: A3E639F5041302FD51332CD861118AB5</h1><br>
+                    <h1>SHA-1: 5967C95263A32BCC08B021D5C036D0231C54D966</h1><br>
+                    (для Rutracker на данный момент отдельная версия с другими хешами)<br><br>
                 </div>
             </div>
 
@@ -398,7 +449,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
             <div class="accordion-container">
                 <button class="accordion">Изменения в сборке</button>
-                <div class="panel panel2">
+                <div class="panel panel1">
                 <br>
                 <p>        <h1>Удалённые приложения:</h1>
                     Удалён Windows Defender,<br>
@@ -441,6 +492,56 @@ document.addEventListener('DOMContentLoaded', () => {
         <p><br>
                 </div>
             </div>
+
+            
+            <div class="accordion-container">
+                <button class="accordion">Краткое описание изменений в сборке</button>
+                <div class="panel panel2">
+                    <br>
+                    <h1>Удалённые приложения:</h1>
+                    Удалён Windows Defender, Кодеки AV1, VP9, MP2, RAW.<br>
+                    Были удалены все UWP приложения, кроме Фотографий, Калькулятора, Будильников и Блокнота.<br><br>
+
+                    <h1>Применённые настройки:</h1>
+                    <h3>Основное:</h3>
+                    Удалена предустановка мусорных UWP приложений.<br>
+                    Отключён SmartScreen и Включён DirectPlay.<br>
+                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+
+                    <h3>Телеметрия:</h3>
+                    Была отключена, запрещена, и удалена какая либо телеметрия.<br><br>
+
+                    <h1>Прочие изменения:</h1>
+                    Интегрированны все обновления по конец октября 2024 года.<br>
+                    В сборке присутствует два языка: Английский и Русский.<br>
+                    В сборке используется самописное OOBE с твиками.<br>
+                    Предустановлен MakuTweaker.<br><br> 
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion">Что нового в V2 версии сборки?</button>
+                <div class="panel panel3">
+                    <br>
+                    Было с нуля переделано OOBE. Была исправлена критическая проблема с выдачей прав администратора,<br>
+                    И была исправлена проблема с выдачей пароля. Больше ввода пароля в OOBE нет, его надо добавлять вручную.<br>
+                    Были Интегрированны обновления по конец октября 2024 года.<br>
+                    Теперь предустановлен MakuTweaker.<br><br> 
+                </div>
+            </div>
+
+
+            <div class="accordion-container">
+                <button class="accordion">Контрольные суммы</button>
+                <div class="panel panel4">
+                    <br>
+                    <h1>CRC32: B75A8935</h1><br>
+                    <h1>MD5: C6C0266F35BA96118D5331A20CF4D156</h1><br>
+                    <h1>SHA-1: A4DEA02EA2819E56944B2D943E40B8D1AF9D1A52</h1><br>
+                    (для Rutracker на данный момент отдельная версия с другими хешами)<br><br>
+                </div>
+            </div>
+
             <h1>Скачать:</h1>
             <a href="https://rutracker.org/forum/viewtopic.php?t=6587410" class="download-button" target="_blank">
                 <img src="icons/rut.png" alt="Rutracker" class="icon"> Скачать на Rutracker
@@ -463,151 +564,116 @@ document.addEventListener('DOMContentLoaded', () => {
             
         </section>
 
-        <section id="maku-os-22h2" class="bootleg-section">
+        <section id="makuos-10-1809" class="bootleg-section">
             <div class="bootleg">
-            <h2>MakuOS 11 22H2 (Windows 11 22H2, 22621.4249)</h2><br>
+            <h2>MakuOS 10 Lite 1809 (Windows 10 1809, 17763.6414)</h2><br>
             </div>
             <div class="image-gallery">
-                <img src="images/bootlegs/makuos22h2_1.png" alt="MakuOS 11 22H2 Image 1">
-                <img src="images/bootlegs/makuos10v2-oobe4.png" alt="MakuOS 11 22H2 Image 2">
-                <img src="images/bootlegs/makuos22h2_2.png" alt="MakuOS 11 22H2 Image 3">
-                <img src="images/bootlegs/makuos22h2_3.png" alt="MakuOS 11 22H2 Image 4">
-                <img src="images/bootlegs/makuos22h2_4.png" alt="MakuOS 11 22H2 Image 5">
-                <img src="images/bootlegs/makuos22h2_5.png" alt="MakuOS 11 22H2 Image 6">
+                <img src="images/bootlegs/makuos10v2-lang.png" alt="MakuOS 10 Lite 1809 Image 1">
+                <img src="images/bootlegs/makuos1809-oobe4.png" alt="MakuOS 10 Lite 1809 Image 2">
+                <img src="images/bootlegs/makuos1809-taskmgr.png" alt="MakuOS 10 Lite 1809 Image 3">
+                <img src="images/bootlegs/makuos1809-size.png" alt="MakuOS 10 Lite 1809 Image 4">
+                <img src="images/bootlegs/makuos1809-winver.png" alt="MakuOS 10 Lite 1809 Image 5">
+                <img src="images/bootlegs/makuos1809-start.png" alt="MakuOS 10 Lite 1809 Image 6">
             </div>
             <div class="accordion-container">
                 <button class="accordion">Изменения в сборке</button>
                 <div class="panel panel1">
                 <br>
                 <p>        <h1>Удалённые приложения:</h1>
-                    Удалён Windows Defender,<br>
-                    Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
-                    Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD, Retail Demo Content,<br>
-                    Outlook for Windows, RAW Image Extension, Microsoft Todos, DevHome, Feedback Hub, Your Phone,<br>
-                    Заставки экрана, Windows Mail, OneDrive, Remote Assistance, Live Captions, Wordpad, Windows To Go,<br>
-                    Windows Subsystem For Linux, Windows Mixed Reality, Skype, Eye Control, Map Control, Microsoft Family.<br><br>
+                    Удалён Microsoft Edge, Windows Defender, Xbox и Microsoft Store.<br>
+                    Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Фотографии, Погода, Диктофон, Сообщения,<br>
+                    Календарь, Microsoft Solitaire Collection, Компоненты управления голосом, Sticky Notes, MP2 Кодек для DVD,<br>
+                    RAW Image Extension, Windows Hello, Windows Error Report, Feedback Hub, Get Help, 3D Viewer, Print 3D, OneDrive,<br>
+                    OneDrive, Remote Assistance, Your Phone, Skype, Windows Mixed Reality, Easy Transfer, Windows Sybsystem For Linux.<br><br>
             <h1>Применённые настройки:</h1>
             <h3>Основное:</h3>
-                    Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
-                    Скрыты ненужные и неиспользуемые настройки в параметрах системы<br>
+                    Удалён центр обновления системы<br>
+                    Включён старый просмотрщик фото<br>
                     Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
-                    Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
-                    В Windows Update обновления заблокированы на канале 22H2<br>
                     Из панели задач убраны рекламные иконки<br>
                     Отключён SmartScreen и Включён DirectPlay.<br>
                     Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
-
+        
                     <h3>Телеметрия:</h3>
                     Запрещена диагностика установленных приложений<br>
                     Запрещена телеметрия за активацией системы<br>
                     Запрещена публикация активности пользователя<br>
                     Запрещён сбор информации о пользователе<br>
                     Запрещён сбор информации об устройстве пользователя<br>
-                    Запрещён сбор информации о письменном вводе пользователя<br>
-                    Запрещён сбор информации о вводе текста пользователем с клавиатуры<br>
-                    Запрещён автоматической вход в аккаунт OneDrive<br>
                     Запрещён сбор информации о производительности системы<br>
                     Запрещено эксперементирование над системой пользователя<br>
                     Отключена отправка сведений о сбоях приложений при их зависании<br>
                     Отключена отправка результатов поиска пользователя<br>
                     Отключена активация управления голосом<br>
-                    Отключена тихая установка рекламных приложений<br>
-                    Отключён сбор информации о голосе пользователя при использовании функций ввода голосом<br><br>
-
-    <h1>Прочие изменения:</h1>
-    Интегрированны все обновления по октябрь 2024 года.<br>
-    В сборке присутствует три языка: Английский, Русский и Украинский.<br>
-    Убрана проверка на железо при установке системы.<br>
-    В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
-    Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
-    <p><br>
+                    Отключена тихая установка рекламных приложений<br><br>
+        
+        <h1>Прочие изменения:</h1>
+        Интегрированны все возможные обновления для Windows 10 1809.<br>
+        Отключены компоненты печати и PowerShell.<br>
+        В сборке присутствует два языка: Английский и Русский.<br>
+        В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
+        В системе предустановлен MakuTweaker. Это моя самописная программа. Подробнее о ней можно <a href="https://adderly.fun/soft" style="text-decoration: underline;"> Узнать здесь.</a><br>
+        <p><br>
                 </div>
             </div>
+
+            <div class="accordion-container">
+                <button class="accordion">Краткое описание изменений в сборке</button>
+                <div class="panel panel2">
+                    <br>
+                    <h1>Удалённые приложения:</h1>
+                    Удалён Центр обновлений, Microsoft Edge, Windows Defender, Xbox и Microsoft Store.<br>
+                    Были удалены абсолютно все UWP приложения, кроме калькулятора.<br><br>
+
+                    <h1>Применённые настройки:</h1>
+                    <h3>Основное:</h3>
+                    Включён старый просмотрщик фото.<br>
+                    Отключён SmartScreen и Включён DirectPlay.<br>
+                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+
+                    <h3>Телеметрия:</h3>
+                    Была отключена, запрещена, и удалена какая либо телеметрия.<br><br>
+
+                    <h1>Прочие изменения:</h1>
+                    Интегрированны все возможные обновления для Windows 10 1809.<br>
+                    В сборке присутствует два языка: Английский и Русский.<br>
+                    В сборке используется самописное OOBE с твиками.<br>
+                    Предустановлен MakuTweaker.<br><br> 
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion">Контрольные суммы</button>
+                <div class="panel panel3">
+                    <br>
+                    <h1>CRC32: 1801735D</h1><br>
+                    <h1>MD5: 09B6BC46427052A83909525C93DB44FD</h1><br>
+                    <h1>SHA-1: 60951EA09CB7EDBCFF94E93B505B6C6F30D918D1</h1><br>
+                </div>
+            </div>
+
             <h1>Скачать:</h1>
-            <a href="https://pixeldrain.com/u/KQuV97kW" class="download-button" target="_blank">
+            <a href="https://rutracker.org/forum/tracker.php?rid=48962354" class="download-button" target="_blank">
+                <img src="icons/rut.png" alt="Rutracker" class="icon"> Скачать на Rutracker
+            </a>
+            <a href="https://pixeldrain.com/u/JqBdbnQT" class="download-button" target="_blank">
                 <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
             </a>
-            <a href="https://drive.google.com/file/d/1qxZ4ktNqBzyIOE5_UDK5l8eKn0XSlbCN/view?usp=sharing" class="download-button" target="_blank">
+            <a href="https://drive.google.com/file/d/1XxCNslNLr--9k5PZ6bZ8hwB1I0vBI0YN/view?usp=sharing" class="download-button" target="_blank">
                 <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
             </a>
-            <a href="https://www.mediafire.com/file/hzha3ano6covlqs/MakuOS+11+22H2.iso/file" class="download-button" target="_blank">
+            <a href="https://www.mediafire.com/file/s3lvvcywb2tr96d/MakuOS+10+Lite+1809.iso/file" class="download-button" target="_blank">
                 <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
-            </a> 
+            </a>
+            <a href="https://adderly.fun/скоро" class="download-button" target="_blank">
+                <img src="icons/tg.png" alt="Telegram" class="icon"> Telegram
+            </a>
+            <a href="https://terabox.com/s/16QoLTQiDoEZnVXawbqRb5w" class="download-button" target="_blank">
+                <img src="icons/terabox.png" alt="TeraBox" class="icon"> TeraBox
+            </a>
+            
         </section>
-
-    <section id="makuos-10-1709" class="bootleg-section">
-        <div class="bootleg">
-        <h2>MakuOS 10 1709 (Windows 10 1709, 16299.2166)</h2><br>
-        </div>
-        <div class="image-gallery">
-            <img src="images/bootlegs/1709_1.png" alt="Winodws 10 1709 Image 1">
-            <img src="images/bootlegs/1709_2.png" alt="Winodws 10 1709 Image 2">
-            <img src="images/bootlegs/1709_3.png" alt="Winodws 10 1709 Image 3">
-            <img src="images/bootlegs/1709_4.png" alt="Winodws 10 1709 Image 4">
-        </div>
-        <div class="accordion-container">
-            <button class="accordion">Изменения в сборке</button>
-            <div class="panel panel3">
-            <br>
-            <p>        <h1>Удалённые приложения:</h1>
-                Удалён Windows Defender, Xbox и Microsoft Store.<br>
-                Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Фотографии, Погода, Диктофон, Сообщения,<br>
-                Календарь, Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD,<br>
-                RAW Image Extension, Feedback Hub, Get Help, 3D Viewer, Print 3D, OneDrive,<br>
-                OneDrive, Remote Assistance, Your Phone, Skype, Windows Mixed Reality.<br><br>
-        <h1>Применённые настройки:</h1>
-        <h3>Основное:</h3>
-                Удалён центр обновления системы<br>
-                Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
-                Из панели задач убраны рекламные иконки<br>
-                Отключён SmartScreen и Включён DirectPlay.<br>
-                Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
-    
-                <h3>Телеметрия:</h3>
-                Запрещена диагностика установленных приложений<br>
-                Запрещена телеметрия за активацией системы<br>
-                Запрещена публикация активности пользователя<br>
-                Запрещён сбор информации о пользователе<br>
-                Запрещён сбор информации об устройстве пользователя<br>
-                Запрещён сбор информации о письменном вводе пользователя<br>
-                Запрещён сбор информации о вводе текста пользователем с клавиатуры<br>
-                Запрещён сбор информации о производительности системы<br>
-                Запрещено эксперементирование над системой пользователя<br>
-                Отключена отправка сведений о сбоях приложений при их зависании<br>
-                Отключена отправка результатов поиска пользователя<br>
-                Отключена активация управления голосом<br>
-                Отключена тихая установка рекламных приложений<br><br>
-    
-    <h1>Прочие изменения:</h1>
-    Интегрированны все обновления по октябрь 2024 года.<br>
-    Отключены компоненты печати и PowerShell.<br>
-    В сборке присутствует три языка: Английский, Русский и Украинский.<br>
-    В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
-    Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
-    <p><br>
-            </div>
-        </div>
-        <h1>Скачать:</h1>
-        <a href="https://pixeldrain.com/u/BLBfGJ79" class="download-button" target="_blank">
-            <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
-        </a>
-        <a href="https://drive.google.com/file/d/1FjS2huazwEg6HD07sGxOiO0GlAr4KcU0/view?usp=sharing" class="download-button" target="_blank">
-            <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
-        </a>
-        <a href="https://www.mediafire.com/file/72e3fzwdi2lbw8w/MakuOS+10+1709.iso/file" class="download-button" target="_blank">
-            <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
-        </a>
-        <a href="https://t.me/Maku_Library/13" class="download-button" target="_blank">
-            <img src="icons/tg.png" alt="Telegram" class="icon"> Telegram
-        </a>
-        <a href="https://terabox.com/s/1-0x1zC9yd9pV33buFdkWtA" class="download-button" target="_blank">
-            <img src="icons/terabox.png" alt="TeraBox" class="icon"> TeraBox
-        </a>
-        <a href="https://archive.org/details/makuos10-1709" class="download-button" target="_blank">
-            <img src="icons/archive.png" alt="Archive.org" class="icon"> Archive.org
-        </a>
-        
-    </section>
 
     <section id="win81v" class="bootleg-section">
         <div class="bootleg">
@@ -621,7 +687,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
         <div class="accordion-container">
             <button class="accordion">Изменения в сборке</button>
-            <div class="panel">
+            <div class="panel panel1">
             <br>
             <p>        <h1>Удалённые приложения:</h1>
                 Финансы, Еда, Здоровье, Карты, Новости, Спорт, Путешествия, Погода,<br>
@@ -647,6 +713,16 @@ document.addEventListener('DOMContentLoaded', () => {
 Специально в этой сборке присутствует 3DP Net. Это программа для установки Wi-Fi драйверов на старых ПК.<br>  
 Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
 <p><br>
+            </div>
+        </div>
+
+        <div class="accordion-container">
+            <button class="accordion">Контрольные суммы</button>
+            <div class="panel panel2">
+                <br>
+                <h1>CRC32: 5AAAF10B</h1><br>
+                <h1>MD5: 92811698D7FBAF61C14ADE36FF2531A9</h1><br>
+                <h1>SHA-1: CB059CEF2A6A631EBBEED489B5F76938DB7677D5</h1><br>
             </div>
         </div>
         <h1>Скачать:</h1>
