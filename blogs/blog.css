@@ -7,7 +7,7 @@
 
 @font-face {
     font-family: 'sf';
-    src: url('fonts/sf.ttf') format('opentype');
+    src: url('/fonts/sf.ttf') format('opentype');
     font-weight: normal;
     font-style: normal;
   }
