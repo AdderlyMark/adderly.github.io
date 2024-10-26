@@ -643,18 +643,44 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
 
+            
             <div class="accordion-container">
-                <button class="accordion">Контрольные суммы</button>
+                <button class="accordion">Что нового в V2 версии сборки?</button>
                 <div class="panel panel3">
                     <br>
-                    <h1>CRC32: 1801735D</h1><br>
-                    <h1>MD5: 09B6BC46427052A83909525C93DB44FD</h1><br>
-                    <h1>SHA-1: 60951EA09CB7EDBCFF94E93B505B6C6F30D918D1</h1><br>
+                    Была исправлена проблемка со спамом уведомлений центра обновлений.<br>
+                    Если вы уже установили сборку, достаточно прописать две команды в CMD (от имени администратора):<br><br>
+                    schtasks /Change /TN "Microsoft\Windows\LanguageComponentsInstaller\Installation" /Disable<br><br>
+                    schtasks /Change /TN "Microsoft\Windows\LanguageComponentsInstaller\ReconcileLanguageResources" /Disable<br><br> 
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion">Контрольные суммы</button>
+                <div class="panel panel4">
+                    <br>
+                    <h1>CRC32: B872F72E</h1><br>
+                    <h1>MD5: AAB516809FB8AD09555D224031091FC4</h1><br>
+                    <h1>SHA-1: 8C3CCF6297FB17B8B6A2DE01A97C212F338997D9</h1><br>
                 </div>
             </div>
 
             <h1>Скачать:</h1>
-            <h2>Сборка временно недоступна.</h2>
+            <a href="https://rutracker.org/forum/tracker.php?rid=48962354" class="download-button" target="_blank">
+                <img src="icons/rut.png" alt="Rutracker" class="icon"> Скачать на Rutracker
+            </a>
+            <a href="https://pixeldrain.com/u/JqBdbnQT" class="download-button" target="_blank">
+                <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
+            </a>
+            <a href="https://drive.google.com/file/d/1ddINyeUohRGl4iPmPnjZ55PnXMsO18aC/view?usp=sharing" class="download-button" target="_blank">
+                <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
+            </a>
+            <a href="https://www.mediafire.com/file/pejj7mcdxeivjs2/MakuOS+10+1809+Lite.iso/file" class="download-button" target="_blank">
+                <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
+            </a>
+            <a href="https://t.me/Maku_Library/16" class="download-button" target="_blank">
+                <img src="icons/tg.png" alt="Telegram" class="icon"> Telegram
+            </a>
             
         </section>
 
