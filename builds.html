@@ -34,18 +34,6 @@
                 headerHidden = false;
             }
         }
-        const minWidthForLogo = 1700;
-        if (currentWidth < minWidthForLogo) {
-            if (!logoHidden) {
-                logo.style.display = 'none';
-                logoHidden = true;
-            }
-        } else {
-            if (logoHidden) {
-                logo.style.display = 'flex';
-                logoHidden = false;
-            }
-        }
     }
 
     window.addEventListener('load', updateLayout);
@@ -257,16 +245,13 @@ document.addEventListener('DOMContentLoaded', () => {
     <nav>
         <ul class="first-row">
             <li><a href="index" class="nav-button">Главная</a></li>
-            <li><a href="bio" class="nav-button">Обо мне</a></li>
-            <li><a href="news" class="nav-button">Новости</a></li>
             <li><a href="soft" class="nav-button">Софт от Аддерли</a></li>
             <li><a href="builds" class="nav-button">Сборки от Аддерли</a></li>
             <li><a href="windows_pe" class="nav-button">Windows PE от Аддерли</a></li>
-            <li><a href="keys" class="nav-button">Ключи от Аддерли</a></li>
         </ul>
         <ul class="second-row">
-            <li><a href="old_versions" class="nav-button">Старые версии Windows</a></li>
-            <li><a href="addons" class="nav-button">Лучшие расширения</a></li>
+            <li><a href="bio" class="nav-button">Обо мне</a></li>
+            <li><a href="news" class="nav-button">Новости</a></li>
             <li><a href="progs" class="nav-button">Программы</a></li>
             <li><a href="donators" class="nav-button">Донатеры</a></li>
             <li><a href="support" class="nav-button">Поддержать</a></li>
@@ -306,14 +291,14 @@ document.addEventListener('DOMContentLoaded', () => {
         <h1>Сборки от Аддерли</h1>
         <section id="top" class="bootleg-section">
             <div class="bootleg">
-            <h2>MakuOS 11 24H2 V2 (Windows 11 24H2, 26100.2152)</h2><br>
+            <h2>MakuOS 11 24H2 V3 (Windows 11 24H2, 26100.2161)</h2><br>
             </div>
             <div class="image-gallery">
                 <img src="images/bootlegs/makuos11v2_lang.png" alt="MakuOS 11 Image 1">
                 <img src="images/bootlegs/makuos10v2-oobe4.png" alt="MakuOS 11 Image 2">
-                <img src="images/bootlegs/makuos11v2_taskmgr.png" alt="MakuOS 11 Image 3">
-                <img src="images/bootlegs/makuos11v2_size.png" alt="MakuOS 11 Image 4">
-                <img src="images/bootlegs/makuos11v2_winver.png" alt="MakuOS 11 Image 5">
+                <img src="images/bootlegs/makuos11v3_taskmgr.png" alt="MakuOS 11 Image 3">
+                <img src="images/bootlegs/makuos11v3_size.png" alt="MakuOS 11 Image 4">
+                <img src="images/bootlegs/makuos11v3_winver.png" alt="MakuOS 11 Image 5">
                 <img src="images/bootlegs/makuos11v2_wu.png" alt="MakuOS 11 Image 6">
             </div>
             <div class="accordion-container">
@@ -322,9 +307,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 <br>
                     <h1>Удалённые приложения:</h1>
                     Удалён Windows Defender,<br>
-                    Clipchamp, AV1 кодек, VP9 кодек, MP2 Кодек для DVD, Microsoft Новости, Погода, Диктофон, Get Help, Quick Assist,<br>
-                    Microsoft Solitaire Collection, Sticky Notes, Microsoft Family, Outlook for Windows, RAW Image Extension, <br>
-                    DevHome, Feedback Hub, Your Phone, Windows Mail, OneDrive, Live Captions, Wordpad, Windows Mixed Reality, Skype.<br><br>
+                    Clipchamp, Microsoft Новости, Погода, Диктофон, Quick Assist,<br>
+                    Microsoft Solitaire Collection, Sticky Notes, Microsoft Family,<br>
+                    DevHome, Feedback Hub, Your Phone, Windows Mail, OneDrive, Windows Mixed Reality, Skype.<br><br>
                     
                     <h1>Применённые настройки:</h1>
                     <h3>Основное:</h3>
@@ -333,7 +318,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
                     Из панели задач убраны рекламные иконки<br>
                     На панели задач добавлена кнопка "Завершить задачу" в ПКМ по программе<br>
-                    Отключён SmartScreen и Включён DirectPlay.<br>
+                    Отключён SmartScreen и Включён DirectPlay<br>
+                    Добавлены платные кодеки HEVC и HEIF<br>
+                    Отключён HPET таймер<br>
                     Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
             
                     <h3>Телеметрия:</h3>
@@ -342,8 +329,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     Запрещена публикация активности пользователя<br>
                     Запрещён сбор информации о пользователе<br>
                     Запрещён сбор информации об устройстве пользователя<br>
-                    Запрещён сбор информации о письменном вводе пользователя<br>
-                    Запрещён сбор информации о вводе текста пользователем с клавиатуры<br>
                     Запрещён автоматической вход в аккаунт OneDrive<br>
                     Запрещён сбор информации о производительности системы<br>
                     Запрещено эксперементирование над системой пользователя<br>
@@ -368,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="panel panel2">
                     <br>
                     <h1>Удалённые приложения:</h1>
-                    Удалён Windows Defender, Кодеки AV1, VP9, MP2, RAW.<br>
+                    Удалён Windows Defender,<br>
                     Были удалены все UWP приложения, кроме Фотографий, Калькулятора, Будильников и Блокнота.<br><br>
 
                     <h1>Применённые настройки:</h1>
@@ -376,6 +361,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     Удалена предустановка мусорных UWP приложений.<br>
                     На панели задач добавлена кнопка "Завершить задачу" в ПКМ по программе<br>
                     Отключён SmartScreen и Включён DirectPlay.<br>
+                    Добавлены платные кодеки HEVC и HEIF<br>
                     Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
 
                     <h3>Телеметрия:</h3>
@@ -391,14 +377,12 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="accordion-container">
-                <button class="accordion">Что нового в V2 версии сборки?</button>
+                <button class="accordion">Что нового в V3 версии сборки?</button>
                 <div class="panel panel3">
                     <br>
-                    Было с нуля переделано OOBE. Была исправлена критическая проблема с выдачей прав администратора,<br>
-                    И была исправлена проблема с выдачей пароля. Больше ввода пароля в OOBE нет, его надо добавлять вручную.<br>
-                    В системе больше никакие параметры не скрыты.<br>
-                    Были Интегрированны обновления по конец октября 2024 года.<br>
-                    Теперь предустановлен MakuTweaker.<br><br> 
+                    • Было снова изменено OOBE. Для людей у которых 800х600 и 1024х768 разрешение, MakuOS теперь подстраивает элементы.<br>
+                    • Был отключён HPET таймер. За счёт этого, прирост в играх может быть большой. (тестируем)<br>
+                    • Было интегрировано обновление 26100.2161.<br><br>
                 </div>
             </div>
 
@@ -407,31 +391,24 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="accordion">Контрольные суммы</button>
                 <div class="panel panel4">
                     <br>
-                    <h1>CRC32: CBFA283A</h1><br>
-                    <h1>MD5: A3E639F5041302FD51332CD861118AB5</h1><br>
-                    <h1>SHA-1: 5967C95263A32BCC08B021D5C036D0231C54D966</h1><br>
-                    (для Rutracker на данный момент отдельная версия с другими хешами)<br><br>
+                    <h1>CRC32: 2F92DD57</h1><br>
+                    <h1>MD5: 7BD4818EDB8F2A554F9161D15407D5AF</h1><br>
+                    <h1>SHA-1: E55D8F401409047C80E544FE5F5194244EC878BE</h1><br><br>
                 </div>
             </div>
 
             <h1>Скачать:</h1>
-            <a href="https://rutracker.org/forum/viewtopic.php?t=6587041" class="download-button" target="_blank">
-                <img src="icons/rut.png" alt="Rutracker" class="icon"> Скачать на Rutracker
-            </a>
-            <a href="https://pixeldrain.com/u/1EGbZfMg" class="download-button" target="_blank">
+            <a href="https://pixeldrain.com/u/YUyQNayw" class="download-button" target="_blank">
                 <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
             </a>
-            <a href="https://drive.google.com/file/d/1qNBPv3o0yZcm8mMVRIzDcZZub1M8CY6h/view?usp=sharing" class="download-button" target="_blank">
+            <a href="https://drive.google.com/file/d/1MvE7GGphA8YaXFJeBTo_SFFUqNOoLaTD/view?usp=sharing" class="download-button" target="_blank">
                 <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
             </a>
-            <a href="https://www.mediafire.com/file/t6zylwkuzvqs452/MakuOS+11+24H2+v2.iso/file" class="download-button" target="_blank">
+            <a href="https://www.mediafire.com/file/sp4hq6evjjwlryb/MakuOS+11+24H2+v3.iso/file" class="download-button" target="_blank">
                 <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
             </a>
-            <a href="https://t.me/Maku_Library/14" class="download-button" target="_blank">
+            <a href="https://t.me/Maku_Library/17" class="download-button" target="_blank">
                 <img src="icons/tg.png" alt="Telegram" class="icon"> Telegram
-            </a>
-            <a href="https://terabox.com/s/13zyeEGESAOE4O0HGARozwQ" class="download-button" target="_blank">
-                <img src="icons/terabox.png" alt="Terabox" class="icon"> Terabox
             </a>
         </section>
 

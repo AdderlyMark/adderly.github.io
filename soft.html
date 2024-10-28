@@ -35,18 +35,6 @@
                 headerHidden = false;
             }
         }
-        const minWidthForLogo = 1700;
-        if (currentWidth < minWidthForLogo) {
-            if (!logoHidden) {
-                logo.style.display = 'none';
-                logoHidden = true;
-            }
-        } else {
-            if (logoHidden) {
-                logo.style.display = 'flex';
-                logoHidden = false;
-            }
-        }
     }
 
     window.addEventListener('load', updateLayout);
@@ -189,16 +177,13 @@ document.addEventListener('DOMContentLoaded', () => {
     <nav>
         <ul class="first-row">
             <li><a href="index" class="nav-button">Главная</a></li>
-            <li><a href="bio" class="nav-button">Обо мне</a></li>
-            <li><a href="news" class="nav-button">Новости</a></li>
             <li><a href="soft" class="nav-button">Софт от Аддерли</a></li>
             <li><a href="builds" class="nav-button">Сборки от Аддерли</a></li>
             <li><a href="windows_pe" class="nav-button">Windows PE от Аддерли</a></li>
-            <li><a href="keys" class="nav-button">Ключи от Аддерли</a></li>
         </ul>
         <ul class="second-row">
-            <li><a href="old_versions" class="nav-button">Старые версии Windows</a></li>
-            <li><a href="addons" class="nav-button">Лучшие расширения</a></li>
+            <li><a href="bio" class="nav-button">Обо мне</a></li>
+            <li><a href="news" class="nav-button">Новости</a></li>
             <li><a href="progs" class="nav-button">Программы</a></li>
             <li><a href="donators" class="nav-button">Донатеры</a></li>
             <li><a href="support" class="nav-button">Поддержать</a></li>
