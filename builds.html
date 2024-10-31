@@ -199,7 +199,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <span>Навигация по сборкам...</span>
             <button class="close-button" onclick="togglePanel()">✖</button>
         </div>
-        <button class="floating-button" onclick="scrollToSection('top')">MakuOS 11 24H2 (Windows 11 24H2)</button>
+        <button class="floating-button" onclick="scrollToSection('top')">MakuOS 11 (Windows 11 22H2)</button>
         <button class="floating-button" onclick="scrollToSection('makuos-10-22H2')">MakuOS 10 22H2 (Windows 10 22H2)</button>
         <button class="floating-button" onclick="scrollToSection('makuos-10-1809')">MakuOS 10 Lite (Windows 10 1809)</button>
         <button class="floating-button" onclick="scrollToSection('win81v')">Windows 8.1 V7 by Adderly</button>
@@ -291,7 +291,8 @@ document.addEventListener('DOMContentLoaded', () => {
         <h1>Сборки от Аддерли</h1>
         <section id="top" class="bootleg-section">
             <div class="bootleg">
-            <h2>MakuOS 11 24H2 V3 (Windows 11 24H2, 26100.2161)</h2><br>
+            <h2>MakuOS 11 V4 (Windows 11 22H2, 22621.4391)</h2><br>
+            <h3> (скриншоты будут обновлены примерно в 22:00 по МСК)</h3><br>
             </div>
             <div class="image-gallery">
                 <img src="images/bootlegs/makuos11v3_lang.png" alt="MakuOS 11 Image 1">
@@ -304,12 +305,12 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="accordion-container">
                 <button class="accordion">Изменения в сборке</button>
                 <div class="panel panel1">
+                    <div style="text-align: left; padding-left: 20px;">
                 <br>
                     <h1>Удалённые приложения:</h1>
-                    Удалён Windows Defender,<br>
-                    Clipchamp, Microsoft Новости, Погода, Диктофон, Quick Assist,<br>
-                    Microsoft Solitaire Collection, Sticky Notes, Microsoft Family,<br>
-                    DevHome, Feedback Hub, Your Phone, Windows Mail, OneDrive, Windows Mixed Reality, Skype.<br><br>
+                    Карты, Диктофон, Люди, Погода, Новости, Почта, Календарь, Clipchamp,<br>
+                    Microsoft Teams, Microsoft Family, Quick Assist, Windows Terminal, Dev Home,<br>
+                    Power Automate Desktop, Get Help, Feedback Hub, Outlook, Todos, Solitaire Collection.<br><br>
                     
                     <h1>Применённые настройки:</h1>
                     <h3>Основное:</h3>
@@ -343,17 +344,17 @@ document.addEventListener('DOMContentLoaded', () => {
                     В сборке присутствует два языка: Английский и Русский.<br>
                     Убрана проверка на железо при установке системы.<br>
                     В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
-                    В системе предустановлен MakuTweaker. Это моя самописная программа. Подробнее о ней можно <a href="https://adderly.fun/soft" style="text-decoration: underline;"> Узнать здесь.</a><br>
+                    На рабочем столе имеется приложение "MakuOS 11", в котором можно отключить Windows Defender,<br>применить Compact OS, разрешить обновление до 24H2, и активировать систему.<br><br>
                 </div>
             </div>
 
             <div class="accordion-container">
                 <button class="accordion">Краткое описание изменений в сборке</button>
                 <div class="panel panel2">
+                    <div style="text-align: left; padding-left: 20px;">
                     <br>
                     <h1>Удалённые приложения:</h1>
-                    Удалён Windows Defender,<br>
-                    Были удалены все UWP приложения, кроме Фотографий, Калькулятора, Будильников и Блокнота.<br><br>
+                    Были удалены все UWP приложения, кроме Фотографий, Калькулятора и Блокнота.<br><br>
 
                     <h1>Применённые настройки:</h1>
                     <h3>Основное:</h3>
@@ -371,17 +372,22 @@ document.addEventListener('DOMContentLoaded', () => {
                     В сборке присутствует два языка: Английский и Русский.<br>
                     Убрана проверка на железо при установке системы.<br>
                     В сборке используется самописное OOBE с твиками.<br>
-                    Предустановлен MakuTweaker.<br><br> 
+                    На рабочем столе имеется приложение "MakuOS 11", в котором можно отключить Windows Defender,<br>применить Compact OS, разрешить обновление до 24H2, и активировать систему.<br><br>
                 </div>
             </div>
 
             <div class="accordion-container">
-                <button class="accordion">Что нового в V3 версии сборки?</button>
+                <button class="accordion">Что нового в V3 и V4 версии сборки?</button>
                 <div class="panel panel3">
+                    <div style="text-align: left; padding-left: 20px;">
                     <br>
+                    • Теперь Windows Defender не удалён!<br>
+                    • На рабочоем столе появилось новое небольшое приложение специальное для MakuOS.<br>
+                    В нём можно отключить Windows Defender, сжать систему, активировать её, и разблокировать обновления до 24H2!
                     • Было снова изменено OOBE. Для людей у которых 800х600 и 1024х768 разрешение, MakuOS теперь подстраивает элементы.<br>
                     • Был отключён HPET таймер. За счёт этого, прирост в играх может быть большой. (тестируем)<br>
-                    • Было интегрировано обновление 26100.2161.<br>
+                    • Было интегрировано ещё одно обновление.<br>
+                    • По просьбе пользователей, среди удалённых приложений теперь есть и будильники. А "Ваш телефон" не удаляется.
                     • По просбе многих пользователей, больше никакие кодеки не удаляются. Вместо этого, я даже встроил платные для HEIF и HEVC.<br>
                     • Больше нет рекламных иконок на рабочем столе.<br><br>
                 </div>
@@ -399,7 +405,15 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <h1>Скачать:</h1>
-     <h2>Временно недоступно. В связи с тем, что у многих проблемы на 24H2, сборка будет переделана под 22H2.</h2>
+            <a href="https://pixeldrain.com/u/uUaxXGsQ" class="download-button" target="_blank">
+                <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
+            </a>
+            <a href="https://drive.google.com/file/d/1xly8ffTVIsZEUHEqxkD2TZ1Y0O6Udx0z/view?usp=sharing" class="download-button" target="_blank">
+                <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
+            </a>
+            <a href="https://www.mediafire.com/file/3o0q7vkda21y4sl/MakuOS+11.iso/file" class="download-button" target="_blank">
+                <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
+            </a>
         </section>
 
         <section id="makuos-10-22H2" class="bootleg-section">
@@ -630,7 +644,18 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <h1>Скачать:</h1>
-            <h2>Временно недоступно.:</h2>
+            <a href="https://pixeldrain.com/u/iRU2U3Uk" class="download-button" target="_blank">
+                <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
+            </a>
+            <a href="https://drive.google.com/file/d/1ddINyeUohRGl4iPmPnjZ55PnXMsO18aC/view?usp=sharing" class="download-button" target="_blank">
+                <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
+            </a>
+            <a href="https://www.mediafire.com/file/pejj7mcdxeivjs2/MakuOS+10+1809+Lite.iso/file" class="download-button" target="_blank">
+                <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
+            </a>
+            <a href="https://t.me/Maku_Library/16" class="download-button" target="_blank">
+                <img src="icons/tg.png" alt="Telegram" class="icon"> Telegram
+            </a>
             
         </section>
 

@@ -575,6 +575,7 @@ main {
     color: white;
     cursor: pointer;
     padding: 10px;
+    margin-top: 10px;
     width: 100%;
     text-align: center;
     border: none;
