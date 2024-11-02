@@ -3,8 +3,7 @@
 
 <head>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9240026161894199"
-    crossorigin="anonymous"></script>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-68MY39SKZ9"></script>
+        crossorigin="anonymous"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag() { dataLayer.push(arguments); }
@@ -15,30 +14,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="icons/favicon.ico" type="image/x-icon">
-    <title>Adderly.Fun - Главная</title>
+    <title>Новости Аддерли</title>
     <link rel="stylesheet" href="styles.css">
-
     <script>
         const toggleDisplay = (el, condition, display) => el.style.display = condition ? display : 'none';
         let existingNews = new Map();
-
-        function checkWidth() {
-            if (window.innerWidth < 1175) {
-                window.location.href = "indexm.html";
-            }
-        }
-
         // window.addEventListener('load', checkScreenWidth);
-        window.addEventListener('resize', () => {
-            checkWidth();
-        });
+        // window.addEventListener('resize', checkScreenWidth);
+
+        function updateLayout() {
+            const width = window.innerWidth;
+            toggleDisplay(document.querySelector('header'), width >= 1175, 'block');
+            toggleDisplay(document.querySelector('.logo'), width >= 1700, 'flex');
+        }
 
         async function fetchNews() {
             const newsContainer = document.getElementById('news-container');
             const today = new Date();
-            const startDate = new Date(2024, 8, 20);
+            const startDate = new Date(2024, 7, 1);  // Установим 1 августа (месяц -1, т.к. месяцы начинаются с 0)
             const requests = [];
-            const maxNewsCount = 20;
 
             for (let d = new Date(startDate); d <= today; d.setDate(d.getDate() + 1)) {
                 const formattedDate = d.toISOString().split('T')[0];
@@ -54,8 +48,8 @@
                     .then(text => {
                         const mainContent = text.match(/<main[^>]*>([\s\S]*?)<\/main>/)?.[1];
                         const title = mainContent?.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1]?.replace(/<!--[\s\S]*?-->/g, '').trim() ?? '';
-                        const description = mainContent?.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1]?.replace(/<!--[\s\S]*?-->/g, '').trim() ?? '';
-                        const shortDescription = description ? description.trim().substring(0, 150).replace(/\s+$/, '') + '...' : 'no description';
+                const description = mainContent?.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1]?.replace(/<!--[\s\S]*?-->/g, '').trim() ?? '';
+                        const shortDescription = description ? description.trim().substring(0, 200).replace(/\s+$/, '') + '...' : 'no description';
 
                         return title ? { date: new Date(formattedDate), formattedDate, title, shortDescription } : null;
                     })
@@ -67,14 +61,11 @@
             }
 
             const newsData = (await Promise.all(requests)).filter(Boolean);
-
             newsData.sort((a, b) => b.date - a.date);
-
-            const newsToDisplay = newsData.slice(0, maxNewsCount);
 
             newsContainer.innerHTML = '';
 
-            for (const news of newsToDisplay) {
+            for (const news of newsData) {
                 const newsDiv = document.createElement('section');
                 newsDiv.className = 'news-section';
                 const iconPath = `blogs/${news.formattedDate}.png`;
@@ -111,13 +102,10 @@
 
     <meta property="og:title" content="Сайт Марка Аддерли">
     <meta property="og:keywords"
-        content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, makutyper, makuadarii, новости аддерли, новости от аддерли, блог аддерли, софт от аддерли">
-    <meta property="og:description" content="Главная страница сайта Марка Аддерли">
-<meta name="description" content="Главная страница сайта Марка Аддерли, сборки, блог и новости.">
-<meta name="keywords" content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, makutyper, makuadarii, новости аддерли, новости от аддерли, блог аддерли, софт от аддерли">
+        content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, makutyper, makuadarii, новости аддерли, новости от аддерли, блог аддерли">
+    <meta property="og:description" content="Блог Марка Аддерли - самые важные новости на сайте">
     <meta property="og:image" content="images/favicon.png">
     <link rel="icon" href="images/favicon.png">
-
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -127,19 +115,19 @@
             const footer = document.querySelector('footer');
             const buttons = document.querySelectorAll('.nav-button');
             const mobileHeader = document.querySelector('.mobile-header');
-        
+
             colorPicker.classList.add('hidden');
-        
+
             paletteButton.addEventListener('click', () => {
                 colorPicker.classList.toggle('hidden');
             });
-        
+
             const colorOptions = document.querySelectorAll('.color-option');
             colorOptions.forEach(option => {
                 option.addEventListener('click', () => {
                     const chosenColor = option.getAttribute('data-color');
                     document.body.style.backgroundColor = chosenColor;
-        
+
                     let headerFooterColor;
                     let buttonColor;
                     if (chosenColor === "#0a1f44") {
@@ -180,14 +168,14 @@
                     localStorage.setItem('themeColor', chosenColor);
                 });
             });
-        
+
             const savedColor = localStorage.getItem('themeColor');
             if (savedColor) {
                 document.body.style.backgroundColor = savedColor;
                 let headerFooterColor;
                 let buttonColor;
                 document.body.style.backgroundColor = savedColor;
-        
+
                 if (savedColor === "#0a1f44") {
                     headerFooterColor = "#002b5e";
                     buttonColor = "#005e92";
@@ -213,10 +201,10 @@
                     headerFooterColor = "#700000";
                     buttonColor = "#9c0202";
                 }
-        
+
                 header.style.backgroundColor = headerFooterColor;
                 footer.style.backgroundColor = headerFooterColor;
-                mobileHeader.style.backgroundColor = headerFooterColor; 
+                mobileHeader.style.backgroundColor = headerFooterColor;
                 buttons.forEach(button => {
                     button.style.backgroundColor = buttonColor;
                     button.style.color = "#ffffff";
@@ -225,8 +213,9 @@
                 document.documentElement.style.setProperty('--button-color', buttonColor);
             }
         });
-        
-            </script>
+
+    </script>
+
     <style>
         .news-item {
             margin-bottom: 20px;
@@ -243,49 +232,46 @@
                 Adderly.Fun
             </a>
         </div>
-    <nav>
-        <ul class="first-row">
-            <li><a href="index" class="nav-button">Главная</a></li>
-            <li><a href="soft" class="nav-button">Софт от Аддерли</a></li>
-            <li><a href="builds" class="nav-button">Сборки от Аддерли</a></li>
-            <li><a href="windows_pe" class="nav-button">Windows PE от Аддерли</a></li>
-        </ul>
-        <ul class="second-row">
-            <li><a href="bio" class="nav-button">Обо мне</a></li>
-            <li><a href="news" class="nav-button">Новости</a></li>
-            <li><a href="progs" class="nav-button">Программы</a></li>
-            <li><a href="donators" class="nav-button">Донатеры</a></li>
-            <li><a href="support" class="nav-button">Поддержать</a></li>
-        </ul>
-</nav>
-<div class="palette-container">
-    <button id="palette-button" class="palette-button">
-        <img src="icons/color.png" alt="Palette Icon" class="palette-icon">
-    </button>
-    <div id="color-picker" class="color-picker hidden">
-        <h4>Выбрать тему:</h4>
-        <div class="color-options">
-            <div class="color-option" style="background-color: #0a1f44;" data-color="#0a1f44"></div>
-            <div class="color-option" style="background-color: #44280a;" data-color="#44280a"></div>
-            <div class="color-option" style="background-color: #1c440a;" data-color="#1c440a"></div>
-            <div class="color-option" style="background-color: #000000;" data-color="#000000"></div>
-            <div class="color-option" style="background-color: #0a4441;" data-color="#0a4441"></div>
-            <div class="color-option" style="background-color: #300a44;" data-color="#300a44"></div>
-            <div class="color-option" style="background-color: #440a34;" data-color="#440a34"></div>
-            <div class="color-option" style="background-color: #440a0a;" data-color="#440a0a"></div>
+        <nav>
+            <ul class="first-row">
+                <li><a href="index" class="nav-button">Главная</a></li>
+                <li><a href="soft" class="nav-button">Софт от Аддерли</a></li>
+                <li><a href="builds" class="nav-button">Сборки от Аддерли</a></li>
+                <li><a href="windows_pe" class="nav-button">Windows PE от Аддерли</a></li>
+            </ul>
+            <ul class="second-row">
+                <li><a href="bio" class="nav-button">Обо мне</a></li>
+                <li><a href="news" class="nav-button">Новости</a></li>
+                <li><a href="progs" class="nav-button">Программы</a></li>
+                <li><a href="donators" class="nav-button">Донатеры</a></li>
+                <li><a href="support" class="nav-button">Поддержать</a></li>
+            </ul>
+        </nav>
+        <div class="palette-container">
+            <button id="palette-button" class="palette-button">
+                <img src="icons/color.png" alt="Palette Icon" class="palette-icon">
+            </button>
+            <div id="color-picker" class="color-picker hidden">
+                <h4>Выбрать тему:</h4>
+                <div class="color-options">
+                    <div class="color-option" style="background-color: #0a1f44;" data-color="#0a1f44"></div>
+                    <div class="color-option" style="background-color: #44280a;" data-color="#44280a"></div>
+                    <div class="color-option" style="background-color: #1c440a;" data-color="#1c440a"></div>
+                    <div class="color-option" style="background-color: #000000;" data-color="#000000"></div>
+                    <div class="color-option" style="background-color: #0a4441;" data-color="#0a4441"></div>
+                    <div class="color-option" style="background-color: #300a44;" data-color="#300a44"></div>
+                    <div class="color-option" style="background-color: #440a34;" data-color="#440a34"></div>
+                    <div class="color-option" style="background-color: #440a0a;" data-color="#440a0a"></div>
+                </div>
+            </div>
         </div>
-    </div>
-</div>
-</header>
-
-    
+    </header>
 
     <header class="mobile-header">
         <nav>
             <ul class="mobile-menu">
                 <li><a href="index" class="nav-button">Главная</a></li>
                 <li><a href="soft" class="nav-button">Софт</a></li>
-                <li><a href="news" class="nav-button">Новости</a></li>
                 <li><a href="builds" class="nav-button">Сборки</a></li>
             </ul>
         </nav>
@@ -293,23 +279,12 @@
 
     <main>
         <main>
-            <section>
-                <h1>Добро пожаловать на Adderly.Fun!</h1>
-                <p>Это сайт Марка Аддерли - техноблогера на YouTube, и в целом довольно занятой персоны.<br>
-                    Здесь вы можете скачать мои приложения, сборки Windows, Windows PE, разные программы, и многое
-                    другое!</p>
-            </section>
-            <section class="youtube-section">
-                <h2>Последнее видео на YouTube канале</h2>
-                <iframe width="700" height="393"
-                    src="https://www.youtube.com/embed/videoseries?si=EL7VwKSGH9gmIKnk&amp;list=UULFsS9QFVkkxhF0zYwf1QP2ZA"
-                    title="YouTube video player" frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <section style="max-width: 800px; margin: 0 auto; padding: 00px; text-align: justify;">
+                <h1 style="text-align: center;">Новости Аддерли</h1>
+                <div id="news-container"></div>
             </section>
         </main>
-        <section style="max-width: 1100px; margin: 0 auto; padding: 0px; text-align: justify;">
-            <h1 style="text-align: center;">Последние важные новости...</h1>
+        <section style="max-width: 800px; margin: 0 auto; padding: 00px; text-align: justify;">
             <div id="news-container"></div>
         </section>
     </main>
