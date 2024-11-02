@@ -45,10 +45,10 @@
      crossorigin="anonymous"></script>
 
     <meta property="og:title" content="Сайт Марка Аддерли">
-    <meta property="og:keywords" content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, makutyper, makuadarii, софт от аддерли, программы аддерли, makucheck, maku cherrywave, maku, программы от аддерли">
+    <meta property="og:keywords" content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, MakuTweaker, makutyper, makuadarii, софт от аддерли, программы аддерли, makucheck, maku cherrywave, maku, программы от аддерли">
     <meta property="og:description" content="Скачать программы от Марка Аддерли! MakuTweaker, MakuTyper, MakuCheck и MakuCherrywave.">
     <meta name="description" content="Скачать программы от Марка Аддерли: MakuTweaker, MakuTyper, MakuCheck и MakuCherrywave.">
-    <meta name="keywords" content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, makutyper, makuadarii, софт от аддерли, программы аддерли, makucheck, maku cherrywave, maku, программы от аддерли">
+    <meta name="keywords" content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, MakuTweaker, makutyper, makuadarii, софт от аддерли, программы аддерли, makucheck, maku cherrywave, maku, программы от аддерли">
     <meta property="og:image" content="images/favicon.png">
     <link rel="icon" href="images/favicon.png">
 
@@ -290,6 +290,44 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="https://github.com/AdderlyMark/MakuCherryWave/releases/download/Maku/Maku.CherryWave.exe" class="download-button">Скачать MakuCherryWave</a>
     </section>
 </main>
+
+<div class="modal" id="modal">
+    <img id="modalImage" src="" alt="Увеличенное изображение">
+</div>
+
+<script>
+
+    const images = document.querySelectorAll('.image-gallery img');
+    const modal = document.getElementById('modal');
+    const modalImage = document.getElementById('modalImage');
+
+    images.forEach(image => {
+        image.addEventListener('click', function() {
+            modal.style.display = 'flex';
+            modalImage.src = this.src;
+        });
+    });
+
+    modal.addEventListener('click', function() {
+        modal.style.display = 'none'; 
+    });
+</script>
+
+<script>
+document.querySelectorAll('.accordion').forEach((accordion, index) => {
+    accordion.addEventListener('click', function() {
+        const panel = this.nextElementSibling;
+        panel.classList.toggle('open');
+        this.classList.toggle('active');
+        
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+});
+            </script>
 
 <footer>
     <a href="https://t.me/adderly324" class="social-link" target="_blank" rel="noopener noreferrer">
