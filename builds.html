@@ -200,8 +200,8 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="close-button" onclick="togglePanel()">✖</button>
         </div>
         <button class="floating-button" onclick="scrollToSection('top')">MakuOS 11 (Windows 11 22H2)</button>
-        <button class="floating-button" onclick="scrollToSection('makuos-10-22H2')">MakuOS 10 22H2 (Windows 10 22H2)</button>
-        <button class="floating-button" onclick="scrollToSection('makuos-10-1809')">MakuOS 10 Lite (Windows 10 1809)</button>
+        <button class="floating-button" onclick="scrollToSection('makuos-10-22H2')">MakuOS 10 (Windows 10 22H2)</button>
+        <button class="floating-button" onclick="scrollToSection('makuos-10-1809')">MakuOS Lite (Windows 10 1809)</button>
         <button class="floating-button" onclick="scrollToSection('win81v')">Windows 8.1 V7 by Adderly</button>
     </div>
     
@@ -307,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div style="text-align: left; padding-left: 20px;">
                 <br>
                     <h1>Удалённые приложения:</h1>
-                    Карты, Диктофон, Люди, Погода, Новости, Почта, Календарь, Clipchamp,<br>
+                    Карты, Диктофон, Люди, Погода, Новости, Будильники, Почта, Календарь, Clipchamp,<br>
                     Microsoft Teams, Microsoft Family, Quick Assist, Windows Terminal, Dev Home,<br>
                     Power Automate Desktop, Get Help, Feedback Hub, Outlook, Todos, Solitaire Collection.<br><br>
                     
@@ -353,7 +353,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div style="text-align: left; padding-left: 20px;">
                     <br>
                     <h1>Удалённые приложения:</h1>
-                    Были удалены все UWP приложения, кроме Фотографий, Калькулятора и Блокнота.<br><br>
+                    Были удалены все UWP приложения, кроме Фотографий, Xbox, Калькулятора и Блокнота.<br><br>
 
                     <h1>Применённые настройки:</h1>
                     <h3>Основное:</h3>
@@ -376,7 +376,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="accordion-container">
-                <button class="accordion">Что нового в V3 и V4 версии сборки?</button>
+                <button class="accordion">Что нового в V4 версии сборки?</button>
                 <div class="panel panel3">
                     <div style="text-align: left; padding-left: 20px;">
                     <br>
@@ -392,10 +392,59 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
             </div>
 
+            <div class="accordion-container">
+                <button class="accordion">Почему сборка основана на 22H2, а не 24H2?</button>
+                <div class="panel panel4">
+                    <div style="text-align: left; padding-left: 20px;">
+                    <br>
+                    Причиной создания сборки на основе 22H2 является переписанная кодовая база в 23H2, из-за которой на большинстве устройств есть проблемы с производительностью, и работой драйверов.<br><br>
+                    В том числе и у меня, как сборщика, был ужасный опыт и на 23H2, и 24H2:<br>
+                    Зависания в абсолютно случайные моменты, перезагрузка видеодрайверов без причины, подвисания звука, частые микрофризы,<br>да и банально медленный проводник - это всё о Windows 11 23H2.<br><br>
+                    А в 24H2 ситуация лучше не стала. Помимо этого, в новой версии Windows 11 ввели проверку на инструкцию SSE 4.2 на уровне ядра.<br>
+                    Поэтому, если у вас железо старше 2012 года, но вы например спокойно пользовались 22H2 - 24H2 у вас просто не запустится.<br><br>
+                </div>
+            </div>
 
             <div class="accordion-container">
-                <button class="accordion">Контрольные суммы</button>
-                <div class="panel panel4">
+                <button class="accordion">Как установить Windows?</button>
+                <div class="panel panel5">
+                    <div style="text-align: left; padding-left: 20px;">
+                    <br>
+                    Если вы видите ошибку 0x7E, это значит, что вы запустили установщик системы который должен быть записан на флешку.<br>
+                    Обновление Windows с одной на другую это чреватое дело, и зачастую оно вызывает проблемы в дальнейшем.<br>
+                    Для того чтобы установить Windows должным образом, есть два популярнейших способа.<br><br>
+                    <h1>Первый способ - Rufus:</h1>
+                    Перейдите на сайт <a href="https://rufus.ie" style="text-decoration: underline; color: green;">rufus.ie</a>, и <a href="https://github.com/pbatard/rufus/releases/download/v4.6/rufus-4.6.exe" style="text-decoration: underline; color: yellow;">скачайте программу</a>.<br>
+                    Далее, в пункте "Устройство" выберите вашу флешку, на 8 ГБ и выше.<br>
+                    В пункте "Метод загрузки", справа есть кнопка "Выбрать". Выберите ISO образ MakuOS.
+                    Далее, в "Схема раздела" вам нужно указать таблицу разделов вашего SSD. - <a href="https://lifehacker.ru/kak-uznat-gpt-ili-mbr/" style="text-decoration: underline; color: yellow;">Как узнать схему раздела?</a><br>
+                    Зачастую, "Целевую систему" и "Файловую систему" можно не трогать. Никакие галочки не нажимайте, и при каких либо диалогах снимайте их.<br>
+                    Для начала записи на флешку, нажмите "СТАРТ", и согласитесь на форматирование.<br>
+                    <br>
+
+                    <h2>Выбранный образ ISO содержит отозванный загрузчик UEFI...?</h2>
+                    В новых версиях Rufus эта ошибка вылезает абсолютно на всех образах Windows которые НЕ скачаны из сайта Microsoft.<br><br>
+
+                    <h1>Второй способ - Ventoy:</h1>
+                    Перейдите на сайт <a href="https://www.ventoy.net/" style="text-decoration: underline; color: green;">ventoy.net</a>, и <a href="https://sourceforge.net/projects/ventoy/files/latest/download" style="text-decoration: underline; color: yellow;">скачайте программу</a>.<br>
+                    Далее, распакуйте архив куда-либо и запустите файл <strong><em>Ventoy2Disk.exe</em></strong>.<BR>
+                    В пункте "Устройство" выберите вашу флешку, на 8 ГБ и выше.<br>
+                    Сверху на вкладке "Настройки" обязательно поставьте галочку на Secure Boot Support если он у вас включён.<br><a href="https://remontka.pro/enable-secure-boot/" style="text-decoration: underline; color: yellow;">Как узнать, включён ли Secure Boot?</a><br>
+                    Осталось нажать кнопку "Установить", и согласиться на форматирование флешки.<br>После этого, вам останется просто перекинуть ISO файл на уже чистую флешку.<br>
+                    <br>
+
+                    <h1>После записи образа на флешку</h1>
+                    После успешной записи на флешку, запомните размер вашего системного раздела С, и попрощайтесь со своей системой, предварительно сохранив важные файлы и данные, и загрузитесь с флешки.<br>
+                    Для этого, откройте меню Пуск, зажмите клавишу Shift, и перезагрузитесь.<br>
+                    Затем, выберите USB FDD, или что либо связанное с USB.<br>
+                    <br>Всё что вам осталось, это следовать инструкциям установщика Windows.<br>Будьте аккуратны с разделами - если вы хотите переустановить только систему, и сохранить файлы и данные на других разделах:<br>Удалите раздел С, вес которого вы запомнили. (К примеру, если ваш системный раздел весил 80 ГБ, удаляйте тот, что весит 80 ГБ.)<br>А так же микро разделы с весом на 100 - 500 мегабайт. Затем, установите систему на незанятое пространство. Удачи!
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion">Контрольные суммы образа</button>
+                <div class="panel panel6">
                     <br>
                     <h1>CRC32: 8072434F</h1><br>
                     <h1>MD5: 9EF8BB3E61B4FE3A1F9131B7F22A0D32</h1><br>
@@ -417,129 +466,159 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <section id="makuos-10-22H2" class="bootleg-section">
             <div class="bootleg">
-            <h2>MakuOS 10 22H2 V2 (Windows 10 22H2, 19045.5070)</h2><br>
+            <h2>MakuOS 10 22H2 V3 (Windows 10 22H2, 19045.5073)</h2><br>
+        </div>
+        <div class="image-gallery">
+            <img src="images/bootlegs/makuos10_winver.png" alt="MakuOS 10 Image 1">
+            <img src="images/bootlegs/makuos10v2-lang.png" alt="MakuOS 10 Image 2">
+            <img src="images/bootlegs/makuos10_taskmgr.png" alt="MakuOS 10 Image 3">
+            <img src="images/bootlegs/makuos10_size.png" alt="MakuOS 10 Image 4">
+            <img src="images/bootlegs/makuos10_oobe1.png" alt="MakuOS 10 Image 5">
+            <img src="images/bootlegs/makuos10_oobe2.png" alt="MakuOS 10 Image 6">
+        </div>
+        <div class="accordion-container">
+            <button class="accordion">Изменения в сборке</button>
+            <div class="panel panel1">
+                <div style="text-align: left; padding-left: 20px;">
+            <br>
+                <h1>Удалённые приложения:</h1>
+                Карты, Диктофон, Люди, Погода, Новости, Будильники, Почта, Календарь, Clipchamp,<br>
+                Dev Home, Microsoft Teams, Get Help, Feedback Hub, Outlook, Solitaire Collection.<br><br>
+                
+                <h1>Применённые настройки:</h1>
+                <h3>Основное:</h3>
+                Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
+                Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
+                Из панели задач убраны рекламные иконки<br>
+                Отключён SmartScreen и Включён DirectPlay<br>
+                Отключён HPET таймер<br>
+                Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+        
+                <h3>Телеметрия:</h3>
+                Запрещена диагностика установленных приложений<br>
+                Запрещена телеметрия за активацией системы<br>
+                Запрещена публикация активности пользователя<br>
+                Запрещён сбор информации о пользователе<br>
+                Запрещён сбор информации об устройстве пользователя<br>
+                Запрещён автоматической вход в аккаунт OneDrive<br>
+                Запрещён сбор информации о производительности системы<br>
+                Запрещено эксперементирование над системой пользователя<br>
+                Отключена отправка сведений о сбоях приложений при их зависании<br>
+                Отключена отправка результатов поиска пользователя<br>
+                Отключена активация управления голосом<br>
+                Отключена тихая установка рекламных приложений<br>
+                Отключён сбор информации о голосе пользователя при использовании функций ввода голосом<br><br>
+        
+                <h1>Прочие изменения:</h1>
+                Интегрированны все обновления по конец октября 2024 года.<br>
+                В сборке присутствует два языка: Английский и Русский.<br>
+                В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
+                На рабочем столе имеется приложение "MakuOS 10", в котором можно отключить Windows Defender,<br>применить Compact OS, и активировать систему.<br><br>
             </div>
-            <div class="image-gallery">
-                <img src="images/bootlegs/makuos10v2-lang.png" alt="MakuOS 10 Image 1">
-                <img src="images/bootlegs/makuos10v2-oobe4.png" alt="MakuOS 10 Image 2">
-                <img src="images/bootlegs/makuos10v2-taskmgr.png" alt="MakuOS 10 Image 3">
-                <img src="images/bootlegs/makuos10v2-size.png" alt="MakuOS 10 Image 4">
-                <img src="images/bootlegs/makuos10v2-winver.png" alt="MakuOS 10 Image 5">
-                <img src="images/bootlegs/makuos10v2-start.png" alt="MakuOS 10 Image 6">
-            </div>
-            <div class="accordion-container">
-                <button class="accordion">Изменения в сборке</button>
-                <div class="panel panel1">
+        </div>
+
+        <div class="accordion-container">
+            <button class="accordion">Краткое описание изменений в сборке</button>
+            <div class="panel panel2">
+                <div style="text-align: left; padding-left: 20px;">
                 <br>
-                <p>        <h1>Удалённые приложения:</h1>
-                    Удалён Windows Defender,<br>
-                    Clipchamp, AV1 кодек, VP9 кодек, Microsoft Новости, Диктофон, Get Help, Quick Assist,<br>
-                    Microsoft Solitaire Collection, Sticky Notes, MP2 Кодек для DVD, Feedback Hub,<br>
-                    Outlook for Windows, RAW Image Extension, Microsoft Todos, DevHome,<br>
-                    Windows Mail, OneDrive, Remote Assistance, Wordpad, Windows To Go, Your Phone,<br>
-                    Windows Mixed Reality, Skype, Eye Control, Map Control, Microsoft Family.<br><br>
-            <h1>Применённые настройки:</h1>
-            <h3>Основное:</h3>
-                    Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
-                    Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
-                    Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
-                    Из панели задач убраны рекламные иконки<br>
-                    Отключён SmartScreen и Включён DirectPlay.<br>
-                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
-        
-                    <h3>Телеметрия:</h3>
-                    Запрещена диагностика установленных приложений<br>
-                    Запрещена телеметрия за активацией системы<br>
-                    Запрещена публикация активности пользователя<br>
-                    Запрещён сбор информации о пользователе<br>
-                    Запрещён сбор информации об устройстве пользователя<br>
-                    Запрещён сбор информации о письменном вводе пользователя<br>
-                    Запрещён сбор информации о вводе текста пользователем с клавиатуры<br>
-                    Запрещён автоматической вход в аккаунт OneDrive<br>
-                    Запрещён сбор информации о производительности системы<br>
-                    Запрещено эксперементирование над системой пользователя<br>
-                    Отключена отправка сведений о сбоях приложений при их зависании<br>
-                    Отключена отправка результатов поиска пользователя<br>
-                    Отключена активация управления голосом<br>
-                    Отключена тихая установка рекламных приложений<br><br>
-        
-        <h1>Прочие изменения:</h1>
-        Интегрированны все обновления по конец октября 2024 года.<br>
-        В сборке присутствует два языка: Английский и Русский.<br>
-        В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
-        В системе предустановлен MakuTweaker. Это моя самописная программа. Подробнее о ней можно <a href="https://adderly.fun/soft" style="text-decoration: underline;"> Узнать здесь.</a><br>
-        Вместо предустановленных программ, в целях экономии места был помещён ярлык с ссылкой на - <a href="https://adderly.fun/progs" style="text-decoration: underline;">"Скачать программы".</a><br>
-        <p><br>
-                </div>
+                <h1>Удалённые приложения:</h1>
+                Были удалены все UWP приложения, кроме Фотографий, Xbox, Калькулятора и Блокнота.<br><br>
+
+                <h1>Применённые настройки:</h1>
+                <h3>Основное:</h3>
+                Удалена предустановка мусорных UWP приложений.<br>
+                Отключён SmartScreen и Включён DirectPlay.<br>
+                Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+
+                <h3>Телеметрия:</h3>
+                Была отключена, запрещена, и удалена какая либо телеметрия.<br><br>
+
+                <h1>Прочие изменения:</h1>
+                Интегрированны все обновления по конец октября 2024 года.<br>
+                В сборке присутствует два языка: Английский и Русский.<br>
+                В сборке используется самописное OOBE с твиками.<br>
+                На рабочем столе имеется приложение "MakuOS 10", в котором можно отключить Windows Defender,<br>применить Compact OS, и активировать систему.<br><br>
             </div>
+        </div>
 
-            
-            <div class="accordion-container">
-                <button class="accordion">Краткое описание изменений в сборке</button>
-                <div class="panel panel2">
-                    <br>
-                    <h1>Удалённые приложения:</h1>
-                    Удалён Windows Defender, Кодеки AV1, VP9, MP2, RAW.<br>
-                    Были удалены все UWP приложения, кроме Фотографий, Калькулятора, Будильников и Блокнота.<br><br>
-
-                    <h1>Применённые настройки:</h1>
-                    <h3>Основное:</h3>
-                    Удалена предустановка мусорных UWP приложений.<br>
-                    Отключён SmartScreen и Включён DirectPlay.<br>
-                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
-
-                    <h3>Телеметрия:</h3>
-                    Была отключена, запрещена, и удалена какая либо телеметрия.<br><br>
-
-                    <h1>Прочие изменения:</h1>
-                    Интегрированны все обновления по конец октября 2024 года.<br>
-                    В сборке присутствует два языка: Английский и Русский.<br>
-                    В сборке используется самописное OOBE с твиками.<br>
-                    Предустановлен MakuTweaker.<br><br> 
-                </div>
+        <div class="accordion-container">
+            <button class="accordion">Что нового в V3 версии сборки?</button>
+            <div class="panel panel3">
+                <div style="text-align: left; padding-left: 20px;">
+                <br>
+                • Теперь Windows Defender не удалён!<br>
+                • На рабочем столе появилось новое небольшое приложение специальное для MakuOS.<br>
+                В нём можно отключить Windows Defender, сжать систему и активировать её!<br>
+                • Было снова изменено OOBE. Для людей у которых 800х600 и 1024х768 разрешение, MakuOS теперь подстраивает элементы.<br>
+                • Был отключён HPET таймер. За счёт этого, прирост в играх может быть большой. (тестируем)<br>
+                • Было интегрировано ещё одно обновление.<br>
+                • По просьбе пользователей, среди удалённых приложений теперь есть и будильники. А "Ваш телефон" не удаляется.<br>
+                • По просьбе многих пользователей, больше никакие кодеки не удаляются.<br>
+                • Больше нет рекламных иконок на рабочем столе.<br><br>
             </div>
+        </div>
 
-            <div class="accordion-container">
-                <button class="accordion">Что нового в V2 версии сборки?</button>
-                <div class="panel panel3">
-                    <br>
-                    Было с нуля переделано OOBE. Была исправлена критическая проблема с выдачей прав администратора,<br>
-                    И была исправлена проблема с выдачей пароля. Больше ввода пароля в OOBE нет, его надо добавлять вручную.<br>
-                    Были Интегрированны обновления по конец октября 2024 года.<br>
-                    Теперь предустановлен MakuTweaker.<br><br> 
-                </div>
+        <div class="accordion-container">
+            <button class="accordion">Как установить Windows?</button>
+            <div class="panel panel4">
+                <div style="text-align: left; padding-left: 20px;">
+                <br>
+                Если вы видите ошибку 0x7E, это значит, что вы запустили установщик системы который должен быть записан на флешку.<br>
+                Обновление Windows с одной на другую это чреватое дело, и зачастую оно вызывает проблемы в дальнейшем.<br>
+                Для того чтобы установить Windows должным образом, есть два популярнейших способа.<br><br>
+                <h1>Первый способ - Rufus:</h1>
+                Перейдите на сайт <a href="https://rufus.ie" style="text-decoration: underline; color: green;">rufus.ie</a>, и <a href="https://github.com/pbatard/rufus/releases/download/v4.6/rufus-4.6.exe" style="text-decoration: underline; color: yellow;">скачайте программу</a>.<br>
+                Далее, в пункте "Устройство" выберите вашу флешку, на 8 ГБ и выше.<br>
+                В пункте "Метод загрузки", справа есть кнопка "Выбрать". Выберите ISO образ MakuOS.
+                Далее, в "Схема раздела" вам нужно указать таблицу разделов вашего SSD. - <a href="https://lifehacker.ru/kak-uznat-gpt-ili-mbr/" style="text-decoration: underline; color: yellow;">Как узнать схему раздела?</a><br>
+                Зачастую, "Целевую систему" и "Файловую систему" можно не трогать. Никакие галочки не нажимайте, и при каких либо диалогах снимайте их.<br>
+                Для начала записи на флешку, нажмите "СТАРТ", и согласитесь на форматирование.<br>
+                <br>
+
+                <h2>Выбранный образ ISO содержит отозванный загрузчик UEFI...?</h2>
+                В новых версиях Rufus эта ошибка вылезает абсолютно на всех образах Windows которые НЕ скачаны из сайта Microsoft.<br><br>
+
+                <h1>Второй способ - Ventoy:</h1>
+                Перейдите на сайт <a href="https://www.ventoy.net/" style="text-decoration: underline; color: green;">ventoy.net</a>, и <a href="https://sourceforge.net/projects/ventoy/files/latest/download" style="text-decoration: underline; color: yellow;">скачайте программу</a>.<br>
+                Далее, распакуйте архив куда-либо и запустите файл <strong><em>Ventoy2Disk.exe</em></strong>.<BR>
+                В пункте "Устройство" выберите вашу флешку, на 8 ГБ и выше.<br>
+                Сверху на вкладке "Настройки" обязательно поставьте галочку на Secure Boot Support если он у вас включён.<br><a href="https://remontka.pro/enable-secure-boot/" style="text-decoration: underline; color: yellow;">Как узнать, включён ли Secure Boot?</a><br>
+                Осталось нажать кнопку "Установить", и согласиться на форматирование флешки.<br>После этого, вам останется просто перекинуть ISO файл на уже чистую флешку.<br>
+                <br>
+
+                <h1>После записи образа на флешку</h1>
+                После успешной записи на флешку, запомните размер вашего системного раздела С, и попрощайтесь со своей системой, предварительно сохранив важные файлы и данные, и загрузитесь с флешки.<br>
+                Для этого, откройте меню Пуск, зажмите клавишу Shift, и перезагрузитесь.<br>
+                Затем, выберите USB FDD, или что либо связанное с USB.<br>
+                <br>Всё что вам осталось, это следовать инструкциям установщика Windows.<br>Будьте аккуратны с разделами - если вы хотите переустановить только систему, и сохранить файлы и данные на других разделах:<br>Удалите раздел С, вес которого вы запомнили. (К примеру, если ваш системный раздел весил 80 ГБ, удаляйте тот, что весит 80 ГБ.)<br>А так же микро разделы с весом на 100 - 500 мегабайт. Затем, установите систему на незанятое пространство. Удачи!
+                <br><br>
             </div>
+        </div>
 
 
-            <div class="accordion-container">
-                <button class="accordion">Контрольные суммы</button>
-                <div class="panel panel4">
-                    <br>
-                    <h1>CRC32: B75A8935</h1><br>
-                    <h1>MD5: C6C0266F35BA96118D5331A20CF4D156</h1><br>
-                    <h1>SHA-1: A4DEA02EA2819E56944B2D943E40B8D1AF9D1A52</h1><br>
-                    (для Rutracker на данный момент отдельная версия с другими хешами)<br><br>
-                </div>
+        <div class="accordion-container">
+            <button class="accordion">Контрольные суммы образа</button>
+            <div class="panel panel5">
+                <br>
+                <h1>CRC32: 1FFC436D</h1><br>
+                <h1>MD5: 91179AE8283FD584D940D31CF0FB0D0F</h1><br>
+                <h1>SHA-1: C48E6492826A1CC12E7878C485E5F3C76DD90E1D</h1><br><br>
             </div>
+        </div>
 
-            <h1>Скачать:</h1>
-            <a href="https://pixeldrain.com/u/wWyNmEku" class="download-button" target="_blank">
-                <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
-            </a>
-            <a href="https://drive.google.com/file/d/1neOEeSjbTcX-Rb0E5P2AcC5EsWB2dN5L/view?usp=sharing" class="download-button" target="_blank">
-                <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
-            </a>
-            <a href="https://www.mediafire.com/file/w1q5x8slvlgi426/MakuOS+10+22H2+v2.iso/file" class="download-button" target="_blank">
-                <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
-            </a>
-            <a href="https://t.me/Maku_Library/11" class="download-button" target="_blank">
-                <img src="icons/tg.png" alt="Telegram" class="icon"> Telegram
-            </a>
-            <a href="https://terabox.com/s/1aoLnf5ry6QqAN4QHUCevGg" class="download-button" target="_blank">
-                <img src="icons/terabox.png" alt="Terabox" class="icon"> Terabox
-            </a>
-            
-        </section>
+        <h1>Скачать:</h1>
+        <a href="https://pixeldrain.com/u/xCgptQWP" class="download-button" target="_blank">
+            <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
+        </a>
+        <a href="https://drive.google.com/file/d/1Hl35Gd_HhVQ-RnOmlVrx-RFMYhfXa7_L/view?usp=sharing" class="download-button" target="_blank">
+            <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
+        </a>
+        <a href="https://www.mediafire.com/file/qdiznfjxvjusfw8/MakuOS+10.iso/file" class="download-button" target="_blank">
+            <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
+        </a>
+    </section>
 
         <section id="makuos-10-1809" class="bootleg-section">
             <div class="bootleg">
@@ -633,8 +712,37 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="accordion-container">
-                <button class="accordion">Контрольные суммы</button>
+                <button class="accordion">Как установить Windows?</button>
                 <div class="panel panel4">
+                    <div style="text-align: left; padding-left: 20px;">
+                    <br>
+                    Если вы видите ошибку 0x7E, это значит, что вы запустили установщик системы который должен быть записан на флешку.<br>
+                    Обновление Windows с одной на другую это чреватое дело, и зачастую оно вызывает проблемы в дальнейшем.<br>
+                    Для того чтобы установить Windows должным образом, используйте Rufus. Ventoy в 1809 использовать не желательно.<br><br>
+                    <h1>Rufus:</h1>
+                    Перейдите на сайт <a href="https://rufus.ie" style="text-decoration: underline; color: green;">rufus.ie</a>, и <a href="https://github.com/pbatard/rufus/releases/download/v4.6/rufus-4.6.exe" style="text-decoration: underline; color: yellow;">скачайте программу</a>.<br>
+                    Далее, в пункте "Устройство" выберите вашу флешку, на 8 ГБ и выше.<br>
+                    В пункте "Метод загрузки", справа есть кнопка "Выбрать". Выберите ISO образ MakuOS.
+                    Далее, в "Схема раздела" вам нужно указать таблицу разделов вашего SSD. - <a href="https://lifehacker.ru/kak-uznat-gpt-ili-mbr/" style="text-decoration: underline; color: yellow;">Как узнать схему раздела?</a><br>
+                    Зачастую, "Целевую систему" и "Файловую систему" можно не трогать. Никакие галочки не нажимайте, и при каких либо диалогах снимайте их.<br>
+                    Для начала записи на флешку, нажмите "СТАРТ", и согласитесь на форматирование.<br>
+                    <br>
+
+                    <h2>Выбранный образ ISO содержит отозванный загрузчик UEFI...?</h2>
+                    В новых версиях Rufus эта ошибка вылезает абсолютно на всех образах Windows которые НЕ скачаны из сайта Microsoft.<br><br>
+
+                    <h1>После записи образа на флешку</h1>
+                    После успешной записи на флешку, запомните размер вашего системного раздела С, и попрощайтесь со своей системой, предварительно сохранив важные файлы и данные, и загрузитесь с флешки.<br>
+                    Для этого, откройте меню Пуск, зажмите клавишу Shift, и перезагрузитесь.<br>
+                    Затем, выберите USB FDD, или что либо связанное с USB.<br>
+                    <br>Всё что вам осталось, это следовать инструкциям установщика Windows.<br>Будьте аккуратны с разделами - если вы хотите переустановить только систему, и сохранить файлы и данные на других разделах:<br>Удалите раздел С, вес которого вы запомнили. (К примеру, если ваш системный раздел весил 80 ГБ, удаляйте тот, что весит 80 ГБ.)<br>А так же микро разделы с весом на 100 - 500 мегабайт. Затем, установите систему на незанятое пространство. Удачи!
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion">Контрольные суммы образа</button>
+                <div class="panel panel5">
                     <br>
                     <h1>CRC32: B872F72E</h1><br>
                     <h1>MD5: AAB516809FB8AD09555D224031091FC4</h1><br>
@@ -700,7 +808,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </div>
 
         <div class="accordion-container">
-            <button class="accordion">Контрольные суммы</button>
+            <button class="accordion">Контрольные суммы образа</button>
             <div class="panel panel2">
                 <br>
                 <h1>CRC32: 5AAAF10B</h1><br>
