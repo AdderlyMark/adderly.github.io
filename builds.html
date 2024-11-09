@@ -325,7 +325,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     Отключена первоначальная настройка Microsoft Edge<br>
                     Отключена задержка контекстного меню<br>
                     Отключена автоперезагрузка при синем экране смерти<br>
-                    Microsoft Edge удаляемый<br>
+                    Microsoft Edge можно удалить<br>
                     Включена иконка "Этот Компьютер" на рабочем столе<br>
                     Включён буфер обмена<br>
                     Убрана подпись "Ярлык" у новых ярлыков<br>
@@ -497,8 +497,6 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="images/bootlegs/makuos10v2-lang.png" alt="MakuOS 10 Image 2">
             <img src="images/bootlegs/makuos10_taskmgr.png" alt="MakuOS 10 Image 3">
             <img src="images/bootlegs/makuos10_size.png" alt="MakuOS 10 Image 4">
-            <img src="images/bootlegs/makuos10_oobe1.png" alt="MakuOS 10 Image 5">
-            <img src="images/bootlegs/makuos10_oobe2.png" alt="MakuOS 10 Image 6">
         </div>
         <div class="accordion-container">
             <button class="accordion">Изменения в сборке</button>
@@ -511,11 +509,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 <h1>Применённые настройки:</h1>
                 <h3>Основное:</h3>
+                Включены скрытые файлы, папки, и диски<br>
+                Включены расширения файлов<br>
+                Отключены виджеты<br>
+                Откреплены закрепления на панели задач<br>
+                Отключён поиск Bing на панели задач<br>
+                По умолчанию открывается "Этот ПК" вместо "Главная"<br>
+                Отключён SmartScreen<br>
+                Отключён быстрый запуск<br>
+                Отключена гибернация<br>
+                Отключено залипание клавиш<br>
+                Отключена первоначальная настройка Microsoft Edge<br>
+                Отключена задержка контекстного меню<br>
+                Отключена автоперезагрузка при синем экране смерти<br>
+                Microsoft Edge можно удалить<br>
+                Включена иконка "Этот Компьютер" на рабочем столе<br>
+                Включён буфер обмена<br>
+                Убрана подпись "Ярлык" у новых ярлыков<br>
+                Отключено требование интернета в первоначальной настройке<br>
+                Разрешен вход в локальный аккаунт<br>
+                Автоматически введён 30 дневной ключ продукта<br>
                 Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
                 Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
                 Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
                 Из панели задач убраны рекламные иконки<br>
-                Отключён SmartScreen и Включён DirectPlay<br>
+                Включён DirectPlay<br>
                 Отключён HPET таймер<br>
                 Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
         
@@ -537,7 +555,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h1>Прочие изменения:</h1>
                 Интегрированны все обновления по конец октября 2024 года.<br>
                 В сборке присутствует два языка: Английский и Русский.<br>
-                В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br>
+                Предустановлен MakuTweaker.<br>
+                В сборке используется изменённое OOBE, в котором включён вход в локальную учётную запись, и скрыты какие либо страницы с рекламой.<br>
                 На рабочем столе имеется приложение "MakuOS 10", в котором можно отключить Windows Defender,<br>применить Compact OS, и активировать систему.<br><br>
             </div>
         </div>
@@ -548,12 +567,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div style="text-align: left; padding-left: 20px;">
                 <br>
                 <h1>Удалённые приложения:</h1>
-                Были удалены все UWP приложения, кроме Фотографий, Xbox, Калькулятора и Блокнота.<br><br>
+                Были удалены все UWP приложения, кроме Фотографий, Xbox, Будильников, Калькулятора и Блокнота.<br><br>
 
                 <h1>Применённые настройки:</h1>
                 <h3>Основное:</h3>
+                Включены скрытые файлы и расширения<br>
+                Откреплён мусор на панели задач<br>
                 Удалена предустановка мусорных UWP приложений.<br>
-                Отключён SmartScreen и Включён DirectPlay.<br>
+                Отключён SmartScreen, быстрый запуск, гибернация, залипание клавиш, задержка контекстного меню, и Включён DirectPlay.<br>
                 Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
 
                 <h3>Телеметрия:</h3>
@@ -562,7 +583,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <h1>Прочие изменения:</h1>
                 Интегрированны все обновления по конец октября 2024 года.<br>
                 В сборке присутствует два языка: Английский и Русский.<br>
-                В сборке используется самописное OOBE с твиками.<br>
+                Предустановлен MakuTweaker.<br>
                 На рабочем столе имеется приложение "MakuOS 10", в котором можно отключить Windows Defender,<br>применить Compact OS, и активировать систему.<br><br>
             </div>
         </div>
@@ -629,20 +650,20 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="accordion">Контрольные суммы образа</button>
             <div class="panel panel5">
                 <br>
-                <h1>CRC32: 1FFC436D</h1><br>
-                <h1>MD5: 91179AE8283FD584D940D31CF0FB0D0F</h1><br>
-                <h1>SHA-1: C48E6492826A1CC12E7878C485E5F3C76DD90E1D</h1><br><br>
+                <h1>CRC32: 1A211B51</h1><br>
+                <h1>MD5: 65EA27796D6A7EBAB9C7B09729C1D90F</h1><br>
+                <h1>SHA-1: A1D82AB586D354E664E0E88CCFDCC46AC198DE8E</h1><br><br>
             </div>
         </div>
 
         <h1>Скачать:</h1>
-        <a href="https://pixeldrain.com/u/1KogTvVy" class="download-button" target="_blank">
-            <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
+        <a href="https://github.com/AdderlyMark/adderly.github.io/raw/refs/heads/main/soft/MakuOS%2010%20V4.torrent" class="download-button" target="_blank">
+            <img src="icons/qbit.png" alt="Qbit" class="icon"> Скачать с торрента
         </a>
-        <a href="https://drive.google.com/file/d/1Hl35Gd_HhVQ-RnOmlVrx-RFMYhfXa7_L/view?usp=sharing" class="download-button" target="_blank">
+        <a href="https://drive.google.com/file/d/1iv0K3jIPNbquDK_X4I3H3gbbqKIPehqV/view?usp=sharing" class="download-button" target="_blank">
             <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
         </a>
-        <a href="https://www.mediafire.com/file/qdiznfjxvjusfw8/MakuOS+10.iso/file" class="download-button" target="_blank">
+        <a href="https://www.mediafire.com/file/8wonhueojvxhlo5/MakuOS+10+22H2+V4.iso/file" class="download-button" target="_blank">
             <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
         </a>
     </section>
