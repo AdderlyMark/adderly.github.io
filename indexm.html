@@ -48,7 +48,7 @@
                 const a = document.createElement('a');
                 a.href = item.href;
                 a.textContent = item.text;
-                a.classList.add('nav-button');
+                a.classList.add('nav-button'); 
                 li.appendChild(a);
                 mobileMenu.appendChild(li);
             });
@@ -196,7 +196,6 @@
         const header = document.querySelector('header');
         const footer = document.querySelector('footer');
         const buttons = document.querySelectorAll('.nav-button, .button-section a');
-
         const mobileHeader = document.querySelector('.mobile-header');
         const themePanel = document.querySelector('.theme-panel');
         const colorOptions = document.querySelectorAll('.theme-button');
@@ -213,13 +212,12 @@
         };
 
         const applyColorTheme = (chosenColor) => {
-            if (!colorMapping[chosenColor]) return;
+            const colors = colorMapping[chosenColor];
+            if (!colors) return;
 
-            const { headerFooter, button } = colorMapping[chosenColor];
+            const { headerFooter, button } = colors;
             document.body.style.backgroundColor = chosenColor;
             themePanel.style.backgroundColor = headerFooter;
-            document.documentElement.style.setProperty('--header-color', headerFooter);
-            document.documentElement.style.setProperty('--button-color', button);
             header.style.backgroundColor = headerFooter;
             footer.style.backgroundColor = headerFooter;
             mobileHeader.style.backgroundColor = headerFooter;
@@ -238,43 +236,11 @@
             option.addEventListener('click', () => {
                 const chosenColor = option.getAttribute('data-color');
                 applyColorTheme(chosenColor);
-                colorPicker.classList.add('hidden');
             });
         });
-    
         const savedColor = localStorage.getItem('themeColor');
         if (savedColor) {
-            const colorMapping = {
-                "#0a1f44": { headerFooter: "#002b5e", button: "#005e92" },
-                "#44280a": { headerFooter: "#944f00", button: "#7a3c02" },
-                "#1c440a": { headerFooter: "#246301", button: "#388e3c" },
-                "#000000": { headerFooter: "#191919", button: "#2e2e2e" },
-                "#0a4441": { headerFooter: "#009688", button: "#00796b" },
-                "#300a44": { headerFooter: "#491066", button: "#60038c" },
-                "#440a34": { headerFooter: "#630549", button: "#8a0665" },
-                "#440a0a": { headerFooter: "#700000", button: "#9c0202" }
-            };
-
-            const applySavedTheme = (chosenColor) => {
-                const { headerFooter, button } = colorMapping[chosenColor];
-                document.body.style.backgroundColor = chosenColor;
-                themePanel.style.backgroundColor = headerFooter;
-                header.style.backgroundColor = headerFooter;
-                footer.style.backgroundColor = headerFooter;
-                mobileHeader.style.backgroundColor = headerFooter;
-
-                buttons.forEach(buttonElement => {
-                    buttonElement.style.backgroundColor = button;
-                    buttonElement.style.color = "#ffffff"; 
-                });
-
-                document.documentElement.style.setProperty('--header-color', headerFooter);
-                document.documentElement.style.setProperty('--button-color', button);
-            };
-
-            if (colorMapping[savedColor]) {
-                applySavedTheme(savedColor);
-            }
+            applyColorTheme(savedColor);
         }
     });
 </script>

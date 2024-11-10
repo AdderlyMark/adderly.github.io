@@ -28,7 +28,6 @@
             }
         }
 
-        // window.addEventListener('load', checkScreenWidth);
         window.addEventListener('resize', () => {
             checkWidth();
         });
@@ -113,8 +112,8 @@
     <meta property="og:keywords"
         content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, makutyper, makuadarii, новости аддерли, новости от аддерли, блог аддерли, софт от аддерли">
     <meta property="og:description" content="Главная страница сайта Марка Аддерли">
-<meta name="description" content="Главная страница сайта Марка Аддерли, сборки, блог и новости.">
-<meta name="keywords" content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, makutyper, makuadarii, новости аддерли, новости от аддерли, блог аддерли, софт от аддерли">
+    <meta name="description" content="Главная страница сайта Марка Аддерли, сборки, блог и новости.">
+    <meta name="keywords" content="adderly, adderlyfun, adderly fun, марк аддерли, аддерли, аддерли фан, сборки от аддерли, makutweaker, makutyper, makuadarii, новости аддерли, новости от аддерли, блог аддерли, софт от аддерли">
     <meta property="og:image" content="images/favicon.png">
     <link rel="icon" href="images/favicon.png">
 
@@ -127,106 +126,56 @@
             const footer = document.querySelector('footer');
             const buttons = document.querySelectorAll('.nav-button');
             const mobileHeader = document.querySelector('.mobile-header');
-        
+    
+            const colorSettings = {
+                "#0a1f44": { headerFooter: "#002b5e", button: "#005e92" },
+                "#44280a": { headerFooter: "#944f00", button: "#7a3c02" },
+                "#1c440a": { headerFooter: "#246301", button: "#388e3c" },
+                "#000000": { headerFooter: "#191919", button: "#2e2e2e" },
+                "#0a4441": { headerFooter: "#009688", button: "#00796b" },
+                "#300a44": { headerFooter: "#491066", button: "#60038c" },
+                "#440a34": { headerFooter: "#630549", button: "#8a0665" },
+                "#440a0a": { headerFooter: "#700000", button: "#9c0202" }
+            };
+    
+            const applyColorTheme = (chosenColor) => {
+                const { headerFooter, button } = colorSettings[chosenColor] || {};
+                if (headerFooter && button) {
+                    document.body.style.backgroundColor = chosenColor;
+                    header.style.backgroundColor = headerFooter;
+                    footer.style.backgroundColor = headerFooter;
+                    mobileHeader.style.backgroundColor = headerFooter;
+                    buttons.forEach(buttonEl => {
+                        buttonEl.style.backgroundColor = button;
+                        buttonEl.style.color = "#ffffff";
+                    });
+                    document.documentElement.style.setProperty('--header-color', headerFooter);
+                    document.documentElement.style.setProperty('--button-color', button);
+                }
+            };
+    
             colorPicker.classList.add('hidden');
-        
+    
             paletteButton.addEventListener('click', () => {
                 colorPicker.classList.toggle('hidden');
             });
-        
+    
             const colorOptions = document.querySelectorAll('.color-option');
             colorOptions.forEach(option => {
                 option.addEventListener('click', () => {
                     const chosenColor = option.getAttribute('data-color');
-                    document.body.style.backgroundColor = chosenColor;
-        
-                    let headerFooterColor;
-                    let buttonColor;
-                    if (chosenColor === "#0a1f44") {
-                        headerFooterColor = "#002b5e";
-                        buttonColor = "#005e92";
-                    } else if (chosenColor === "#44280a") {
-                        headerFooterColor = "#944f00";
-                        buttonColor = "#7a3c02";
-                    } else if (chosenColor === "#1c440a") {
-                        headerFooterColor = "#246301";
-                        buttonColor = "#388e3c";
-                    } else if (chosenColor === "#000000") {
-                        headerFooterColor = "#191919";
-                        buttonColor = "#2e2e2e";
-                    } else if (chosenColor === "#0a4441") {
-                        headerFooterColor = "#009688";
-                        buttonColor = "#00796b";
-                    } else if (chosenColor === "#300a44") {
-                        headerFooterColor = "#491066";
-                        buttonColor = "#60038c";
-                    } else if (chosenColor === "#440a34") {
-                        headerFooterColor = "#630549";
-                        buttonColor = "#8a0665";
-                    } else if (chosenColor === "#440a0a") {
-                        headerFooterColor = "#700000";
-                        buttonColor = "#9c0202";
-                    }
-                    document.documentElement.style.setProperty('--header-color', headerFooterColor);
-                    document.documentElement.style.setProperty('--button-color', buttonColor);
-                    header.style.backgroundColor = headerFooterColor;
-                    footer.style.backgroundColor = headerFooterColor;
-                    mobileHeader.style.backgroundColor = headerFooterColor;
-                    buttons.forEach(button => {
-                        button.style.backgroundColor = buttonColor;
-                        button.style.color = "#ffffff";
-                    });
+                    applyColorTheme(chosenColor);
                     colorPicker.classList.add('hidden');
                     localStorage.setItem('themeColor', chosenColor);
                 });
             });
-        
+    
             const savedColor = localStorage.getItem('themeColor');
             if (savedColor) {
-                document.body.style.backgroundColor = savedColor;
-                let headerFooterColor;
-                let buttonColor;
-                document.body.style.backgroundColor = savedColor;
-        
-                if (savedColor === "#0a1f44") {
-                    headerFooterColor = "#002b5e";
-                    buttonColor = "#005e92";
-                } else if (savedColor === "#44280a") {
-                    headerFooterColor = "#944f00";
-                    buttonColor = "#7a3c02";
-                } else if (savedColor === "#1c440a") {
-                    headerFooterColor = "#246301";
-                    buttonColor = "#388e3c";
-                } else if (savedColor === "#000000") {
-                    headerFooterColor = "#191919";
-                    buttonColor = "#2e2e2e";
-                } else if (savedColor === "#0a4441") {
-                    headerFooterColor = "#009688";
-                    buttonColor = "#00796b";
-                } else if (savedColor === "#300a44") {
-                    headerFooterColor = "#491066";
-                    buttonColor = "#60038c";
-                } else if (savedColor === "#440a34") {
-                    headerFooterColor = "#630549";
-                    buttonColor = "#8a0665";
-                } else if (savedColor === "#440a0a") {
-                    headerFooterColor = "#700000";
-                    buttonColor = "#9c0202";
-                }
-        
-                header.style.backgroundColor = headerFooterColor;
-                footer.style.backgroundColor = headerFooterColor;
-                mobileHeader.style.backgroundColor = headerFooterColor; 
-                buttons.forEach(button => {
-                    button.style.backgroundColor = buttonColor;
-                    button.style.color = "#ffffff";
-                });
-                document.documentElement.style.setProperty('--header-color', headerFooterColor);
-                document.documentElement.style.setProperty('--button-color', buttonColor);
+                applyColorTheme(savedColor);
             }
         });
-        
-            </script>
+    </script>
     <style>
         .news-item {
             margin-bottom: 20px;
@@ -244,19 +193,44 @@
             </a>
         </div>
     <nav>
-        <ul class="first-row">
-            <li><a href="index" class="nav-button">Главная</a></li>
-            <li><a href="soft" class="nav-button">Софт от Аддерли</a></li>
-            <li><a href="builds" class="nav-button">Сборки от Аддерли</a></li>
-            <li><a href="windows_pe" class="nav-button">Windows PE от Аддерли</a></li>
+        <ul class="first-row" id='first-row'>
         </ul>
-        <ul class="second-row">
-            <li><a href="bio" class="nav-button">Обо мне</a></li>
-            <li><a href="news" class="nav-button">Новости</a></li>
-            <li><a href="progs" class="nav-button">Программы</a></li>
-            <li><a href="donators" class="nav-button">Донатеры</a></li>
-            <li><a href="support" class="nav-button">Поддержать</a></li>
+        <ul class="second-row" id='second-row'>
         </ul>
+        <script>
+            const getButton = (buttons, container) => {
+                buttons.forEach(item => {
+                    const li = document.createElement('li');
+                    const a = document.createElement('a');
+                    a.href = item.href;
+                    a.textContent = item.text;
+                    a.classList.add('nav-button'); 
+                    li.appendChild(a);
+                    container.appendChild(li);
+                });
+            };
+
+            const firstButtons = [
+                { href: "bio", text: "Обо мне" },
+                { href: "news", text: "Новости" },
+                { href: "progs", text: "Программы" },
+                { href: "donators", text: "Донатеры" },
+                { href: "support", text: "Поддержать" },
+            ];
+
+            const secondButtons = [
+                { href: "index", text: "Главная" },
+                { href: "soft", text: "Софт от Аддерли" },
+                { href: "builds", text: "Сборки от Аддерли" },
+                { href: "windows_pe", text: "Windows PE от Аддерли" },
+            ];
+
+            const firstButtonSection = document.getElementById('first-row');
+            const secondButtonSection = document.getElementById('second-row');
+
+            getButton(firstButtons, firstButtonSection);
+            getButton(secondButtons, secondButtonSection);
+        </script>
 </nav>
 <div class="palette-container">
     <button id="palette-button" class="palette-button">
@@ -277,17 +251,30 @@
     </div>
 </div>
 </header>
-
-    
-
     <header class="mobile-header">
         <nav>
-            <ul class="mobile-menu">
-                <li><a href="index" class="nav-button">Главная</a></li>
-                <li><a href="soft" class="nav-button">Софт</a></li>
-                <li><a href="news" class="nav-button">Новости</a></li>
-                <li><a href="builds" class="nav-button">Сборки</a></li>
-            </ul>
+            <ul class="mobile-menu" id="mobile-menu"></ul>
+
+        <script>
+            const mobileMenuItems = [
+                { href: "support", text: "Поддержать" },
+                { href: "soft", text: "Софт" },
+                { href: "news", text: "Новости" },
+                { href: "builds", text: "Сборки" }
+            ];
+        
+            const mobileMenu = document.getElementById('mobile-menu');
+        
+            mobileMenuItems.forEach(item => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.href = item.href;
+                a.textContent = item.text;
+                a.classList.add('nav-button'); 
+                li.appendChild(a);
+                mobileMenu.appendChild(li);
+            });
+        </script>
         </nav>
     </header>
 
