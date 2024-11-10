@@ -669,11 +669,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
         <section id="makuos-10-1809" class="bootleg-section">
             <div class="bootleg">
-            <h2>MakuOS 10 Lite 1809 V3 (Windows 10 1809, 17763.6414)</h2><br>
+            <h2>MakuOS 10 Lite 1809 V4 (Windows 10 1809, 17763.6414)</h2><br>
             </div>
             <div class="image-gallery">
                 <img src="images/bootlegs/makuoslite_winver.png" alt="MakuOS 10 Lite Image 1">
-                <img src="images/bootlegs/makuoslite_oobe.png" alt="MakuOS 10 Lite Image 2">
+                <img src="images/bootlegs/makuoslite_lang.png" alt="MakuOS 10 Lite Image 2">
                 <img src="images/bootlegs/makuoslite_taskmgr.png" alt="MakuOS 10 Lite Image 3">
                 <img src="images/bootlegs/makuoslite_size.png" alt="MakuOS 10 Lite Image 4">
             </div>
@@ -692,12 +692,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h1>Применённые настройки:</h1>
                     <h3>Основное:</h3>
                     Удалён центр обновления системы<br>
+                    Включены скрытые файлы, папки, и диски<br>
+                    Включены расширения файлов<br>
+                    Откреплены закрепления на панели задач<br>
+                    Отключён поиск Bing на панели задач<br>
+                    По умолчанию открывается "Этот ПК" вместо "Главная"<br>
+                    Отключён SmartScreen<br>
+                    Отключён быстрый запуск<br>
+                    Отключена гибернация<br>
+                    Отключено залипание клавиш<br>
+                    Отключена задержка контекстного меню<br>
+                    Отключена автоперезагрузка при синем экране смерти<br>
+                    Включена иконка "Этот Компьютер" на рабочем столе<br>
+                    Включён буфер обмена<br>
+                    Убрана подпись "Ярлык" у новых ярлыков<br>
+                    Отключено требование интернета в первоначальной настройке<br>
+                    Разрешен вход в локальный аккаунт<br>
+                    Автоматически введён 30 дневной ключ продукта<br>
                     Включён старый просмотрщик фото<br>
                     Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
                     Из панели задач убраны рекламные иконки<br>
                     Отключён SmartScreen и Включён DirectPlay<br>
-                    Отключён HPET таймер<br>
-                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+                    Интегрированны NET Framework 2.0, 3.0, 3.5, и 4.7.2.<br><br>
             
                     <h3>Телеметрия:</h3>
                     Запрещена диагностика установленных приложений<br>
@@ -716,8 +732,9 @@ document.addEventListener('DOMContentLoaded', () => {
             
                     <h1>Прочие изменения:</h1>
                     Интегрированны все обновления по конец октября 2024 года.<br>
-                    В сборке присутствует два языка: Английский и Русский.<br>
-                    В сборке используется самописное OOBE, в котором нету лишних регионов. А так же, в котором можно выбрать нужные твики.<br><br>
+                    В сборке присутствует три языка: Английский, Русский, и Украинский.<br>
+                    Предустановлен MakuTweaker.<br>
+                    В сборке используется изменённое OOBE, в котором включён вход в локальную учётную запись, и скрыты какие либо страницы с рекламой.<br>
                 </div>
             </div>
     
@@ -734,27 +751,28 @@ document.addEventListener('DOMContentLoaded', () => {
                     <h3>Основное:</h3>
                     Включён старый просмотрщик фото.<br>
                     Отключён SmartScreen и Включён DirectPlay.<br>
-                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+                    Интегрированны NET Framework 2.0, 3.0, 3.5, и 4.7.2.<br><br>
     
                     <h3>Телеметрия:</h3>
                     Была отключена, запрещена, и удалена какая либо телеметрия.<br><br>
     
                     <h1>Прочие изменения:</h1>
-                    Интегрированны все обновления по конец октября 2024 года.<br>
-                    В сборке присутствует два языка: Английский и Русский.<br>
-                    В сборке используется самописное OOBE с твиками.<br><br>
+                    В сборке присутствует три языка: Английский, Русский, и Украинский.<br>
+                    Предустановлен MakuTweaker.<br>
+                    В сборке используется изменённое OOBE, в котором включён вход в локальную учётную запись, и скрыты какие либо страницы с рекламой.<br>
                 </div>
             </div>
     
             <div class="accordion-container">
-                <button class="accordion">Что нового в V3 версии сборки?</button>
+                <button class="accordion">Что нового в V4 версии сборки?</button>
                 <div class="panel panel3">
                     <div style="text-align: left; padding-left: 20px;">
                     <br>
-                    • Починил поиск, он теперь работает в системе.<br>
-                    • Было немного изменено OOBE.<br>
-                    • Был отключён HPET таймер. За счёт этого, прирост в играх может быть большой. (тестируем)<br>
-                    • По просьбе многих пользователей, больше никакие кодеки не удаляются.<br><br>
+                    • То, чего многие ждали - принтеры наконец работают!<br>
+                    • Было удалено собственное OOBE, вместо него снова используется стандартное.<br>Это как раз связано с тем, что компоненты печати устанавливаються именно там.<br>Но не спешите растраиваться, там всего лишь 3 страницы - выбор регион, клавиатуры, и локальной учётной записи! :)<br>
+                    • Были сразу же применены практически все твики из OOBE, и даже больше. Подробнее смотрите в первом спойлере.<br>
+                    • Появился украинский язык<br>
+                    • В инсталляторе стало намного меньше лишних страниц.<br><br>
                 </div>
             </div>
     
@@ -794,23 +812,23 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="accordion">Контрольные суммы образа</button>
                 <div class="panel panel5">
                     <br>
-                    <h1>CRC32: 5D9991AF</h1><br>
-                    <h1>MD5: B43953D4501CA06CA9AC868209423C81</h1><br>
-                    <h1>SHA-1: 50CEF3CE091BCA403196FAE1F5CF82875367BD9C</h1><br><br>
+                    <h1>CRC32: D685AA75</h1><br>
+                    <h1>MD5: 77DE1CE598DD948C1A2858C4B20AF70D</h1><br>
+                    <h1>SHA-1: 4A7AF5DC89F61EF6D09625D7E30E25368A07999A</h1><br><br>
                 </div>
             </div>
     
             <h1>Скачать:</h1>
-            <a href="https://pixeldrain.com/u/Pq3QnqyS" class="download-button" target="_blank">
+            <a href="https://pixeldrain.com/u/KHVPVhyh" class="download-button" target="_blank">
                 <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
             </a>
-            <a href="https://drive.google.com/file/d/1PlymkRi5FEN43xl2IQhh9FA06mHh8OMm/view?usp=sharing" class="download-button" target="_blank">
+            <a href="https://drive.google.com/file/d/1BffklbcGBZ4u-u-X8l8kzArzguIA4AYi/view?usp=sharing" class="download-button" target="_blank">
                 <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
             </a>
-            <a href="https://www.mediafire.com/file/6l2a020ew6ecuei/MakuOS+10+Lite.iso/file" class="download-button" target="_blank">
+            <a href="https://www.mediafire.com/file/34106rof8l9uiyc/MakuOS+10+Lite.iso/file" class="download-button" target="_blank">
                 <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
             </a>
-            <a href="https://t.me/Maku_Library/18" class="download-button" target="_blank">
+            <a href="https://t.me/Maku_Library/19" class="download-button" target="_blank">
                 <img src="icons/tg.png" alt="Telegram" class="icon"> Telegram
             </a>
             
