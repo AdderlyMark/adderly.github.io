@@ -31,28 +31,12 @@
 
 <header class="mobile-header">
     <nav>
-        <ul class="mobile-menu" id="mobile-menu"></ul>
-
-        <script>
-            const mobileMenuItems = [
-                { href: "support", text: "Поддержать" },
-                { href: "soft", text: "Софт" },
-                { href: "news", text: "Новости" },
-                { href: "builds", text: "Сборки" }
-            ];
-        
-            const mobileMenu = document.getElementById('mobile-menu');
-        
-            mobileMenuItems.forEach(item => {
-                const li = document.createElement('li');
-                const a = document.createElement('a');
-                a.href = item.href;
-                a.textContent = item.text;
-                a.classList.add('nav-button'); 
-                li.appendChild(a);
-                mobileMenu.appendChild(li);
-            });
-        </script>
+        <ul class="mobile-menu">
+            <li><a href="support" class="nav-button">Поддержать</a></li>
+            <li><a href="soft" class="nav-button">Софт</a></li>
+            <li><a href="news" class="nav-button">Новости</a></li>
+            <li><a href="builds" class="nav-button">Сборки</a></li>
+        </ul>
     </nav>
 </header>
     <style>
@@ -149,29 +133,16 @@
         Здесь вы можете скачать мои приложения, сборки Windows, Windows PE, старые архивные программы, и многое другое!</p>
 </p>
     </section>
-    <section class="button-section" id="button-section"></section>
-
-    <script>
-        const buttons = [
-            { href: "bio", text: "Обо мне" },
-            { href: "news", text: "Новости" },
-            { href: "builds", text: "Сборки от Аддерли" },
-            { href: "soft", text: "Софт от Аддерли" },
-            { href: "windows_pe", text: "Windows PE от Аддерли" },
-            { href: "progs", text: "Скачать программы" },
-            { href: "donators", text: "Донатеры" },
-            { href: "support", text: "Поддержать" }
-        ];
-    
-        const buttonSection = document.getElementById('button-section');
-    
-        buttons.forEach(button => {
-            const a = document.createElement('a');
-            a.href = button.href;
-            a.textContent = button.text;
-            buttonSection.appendChild(a);
-        });
-    </script>
+    <section class="button-section">
+        <a href="bio">Обо мне</a>
+        <a href="news">Новости</a>
+        <a href="builds">Сборки от Аддерли</a>
+        <a href="soft">Софт от Аддерли</a>
+        <a href="windows_pe">Windows PE от Аддерли</a>
+        <a href="progs">Скачать программы</a>
+        <a href="donators">Донатеры</a>
+        <a href="support">Поддержать</a>
+    </section>
 
     <div class="theme-panel">
         <div class="theme-title">Выбрать тему:</div>
@@ -238,6 +209,7 @@
                 applyColorTheme(chosenColor);
             });
         });
+        
         const savedColor = localStorage.getItem('themeColor');
         if (savedColor) {
             applyColorTheme(savedColor);
