@@ -179,10 +179,6 @@ nav a {
     font-weight: bold;
 }
 
-nav a:hover {
-    text-decoration: underline; 
-}
-
 .first-row {
     margin-bottom: 17px;
 }
