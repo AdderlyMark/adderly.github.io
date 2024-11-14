@@ -204,7 +204,7 @@ h2 {
     align-items: center;
     margin-bottom: 30px;
     padding: 15px;
-    background-color: var(--header-color, #002b5e);
+    background-color: var(--header-color, #191919);
     border-radius: 10px;
     position: relative;
 }
@@ -225,7 +225,7 @@ h2 {
 
 .download-button {
     display: inline-block;
-    background-color: var(--button-color, #005e92);
+    background-color: var(--button-color, #2e2e2e);
     color: #ffffff;
     padding: 8px 20px;
     margin: 0 4px;
@@ -345,7 +345,7 @@ h2 {
     width: 100%;
     margin: 2px 0;
     padding: 5px 10px;
-    background-color: #003a69;
+    background-color: #191919;
     color: white;
     border: none;
     border-radius: 3px;
@@ -389,13 +389,9 @@ h2 {
         text-decoration: none;
         font-weight: bold;
         padding: 8px 12px;
-        background-color: #005a8d;
+        background-color: #191919;
         border-radius: 5px;
         transition: background-color 0.3s ease;
-    }
-
-    .mobile-header nav ul li a:hover {
-        background-color: #0073aa;
     }
 }
 
