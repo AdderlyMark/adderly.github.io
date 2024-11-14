@@ -200,7 +200,7 @@ header nav ul li a:hover {
 }
 
 .nav-button {
-    background-color: #353535;
+    background-color: #2e2e2e;
     color: #ffffff;
     padding: 8px 15px;
     text-decoration: none;
@@ -231,7 +231,7 @@ main {
     display: block;
     margin: 10px auto;
     padding: 10px 20px;
-    background-color: #353535;
+    background-color: #2e2e2e;
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
@@ -239,12 +239,6 @@ main {
     transition: background-color 0.3s ease, transform 0.3s ease;
     max-width: 300px;
     transform: scale(1);
-}
-
-.button-section a:hover {
-    background-color: #0073aa;
-    transform: scale(1.1);
-    text-decoration: none;
 }
 
 main h1 {
@@ -383,7 +377,7 @@ footer {
     align-items: center;
     margin-bottom: 20px;
     padding: 15px;
-    background-color: var(--header-color, #002b5e);
+    background-color: var(--header-color, #191919);
     border-radius: 7px;
     position: relative;
 }
