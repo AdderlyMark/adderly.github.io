@@ -147,10 +147,10 @@
     <div class="theme-panel">
         <div class="theme-title">Выбрать тему:</div>
         <div class="theme-buttons">
-            <button class="theme-button" style="background-color: #0a1f44;" data-color="#0a1f44"></button>
+            <button class="theme-button" style="background-color: #000000;" data-color="#000000"></button>
             <button class="theme-button" style="background-color: #44280a;" data-color="#44280a"></button>
             <button class="theme-button" style="background-color: #1c440a;" data-color="#1c440a"></button>
-            <button class="theme-button" style="background-color: #000000;" data-color="#000000"></button>
+            <button class="theme-button" style="background-color: #0a1f44;" data-color="#0a1f44"></button>
         </div>
         <div class="theme-buttons">
             <button class="theme-button" style="background-color: #0a4441;" data-color="#0a4441"></button>
@@ -179,31 +179,31 @@
                 let headerFooterColor;
                 let buttonColor;
 
-                if (chosenColor === "#0a1f44") {
-                    headerFooterColor = "#002b5e";
-                    buttonColor = "#005e92";
-                } else if (chosenColor === "#44280a") {
-                    headerFooterColor = "#944f00";
-                    buttonColor = "#7a3c02";
-                } else if (chosenColor === "#1c440a") {
-                    headerFooterColor = "#246301";
-                    buttonColor = "#388e3c";
-                } else if (chosenColor === "#000000") {
-                    headerFooterColor = "#191919";
-                    buttonColor = "#2e2e2e";
-                } else if (chosenColor === "#0a4441") {
-                    headerFooterColor = "#009688";
-                    buttonColor = "#00796b";
-                } else if (chosenColor === "#300a44") {
-                    headerFooterColor = "#491066";
-                    buttonColor = "#60038c";
-                } else if (chosenColor === "#440a34") {
-                    headerFooterColor = "#630549";
-                    buttonColor = "#8a0665";
-                } else if (chosenColor === "#440a0a") {
-                    headerFooterColor = "#700000";
-                    buttonColor = "#9c0202";
-                }
+                if (chosenColor === "#000000") {
+                        headerFooterColor = "#191919";
+                        buttonColor = "#2e2e2e";
+                    } else if (chosenColor === "#44280a") {
+                        headerFooterColor = "#944f00";
+                        buttonColor = "#7a3c02";
+                    } else if (chosenColor === "#1c440a") {
+                        headerFooterColor = "#246301";
+                        buttonColor = "#388e3c";
+                    } else if (chosenColor === "#0a1f44") {
+                        headerFooterColor = "#002b5e";
+                        buttonColor = "#005e92";
+                    } else if (chosenColor === "#0a4441") {
+                        headerFooterColor = "#009688";
+                        buttonColor = "#00796b";
+                    } else if (chosenColor === "#300a44") {
+                        headerFooterColor = "#491066";
+                        buttonColor = "#60038c";
+                    } else if (chosenColor === "#440a34") {
+                        headerFooterColor = "#630549";
+                        buttonColor = "#8a0665";
+                    } else if (chosenColor === "#440a0a") {
+                        headerFooterColor = "#700000";
+                        buttonColor = "#9c0202";
+                    }
                 themePanel.style.backgroundColor = headerFooterColor; 
                 document.documentElement.style.setProperty('--header-color', headerFooterColor);
                 document.documentElement.style.setProperty('--button-color', buttonColor);
@@ -229,31 +229,31 @@
             let buttonColor;
             document.body.style.backgroundColor = savedColor;
     
-            if (savedColor === "#0a1f44") {
-                headerFooterColor = "#002b5e";
-                buttonColor = "#005e92";
-            } else if (savedColor === "#44280a") {
-                headerFooterColor = "#944f00";
-                buttonColor = "#7a3c02";
-            } else if (savedColor === "#1c440a") {
-                headerFooterColor = "#246301";
-                buttonColor = "#388e3c";
-            } else if (savedColor === "#000000") {
-                headerFooterColor = "#191919";
-                buttonColor = "#2e2e2e";
-            } else if (savedColor === "#0a4441") {
-                headerFooterColor = "#009688";
-                buttonColor = "#00796b";
-            } else if (savedColor === "#300a44") {
-                headerFooterColor = "#491066";
-                buttonColor = "#60038c";
-            } else if (savedColor === "#440a34") {
-                headerFooterColor = "#630549";
-                buttonColor = "#8a0665";
-            } else if (savedColor === "#440a0a") {
-                headerFooterColor = "#700000";
-                buttonColor = "#9c0202";
-            }
+            if (savedColor === "#000000") {
+                    headerFooterColor = "#191919";
+                    buttonColor = "#2e2e2e";
+                } else if (savedColor === "#44280a") {
+                    headerFooterColor = "#944f00";
+                    buttonColor = "#7a3c02";
+                } else if (savedColor === "#1c440a") {
+                    headerFooterColor = "#246301";
+                    buttonColor = "#388e3c";
+                } else if (savedColor === "#0a1f44") {
+                    headerFooterColor = "#002b5e";
+                    buttonColor = "#005e92";
+                } else if (savedColor === "#0a4441") {
+                    headerFooterColor = "#009688";
+                    buttonColor = "#00796b";
+                } else if (savedColor === "#300a44") {
+                    headerFooterColor = "#491066";
+                    buttonColor = "#60038c";
+                } else if (savedColor === "#440a34") {
+                    headerFooterColor = "#630549";
+                    buttonColor = "#8a0665";
+                } else if (savedColor === "#440a0a") {
+                    headerFooterColor = "#700000";
+                    buttonColor = "#9c0202";
+                }
             themePanel.style.backgroundColor = headerFooterColor;
             header.style.backgroundColor = headerFooterColor;
             footer.style.backgroundColor = headerFooterColor;
