@@ -98,14 +98,11 @@
         text-decoration: none;
         font-weight: bold;
         padding: 8px 12px;
-        background-color: #005a8d;
+        background-color: #2e2e2e;
         border-radius: 5px;
         transition: background-color 0.3s ease;
     }
 
-    .mobile-header nav ul li a:hover {
-        background-color: #0073aa;
-    }
 }
 
 nav {
@@ -216,7 +213,7 @@ main {
 
 .download-button {
     display: inline-block;
-    background-color: #1c4ebf;
+    background-color: #2e2e2e;
     color: #ffffff;
     padding: 10px 30px;
     text-decoration: none;
