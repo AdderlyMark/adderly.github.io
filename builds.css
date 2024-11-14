@@ -164,17 +164,12 @@ nav a:hover {
 }
 
 .nav-button {
-    background-color: #353535;
+    background-color: #2e2e2e;
     color: #ffffff;
     padding: 8px 15px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
-}
-
-.nav-button:hover {
-    background-color: #0073aa;
-    text-decoration: none;
 }
 
 main {

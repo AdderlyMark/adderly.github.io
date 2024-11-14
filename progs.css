@@ -19,19 +19,19 @@
   }
   
   header {
-      background-color: #191919;
-      color: #ffffff;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 15px 0;
-      text-align: center;
-      z-index: 1000;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-  }
+    background-color: #191919;
+    color: #ffffff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 .logo {
     margin-left: 40px;
@@ -188,18 +188,13 @@ nav a:hover {
 }
 
 .nav-button {
-    background-color: #191919;
+    background-color: #2e2e2e;
     color: #ffffff;
     padding: 8px 15px;
     text-decoration: none;
     border-radius: 5px;
     font-weight: bold;
 
-}
-
-.nav-button:hover {
-    background-color: #0073aa;
-    text-decoration: none;
 }
 
 h2 {
