@@ -52,118 +52,145 @@
     <meta property="og:image" content="images/favicon.png">
     <link rel="icon" href="images/favicon.png">
 
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const paletteButton = document.getElementById('palette-button');
-    const colorPicker = document.getElementById('color-picker');
-    const header = document.querySelector('header');
-    const footer = document.querySelector('footer');
-    const buttons = document.querySelectorAll('.nav-button');
-    const mobileHeader = document.querySelector('.mobile-header');
-    const downloadButtons = document.querySelectorAll('.download-button');
-
-    colorPicker.classList.add('hidden');
-
-    paletteButton.addEventListener('click', () => {
-        colorPicker.classList.toggle('hidden');
-    });
-
-    const colorOptions = document.querySelectorAll('.color-option');
-    colorOptions.forEach(option => {
-        option.addEventListener('click', () => {
-            const chosenColor = option.getAttribute('data-color');
-            document.body.style.backgroundColor = chosenColor;
-
-            let headerFooterColor;
-            let buttonColor;
-            if (chosenColor === "#000000") {
-                        headerFooterColor = "#191919";
-                        buttonColor = "#2e2e2e";
-                    } else if (chosenColor === "#44280a") {
-                        headerFooterColor = "#944f00";
-                        buttonColor = "#7a3c02";
-                    } else if (chosenColor === "#1c440a") {
-                        headerFooterColor = "#246301";
-                        buttonColor = "#388e3c";
-                    } else if (chosenColor === "#0a1f44") {
-                        headerFooterColor = "#002b5e";
-                        buttonColor = "#005e92";
-                    } else if (chosenColor === "#0a4441") {
-                        headerFooterColor = "#009688";
-                        buttonColor = "#00796b";
-                    } else if (chosenColor === "#300a44") {
-                        headerFooterColor = "#491066";
-                        buttonColor = "#60038c";
-                    } else if (chosenColor === "#440a34") {
-                        headerFooterColor = "#630549";
-                        buttonColor = "#8a0665";
-                    } else if (chosenColor === "#440a0a") {
-                        headerFooterColor = "#700000";
-                        buttonColor = "#9c0202";
-                    }
-            header.style.backgroundColor = headerFooterColor;
-            footer.style.backgroundColor = headerFooterColor;
-            mobileHeader.style.backgroundColor = headerFooterColor;
-            buttons.forEach(button => {
-                button.style.backgroundColor = buttonColor;
-                button.style.color = "#ffffff";
-            });
-            downloadButtons.forEach(button => {
-                button.style.backgroundColor = buttonColor;
-                button.style.color = "#ffffff";
-            });
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const paletteButton = document.getElementById('palette-button');
+            const colorPicker = document.getElementById('color-picker');
+            const header = document.querySelector('header');
+            const footer = document.querySelector('footer');
+            const buttons = document.querySelectorAll('.nav-button');
+            const mobileHeader = document.querySelector('.mobile-header');
+            const floatingButtons = document.querySelectorAll('.floating-button');
+            const downloadButtons = document.querySelectorAll('.download-button');
+            const accordionButtons = document.querySelectorAll('.accordion');
+            const accordionPanels = document.querySelectorAll('.panel');
+        
             colorPicker.classList.add('hidden');
-            localStorage.setItem('themeColor', chosenColor);
-        });
-    });
-
-    const savedColor = localStorage.getItem('themeColor');
-    if (savedColor) {
-        document.body.style.backgroundColor = savedColor;
-        let headerFooterColor;
-        let buttonColor;
-
-        if (savedColor === "#000000") {
-                    headerFooterColor = "#191919";
-                    buttonColor = "#2e2e2e";
-                } else if (savedColor === "#44280a") {
-                    headerFooterColor = "#944f00";
-                    buttonColor = "#7a3c02";
-                } else if (savedColor === "#1c440a") {
-                    headerFooterColor = "#246301";
-                    buttonColor = "#388e3c";
-                } else if (savedColor === "#0a1f44") {
-                    headerFooterColor = "#002b5e";
-                    buttonColor = "#005e92";
-                } else if (savedColor === "#0a4441") {
-                    headerFooterColor = "#009688";
-                    buttonColor = "#00796b";
-                } else if (savedColor === "#300a44") {
-                    headerFooterColor = "#491066";
-                    buttonColor = "#60038c";
-                } else if (savedColor === "#440a34") {
-                    headerFooterColor = "#630549";
-                    buttonColor = "#8a0665";
-                } else if (savedColor === "#440a0a") {
-                    headerFooterColor = "#700000";
-                    buttonColor = "#9c0202";
-                }
-
-        header.style.backgroundColor = headerFooterColor;
-        footer.style.backgroundColor = headerFooterColor;
-        mobileHeader.style.backgroundColor = headerFooterColor; 
-        buttons.forEach(button => {
+        
+            paletteButton.addEventListener('click', () => {
+                colorPicker.classList.toggle('hidden');
+            });
+        
+            const colorOptions = document.querySelectorAll('.color-option');
+            colorOptions.forEach(option => {
+                option.addEventListener('click', () => {
+                    const chosenColor = option.getAttribute('data-color');
+                    document.body.style.backgroundColor = chosenColor;
+        
+                    let headerFooterColor;
+                    let buttonColor;
+                    if (chosenColor === "#000000") {
+                                headerFooterColor = "#191919";
+                                buttonColor = "#2e2e2e";
+                            } else if (chosenColor === "#44280a") {
+                                headerFooterColor = "#944f00";
+                                buttonColor = "#7a3c02";
+                            } else if (chosenColor === "#1c440a") {
+                                headerFooterColor = "#246301";
+                                buttonColor = "#388e3c";
+                            } else if (chosenColor === "#0a1f44") {
+                                headerFooterColor = "#002b5e";
+                                buttonColor = "#005e92";
+                            } else if (chosenColor === "#0a4441") {
+                                headerFooterColor = "#009688";
+                                buttonColor = "#00796b";
+                            } else if (chosenColor === "#300a44") {
+                                headerFooterColor = "#491066";
+                                buttonColor = "#60038c";
+                            } else if (chosenColor === "#440a34") {
+                                headerFooterColor = "#630549";
+                                buttonColor = "#8a0665";
+                            } else if (chosenColor === "#440a0a") {
+                                headerFooterColor = "#700000";
+                                buttonColor = "#9c0202";
+                            }
+                    header.style.backgroundColor = headerFooterColor;
+                    footer.style.backgroundColor = headerFooterColor;
+                    mobileHeader.style.backgroundColor = headerFooterColor;
+                    floatingButtons.forEach(button => {
             button.style.backgroundColor = buttonColor;
             button.style.color = "#ffffff";
         });
-        downloadButtons.forEach(button => {
+                    buttons.forEach(button => {
+                        button.style.backgroundColor = buttonColor;
+                        button.style.color = "#ffffff";
+                    });
+        
+                    downloadButtons.forEach(button => {
+                        button.style.backgroundColor = buttonColor;
+                        button.style.color = "#ffffff";
+                    });
+                    accordionButtons.forEach(button => {
+                        button.style.backgroundColor = buttonColor;
+                        button.style.color = "#ffffff";
+                    });
+                    accordionPanels.forEach(panel => {
+                    panel.style.backgroundColor = headerFooterColor;
+                });
+                    colorPicker.classList.add('hidden');
+                    localStorage.setItem('themeColor', chosenColor);
+                });
+            });
+        
+            const savedColor = localStorage.getItem('themeColor');
+            if (savedColor) {
+                document.body.style.backgroundColor = savedColor;
+                let headerFooterColor;
+                let buttonColor;
+        
+                if (savedColor === "#000000") {
+                            headerFooterColor = "#191919";
+                            buttonColor = "#2e2e2e";
+                        } else if (savedColor === "#44280a") {
+                            headerFooterColor = "#944f00";
+                            buttonColor = "#7a3c02";
+                        } else if (savedColor === "#1c440a") {
+                            headerFooterColor = "#246301";
+                            buttonColor = "#388e3c";
+                        } else if (savedColor === "#0a1f44") {
+                            headerFooterColor = "#002b5e";
+                            buttonColor = "#005e92";
+                        } else if (savedColor === "#0a4441") {
+                            headerFooterColor = "#009688";
+                            buttonColor = "#00796b";
+                        } else if (savedColor === "#300a44") {
+                            headerFooterColor = "#491066";
+                            buttonColor = "#60038c";
+                        } else if (savedColor === "#440a34") {
+                            headerFooterColor = "#630549";
+                            buttonColor = "#8a0665";
+                        } else if (savedColor === "#440a0a") {
+                            headerFooterColor = "#700000";
+                            buttonColor = "#9c0202";
+                        }
+        
+                header.style.backgroundColor = headerFooterColor;
+                footer.style.backgroundColor = headerFooterColor;
+                mobileHeader.style.backgroundColor = headerFooterColor; 
+                buttons.forEach(button => {
+                    button.style.backgroundColor = buttonColor;
+                    button.style.color = "#ffffff";
+                });
+        
+                downloadButtons.forEach(button => {
+                    button.style.backgroundColor = buttonColor;
+                    button.style.color = "#ffffff";
+                });
+                accordionButtons.forEach(button => {
+                    button.style.backgroundColor = buttonColor;
+                    button.style.color = "#ffffff";
+                });
+                accordionPanels.forEach(panel => {
+                    panel.style.backgroundColor = headerFooterColor;
+                });
+                floatingButtons.forEach(button => {
             button.style.backgroundColor = buttonColor;
             button.style.color = "#ffffff";
         });
-    }
-});
-
-    </script>
+            }
+        });
+        
+            </script>
 
 </head>
 <body>
@@ -243,51 +270,52 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="images/soft/makut3.png" alt="MakuTweaker Image 11">
             <img src="images/soft/makut6.png" alt="MakuTweaker Image 12">
         </div>
+        <div class="accordion-container">
+            <button class="accordion">Системные требования</button>
+            <div class="panel panel1">
+                <div style="text-align: left; padding-left: 20px;">
+            <br>
+                <h1>Системные требования</h1>
+                • Windows 10 1809<br>
+   ‣  Для полного функционала нужна Windows 11 версии 22H2 и выше.<br>
+• .NET Framework 4.7.2 (Windows 7 и выше)<br>
+
+Многие антивирусы могут определять MakuTweaker как опасность.<br><br>
+            </div>
+        </div>
         <a href="https://github.com/AdderlyMark/adderly.github.io/raw/main/soft/MakuTweaker%20Setup.exe" class="download-button">Скачать MakuTweaker</a>
     </section>
 
     <section class="program-section">
-        <h2>MakuTyper</h2>
+        <h2>Luminara</h2>
         <div class="program">
             <img src="icons/2.png" alt="MakuTyper Icon" class="program-icon">
-            <p>MakuTyper - блокнот, который спокойно заменит стандартный.<br>
-Более 20 тем оформления, гибкая кастомизация, подсчет времени чтения и письма,<br>
-поверх всех окон, автосохранение текста, и многое другое!</p>
+            <p>Luminara - блокнот, который спокойно заменит стандартный.<br>
+            Гибкая кастомизация, подсчет времени чтения и письма, автосохранение текста,<br>
+поверх всех окон, и многое другое!</p>
         </div>
         <div class="image-gallery">
-            <img src="images/soft/5.png" alt="MakuTyper Image 1">
-            <img src="images/soft/6.png" alt="MakuTyper Image 2">
+            <img src="images/luminara/main.png" alt="MakuTyper Image 1">
+            <img src="images/luminara/settings.png" alt="MakuTyper Image 2">
+            <img src="images/luminara/about.png" alt="MakuTyper Image 3">
+            <img src="images/luminara/tools.png" alt="MakuTyper Image 4">
+            <img src="images/luminara/rep.png" alt="MakuTyper Image 5">
+            <img src="images/luminara/numb.png" alt="MakuTyper Image 6">
         </div>
-        <a href="https://github.com/AdderlyMark/adderly.github.io/raw/main/soft/Maku%20Typer%20Setup.exe" class="download-button">Скачать MakuTyper</a>
-    </section>
+        <div class="accordion-container">
+            <button class="accordion">Системные требования</button>
+            <div class="panel panel1">
+                <div style="text-align: left; padding-left: 20px;">
+            <br>
+                <h1>Системные требования</h1>
+                • Windows 10 1809+<br>
+   ‣  Для эффектов прозрачности требуется Windows 11 22H2 и выше<br>
+• .NET Core 8.0 (скачивается автоматически при установке)*<br>
 
-    <section class="program-section">
-        <h2>MakuCheck</h2>
-        <div class="program">
-            <img src="icons/3.png" alt="MakuCheck Icon" class="program-icon">
-            <p>MakuCheck - программа, в которой можно посмотреть характеристики процессора,<br>
-видеокарт, оперативной памяти и материнской платы.</p>
+*по этой причине, многие антивирусы могут определять Luminara как опасность.<br><br>
+            </div>
         </div>
-        <div class="image-gallery">
-            <img src="images/soft/7.png" alt="MakuCheck Image 1">
-            <img src="images/soft/8.png" alt="MakuCheck Image 2">
-        </div>
-        <a href="https://github.com/AdderlyMark/adderly.github.io/raw/main/soft/Maku%20Check%20Setup.exe" class="download-button">Скачать MakuCheck</a>
-    </section>
-
-    <section class="program-section">
-        <h2>MakuCherryWave</h2>
-        <div class="program">
-            <img src="icons/4.png" alt="MakuCherryWave Icon" class="program-icon">
-            <p>MakuCherryWave - программа позволяющая писать заметки,<br>
-Которые сохранятся даже после закрытия программы. Они никуда не пропадут, если вы сами их не сотрете.<br>
-Также есть единый режим, в котором программу можно превратить в блокнот, сохраняющий текст.</p>
-        </div>
-        <div class="image-gallery">
-            <img src="images/soft/9.png" alt="MakuCherryWave Image 1">
-            <img src="images/soft/10.png" alt="MakuCherryWave Image 2">
-        </div>
-        <a href="https://github.com/AdderlyMark/MakuCherryWave/releases/download/Maku/Maku.CherryWave.exe" class="download-button">Скачать MakuCherryWave</a>
+        <a href="https://t.me/luminaranote/11" class="download-button">Скачать Luminara</a>
     </section>
 </main>
 
@@ -314,20 +342,20 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 
 <script>
-document.querySelectorAll('.accordion').forEach((accordion, index) => {
-    accordion.addEventListener('click', function() {
-        const panel = this.nextElementSibling;
-        panel.classList.toggle('open');
-        this.classList.toggle('active');
-        
-        if (panel.style.maxHeight) {
-            panel.style.maxHeight = null;
-        } else {
-            panel.style.maxHeight = panel.scrollHeight + "px";
-        }
+    document.querySelectorAll('.accordion').forEach((accordion, index) => {
+        accordion.addEventListener('click', function() {
+            const panel = this.nextElementSibling;
+            panel.classList.toggle('open');
+            this.classList.toggle('active');
+            
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
     });
-});
-            </script>
+                </script>
 
 <footer>
     <a href="https://t.me/adderly324" class="social-link" target="_blank" rel="noopener noreferrer">

@@ -61,7 +61,7 @@
 }
 
 footer {
-    background-color: #002b5e;
+    background-color: #191919;
     color: #ffffff;
     text-align: center;
     padding: 10px 20px;
@@ -186,7 +186,7 @@ main {
     
     .mobile-header {
         display: block;
-        background-color: #002b5e;
+        background-color: #191919;
         color: #ffffff;
         padding: 15px 0;
         text-align: center;
@@ -395,6 +395,63 @@ main {
 .color-picker h4 {
     color: #000000;
     margin: 0;
+}
+
+.accordion-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.accordion {
+    background-color: #2e2e2e;
+    color: white;
+    cursor: pointer;
+    padding: 10px;
+    margin-top: 10px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.4s ease;
+    border-radius: 10px;
+    justify-content: center;
+    position: relative;
+
+}
+
+.accordion::after {
+    content: '\002B';
+    color: white;
+    right: 20px;
+    position: absolute;
+
+
+}
+
+.accordion.active::after {
+    content: "\2212";
+    color: white;
+}
+
+.panel {
+    border-radius: 10px;
+    background-color: #191919;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    opacity: 0;
+    transition: max-height 0.4s ease, opacity 0.4s ease;
+}
+
+.panel.open {
+    max-height: 500px;
+    opacity: 1;
 }
 
 @media (max-width: 600px) {

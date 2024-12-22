@@ -406,7 +406,7 @@ main {
     
     .mobile-header {
         display: block;
-        background-color: #002b5e;
+        background-color: #191919;
         color: #ffffff;
         padding: 15px 0;
         text-align: center;
@@ -594,7 +594,7 @@ main {
 
 .panel {
     border-radius: 10px;
-    background-color: #002b5e;
+    background-color: #191919;
     padding: 0 18px;
     max-height: 0;
     overflow: hidden;
