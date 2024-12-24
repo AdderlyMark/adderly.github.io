@@ -290,7 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <h1>Сборки от Аддерли</h1>
         <section id="top" class="bootleg-section">
             <div class="bootleg">
-            <h2>MakuOS 11 V5 (Windows 11 22H2, 22621.4391)</h2>
+            <h2>MakuOS 11 V6 (Windows 11 22H2, 22621.4460)</h2>
             </div>
             <div class="image-gallery">
                 <img src="images/bootlegs/makuos11_winver.png" alt="MakuOS 11 Image 1">
@@ -317,7 +317,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     Откреплены закрепления на панели задач<br>
                     Отключён поиск Bing на панели задач<br>
                     По умолчанию открывается "Этот ПК" вместо "Главная"<br>
-                    Отключён SmartScreen<br>
                     Отключён быстрый запуск<br>
                     Отключена гибернация<br>
                     Отключено залипание клавиш<br>
@@ -336,9 +335,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
                     На панели задач добавлена кнопка "Завершить задачу" в ПКМ по программе<br>
                     Включён DirectPlay<br>
-                    Добавлены платные кодеки HEVC и HEIF<br>
-                    Отключён HPET таймер<br>
-                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br><br>
+                    Интегрированны NET Framework 2.0, 3.0, 3.5.<br>
+                    Удалён Windows Defender.<br><br>
             
                     <h3>Телеметрия:</h3>
                     Запрещена диагностика установленных приложений<br>
@@ -349,7 +347,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     Запрещён автоматической вход в аккаунт OneDrive<br>
                     Запрещён сбор информации о производительности системы<br>
                     Запрещено эксперементирование над системой пользователя<br>
-                    Отключена отправка сведений о сбоях приложений при их зависании<br>
                     Отключена отправка результатов поиска пользователя<br>
                     Отключена активация управления голосом<br>
                     Отключена тихая установка рекламных приложений<br>
@@ -361,7 +358,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     Убрана проверка на железо при установке системы.<br>
                     Предустановлен MakuTweaker.<br>
                     В сборке используется изменённое OOBE, в котором включён вход в локальную учётную запись, и скрыты какие либо страницы с рекламой.<br>
-                    На рабочем столе имеется приложение "MakuOS 11", в котором можно отключить Windows Defender,<br>применить Compact OS, разрешить обновление до 24H2, и активировать систему.<br><br>
+                    На рабочем столе имеется приложение "MakuOS 11", в котором можно применить Compact OS,<br>разрешить обновление до 24H2, и активировать систему.<br><br>
                 </div>
             </div>
 
@@ -371,6 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div style="text-align: left; padding-left: 20px;">
                     <br>
                     <h1>Удалённые приложения:</h1>
+                    Был удалён Windows Defender.<br>
                     Были удалены все UWP приложения, кроме Фотографий, Будильников, Терминала, Xbox, Калькулятора и Блокнота.<br><br>
 
                     <h1>Применённые настройки:</h1>
@@ -436,53 +434,42 @@ document.addEventListener('DOMContentLoaded', () => {
             </div>
 
             <div class="accordion-container">
-                <button class="accordion">Что нового в V5 версии сборки?</button>
+                <button class="accordion">Что нового в V6 версии сборки?</button>
                 <div class="panel panel4">
                     <div style="text-align: left; padding-left: 20px;">
                     <br>
-                    • То, чего многие ждали - принтеры наконец работают!<br>
-                    • Было удалено собственное OOBE, вместо него снова используется стандартное.<br>Это как раз связано с тем, что компоненты печати устанавливаются именно там.<br>Но не спешите растраиваться, там всего лишь 3 страницы - выбор регион, клавиатуры, и локальной учётной записи! :)<br>
-                    • Были сразу же применены практически все твики из OOBE, и даже больше. Подробнее смотрите в первом спойлере.<br>
-                    • Исправлен баг в программе MakuOS, теперь обновления снова можно разблокировать до 24H2.<br>
-                    • Приложения "Будильники" и "Терминал" больше не удалены.<br>
-                    • В инсталляторе стало намного меньше лишних страниц.<br><br>
-                </div>
-            </div>
-
-            <div class="accordion-container">
-                <button class="accordion">Почему сборка основана на 22H2, а не 24H2?</button>
-                <div class="panel panel5">
-                    <div style="text-align: left; padding-left: 20px;">
-                    <br>
-                    Причиной создания сборки на основе 22H2 является переписанная кодовая база в 23H2, из-за которой на большинстве устройств есть проблемы с производительностью, и работой драйверов.<br><br>
-                    В том числе и у меня, как сборщика, был ужасный опыт и на 23H2, и 24H2:<br>
-                    Зависания в абсолютно случайные моменты, перезагрузка видеодрайверов без причины, подвисания звука, частые микрофризы,<br>да и банально медленный проводник - это всё о Windows 11 23H2.<br><br>
-                    А в 24H2 ситуация лучше не стала. Помимо этого, в новой версии Windows 11 ввели проверку на инструкцию SSE 4.2 на уровне ядра.<br>
-                    Поэтому, если у вас железо старше 2012 года, но вы например спокойно пользовались 22H2 - 24H2 у вас просто не запустится.<br><br>
+                    • Больше не отключается HPET таймер. Статистика показала, что на мощных ПК это иногда может вызывать проблемы<br>
+                    • Больше не устанавливаются обновления до 23H2 при подключении к интернету!<br>
+                    • Больше не вшиваются платные кодеки для iPhone<br>
+                    • Окончательно был удалён Windows Defender, версия с его наличием будет в 24H2 сборке которая выйдет совсем скоро.<br>
+                    • Теперь названия ПК устанавливается в формате "MakuOS V6 - "число 0-999"<br>
+                    • SmartScreen больше не удалён, сделано это с целью повышения безопасности и на всякий случай стабильности системы<br>
+                    • Сборка больше не сжимается в ESD формат, вместо него используется старый WIM. Эксперимент показал, что это чутка повышает скорость установки, и вероятнее всего, с этим будет намного меньше проблем.<br><br>
                 </div>
             </div>
 
             <div class="accordion-container">
                 <button class="accordion">Контрольные суммы образа</button>
-                <div class="panel panel6">
+                <div class="panel panel5">
                     <br>
-                    <h1>CRC32: 2DD8C343</h1><br>
-                    <h1>MD5: 0010EE042DC1D7BCC6A49B6265022EAF</h1><br>
-                    <h1>SHA-1: 279AFB4E0E945B23F81CDE2FA19BA98DB145DCC4</h1><br><br>
+                    <h1>CRC32: 357B06AE</h1><br>
+                    <h1>MD5: 90657F30EA546A0AA4BE4D9EE6352DB0</h1><br>
+                    <h1>SHA-256: 54c87c5c59bb77d3eba36e6cd29c571156c6f5ac6d66535b9e96306f333a227b</h1><br>
+                    <h1>SHA-1: 272FA33EFEC2517BEA4349B96FCDE18FACC21CB0</h1><br><br>
                 </div>
             </div>
 
             <h1>Скачать:</h1>
-            <a href="https://github.com/AdderlyMark/adderly.github.io/raw/refs/heads/main/soft/MakuOS%2011%20V5.torrent" class="download-button" target="_blank">
+            <a href="https://t.me/adderly324/3733" class="download-button" target="_blank">
                 <img src="icons/qbit.png" alt="Qbit" class="icon"> Скачать с торрента
             </a>
-            <a href="https://pixeldrain.com/u/DreCXRLj" class="download-button" target="_blank">
+            <a href="https://pixeldrain.com/u/6DpWZ9HZ" class="download-button" target="_blank">
                 <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
             </a>
-            <a href="https://drive.google.com/file/d/1DwomzTx6Qevvbx4-7EUDcdf6-RSJBjqE/view?usp=sharing" class="download-button" target="_blank">
+            <a href="https://drive.google.com/file/d/1Db-WLVEeffBepEf5UU_NDbZ0YI-02EqK/view?usp=sharing" class="download-button" target="_blank">
                 <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
             </a>
-            <a href="https://www.mediafire.com/file/t0pycxm6jf172hn/MakuOS+11+V5.iso/file" class="download-button" target="_blank">
+            <a href="https://www.mediafire.com/file/pi4nlbk9ro27xaz/MakuOS+11+22H2+V6.iso/file" class="download-button" target="_blank">
                 <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
             </a>
         </section>
