@@ -33,77 +33,6 @@
             checkWidth();
         });
 
-        async function fetchNews() {
-            const newsContainer = document.getElementById('news-container');
-            const today = new Date();
-            const startDate = new Date(2024, 8, 20);
-            const requests = [];
-            const maxNewsCount = 20;
-
-            for (let d = new Date(startDate); d <= today; d.setDate(d.getDate() + 1)) {
-                const formattedDate = d.toISOString().split('T')[0];
-                console.log(formattedDate);
-
-                const request = fetch(`blogs/${formattedDate}.html`)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error(`File ${formattedDate}.html not found or unavailable. Status: ${response.status}`);
-                        }
-                        return response.text();
-                    })
-                    .then(text => {
-                        const mainContent = text.match(/<main[^>]*>([\s\S]*?)<\/main>/)?.[1];
-                        const title = mainContent?.match(/<h1[^>]*>([\s\S]*?)<\/h1>/)?.[1]?.replace(/<!--[\s\S]*?-->/g, '').trim() ?? '';
-                        const description = mainContent?.match(/<h2[^>]*>([\s\S]*?)<\/h2>/)?.[1]?.replace(/<!--[\s\S]*?-->/g, '').trim() ?? '';
-                        const shortDescription = description ? description.trim().substring(0, 150).replace(/\s+$/, '') + '...' : 'no description';
-
-                        return title ? { date: new Date(formattedDate), formattedDate, title, shortDescription } : null;
-                    })
-                    .catch(error => {
-                        console.error(`Failed to fetch ${formattedDate}: ${error.message}`);
-                    });
-
-                requests.push(request);
-            }
-
-            const newsData = (await Promise.all(requests)).filter(Boolean);
-
-            newsData.sort((a, b) => b.date - a.date);
-
-            const newsToDisplay = newsData.slice(0, maxNewsCount);
-
-            newsContainer.innerHTML = '';
-
-            for (const news of newsToDisplay) {
-                const newsDiv = document.createElement('section');
-                newsDiv.className = 'news-section';
-                const iconPath = `blogs/${news.formattedDate}.png`;
-
-                const iconExists = await checkImageExists(iconPath);
-
-                newsDiv.innerHTML = `
-            <div class="news">
-                ${iconExists ? `<img src="${iconPath}" alt="${news.title}" class="news-icon">` : ''}
-                <div class="news-text">
-                    <a href="blogs/${news.formattedDate}.html" class="news-title" target="_blank">${news.title}</a>
-                    <p class="news-subtitle">${news.shortDescription || 'no description'}</p>
-                </div>
-            </div>`;
-                newsContainer.appendChild(newsDiv);
-            }
-        }
-
-        function checkImageExists(url) {
-            return new Promise((resolve) => {
-                const img = new Image();
-                img.onload = () => resolve(true);
-                img.onerror = () => resolve(false);
-                img.src = url;
-            });
-        }
-
-        document.addEventListener("DOMContentLoaded", () => { fetchNews(); });
-
     </script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9240026161894199"
@@ -337,9 +266,6 @@
         </main>
         <iframe height="80px" width="300px" frameborder="0" src=https://socialcounts.org/youtube-live-subscriber-count/UCsS9QFVkkxhF0zYwf1QP2ZA/embed?counter=0&odospeed=996&style=img%7Bborder-radius%3A0%25%7D.title%7Bfont-size%3A29px%7D.odoParrent%7Bcolor%3A+rgba%28255%2C255%2C255%2C1%29%7Dbody%7Bbackground-color%3Argba%2815%2C15%2C30%2C1%29%21important%7D.title%7Bcolor%3A+rgba%28168%2C194%2C255%2C1%29%7D&odoUpColor=rgba%28232%2C232%2C232%2C1%29&odoDownColor=rgba%28255%2C255%2C255%2C1%29 style="margin-top: 0px; margin-bottom: 0px;border-radius: 10px; width:350px; height:90px;"></iframe>
         <section style="max-width: 1100px; margin: 0 auto; padding: 0px; text-align: justify;">
-            <h1 style="text-align: center;">Последние важные новости...</h1>
-            <div id="news-container"></div>
-        </section>
     </main>
 
     <footer>
