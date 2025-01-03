@@ -412,6 +412,30 @@ footer {
     transform: scale(1.2);
 }
 
+.button-menu-section {
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.row a {
+    display: block;
+    width: 250px;
+    padding: 10px 15px;
+    background-color: #2e2e2e;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
 @media (max-width: 600px) {
     footer p {
         display: none;
