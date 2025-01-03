@@ -127,6 +127,7 @@
             const footer = document.querySelector('footer');
             const buttons = document.querySelectorAll('.nav-button');
             const mobileHeader = document.querySelector('.mobile-header');
+            const rowLinks = document.querySelectorAll('.row a');
         
             colorPicker.classList.add('hidden');
         
@@ -176,6 +177,10 @@
                         button.style.backgroundColor = buttonColor;
                         button.style.color = "#ffffff";
                     });
+                    rowLinks.forEach(link => {
+    link.style.backgroundColor = buttonColor;
+    link.style.color = "#ffffff"
+});
                     colorPicker.classList.add('hidden');
                     localStorage.setItem('themeColor', chosenColor);
                 });
@@ -221,6 +226,10 @@
                     button.style.backgroundColor = buttonColor;
                     button.style.color = "#ffffff";
                 });
+                rowLinks.forEach(link => {
+    link.style.backgroundColor = buttonColor;
+    link.style.color = "#ffffff";
+});
                 document.documentElement.style.setProperty('--header-color', headerFooterColor);
                 document.documentElement.style.setProperty('--button-color', buttonColor);
             }
@@ -298,6 +307,25 @@
                     Здесь вы можете скачать мои приложения, сборки Windows, Windows PE, разные программы, и многое
                     другое!</p>
             </section>
+        </section>
+
+        <section class="button-menu-section">
+            <div class="row">
+                <a href="builds">Сборки от Аддерли</a>
+                <a href="soft">Софт от Аддерли</a>
+            </div>
+            <div class="row">
+                <a href="windows_pe">Windows PE от Аддерли</a>
+                <a href="progs">Скачать программы</a>
+            </div>
+            <div class="row">
+                <a href="bio">Обо мне</a>
+                <a href="support">Поддержать</a>
+            </div>
+
+            </div>
+        </section>
+
             <section class="youtube-section">
                 <h2>Последнее видео на YouTube канале</h2>
                 <iframe width="700" height="393"
