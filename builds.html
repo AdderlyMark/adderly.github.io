@@ -63,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadButtons = document.querySelectorAll('.download-button');
     const accordionButtons = document.querySelectorAll('.accordion');
     const accordionPanels = document.querySelectorAll('.panel');
+    const welcomeButtons = document.querySelectorAll('.welcome-button');
 
     colorPicker.classList.add('hidden');
 
@@ -107,9 +108,9 @@ document.addEventListener('DOMContentLoaded', () => {
             footer.style.backgroundColor = headerFooterColor;
             mobileHeader.style.backgroundColor = headerFooterColor;
             floatingButtons.forEach(button => {
-    button.style.backgroundColor = buttonColor;
-    button.style.color = "#ffffff";
-});
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
             buttons.forEach(button => {
                 button.style.backgroundColor = buttonColor;
                 button.style.color = "#ffffff";
@@ -126,6 +127,12 @@ document.addEventListener('DOMContentLoaded', () => {
             accordionPanels.forEach(panel => {
             panel.style.backgroundColor = headerFooterColor;
         });
+            
+            welcomeButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+
             colorPicker.classList.add('hidden');
             localStorage.setItem('themeColor', chosenColor);
         });
@@ -183,11 +190,16 @@ document.addEventListener('DOMContentLoaded', () => {
             panel.style.backgroundColor = headerFooterColor;
         });
         floatingButtons.forEach(button => {
-    button.style.backgroundColor = buttonColor;
-    button.style.color = "#ffffff";
-});
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+        welcomeButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
     }
 });
+
 
     </script>
 
