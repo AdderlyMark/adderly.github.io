@@ -194,16 +194,29 @@ document.addEventListener('DOMContentLoaded', () => {
 </head>
 <body>
 
-    <div class="floating-panel">
-        <div class="panel-header">
-            <span>Навигация по сборкам...</span>
-            <button class="close-button" onclick="togglePanel()">✖</button>
+    
+    <h1 class="builds-header">Сборки от Аддерли</h1>
+
+    <div class="welcome-panel">
+        <h1><strong>Добро пожаловать на Сборки от Аддерли!</strong><br>Какую сборку вы ищете?</h1>
+        
+        <h2>Сборки на основе Windows 11</h2>
+        <div class="button-container">
+            <button class="welcome-button" onclick="scrollToSection('top')">MakuOS 11 24H2 (Windows 11 24H2)</button>
+            <button class="welcome-button" onclick="scrollToSection('makuos-11-22h2')">MakuOS 11 22H2 (Windows 11 22H2)</button>
+            <button class="welcome-button" onclick="scrollToSection('makuos-11-1778')">MakuOS 11 Lite (Windows 11 22H2)</button>
         </div>
-        <button class="floating-button" onclick="scrollToSection('top')">MakuOS 11 24H2 (Windows 11 24H2)</button>
-        <button class="floating-button" onclick="scrollToSection('makuos-11-22h2')">MakuOS 11 22H2 (Windows 11 22H2)</button>
-        <button class="floating-button" onclick="scrollToSection('makuos-10-22H2')">MakuOS 10 (Windows 10 22H2)</button>
-        <button class="floating-button" onclick="scrollToSection('makuos-10-1809')">MakuOS Lite (Windows 10 1809)</button>
-        <button class="floating-button" onclick="scrollToSection('win81v')">Windows 8.1 V7 by Adderly</button>
+        
+        <h2>Сборки на основе Windows 10</h2>
+        <div class="button-container">
+            <button class="welcome-button" onclick="scrollToSection('makuos-10-22H2')">MakuOS 10 22H2 (Windows 10 22H2)</button>
+            <button class="welcome-button" onclick="scrollToSection('makuos-10-1809')">MakuOS 10 Lite (Windows 10 1809)</button>
+        </div>
+
+        <h2>Сборки на основе старых Windows</h2>
+        <div class="button-container">
+            <button class="welcome-button" onclick="scrollToSection('win81v')">Windows 8.1 V7 by Adderly</button>
+        </div>
     </div>
     
     <script>
@@ -224,16 +237,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
         }
-
+    
         function togglePanel() {
     const panel = document.querySelector('.floating-panel');
     panel.style.display = panel.style.display === 'none' ? 'flex' : 'none';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
     const panel = document.querySelector('.floating-panel');
     panel.style.display = 'flex';
-});
+    });
     </script>
 
 <header>
@@ -288,7 +301,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </header>
 
 <main>
-        <h1>Сборки от Аддерли</h1>
         <section id="top" class="bootleg-section">
             <div class="bootleg">
             <h2>MakuOS 11 24H2 V4 (Windows 11 24H2, 26100.2605)</h2>
@@ -817,6 +829,151 @@ document.addEventListener('DOMContentLoaded', () => {
         <a href="https://www.mediafire.com/file/8wonhueojvxhlo5/MakuOS+10+22H2+V4.iso/file" class="download-button" target="_blank">
             <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
         </a>
+    </section>
+
+    <section id="makuos-11-1778" class="bootleg-section">
+        <div class="bootleg">
+        <h2>MakuOS 11 Lite 22H2 (Windows 11 22H2, 22621.1778)</h2><br>
+        </div>
+        <div class="image-gallery">
+            <img src="images/bootlegs/makuos11_lite_winver.png" alt="MakuOS 11 Lite Image 1">
+            <img src="images/bootlegs/makuos11_lite_startyay.png" alt="MakuOS 11 Lite Image 2">
+            <img src="images/bootlegs/makuos11_lite_taskmgr.png" alt="MakuOS 11 Lite Image 3">
+            <img src="images/bootlegs/makuos11_lite_cpu.png" alt="MakuOS 11 Lite Image 4">
+            <img src="images/bootlegs/makuos11_lite_size.png" alt="MakuOS 11 Lite Image 5">
+            <img src="images/bootlegs/makuos11_lite_workingacc.png" alt="MakuOS 11 Lite Image 6">
+        </div>
+        <div class="accordion-container">
+            <button class="accordion">Изменения в сборке</button>
+            <div class="panel panel1">
+                <div style="text-align: left; padding-left: 20px;">
+            <br>
+                <h1>Удалённые приложения:</h1>
+                Microsoft Edge, Microsoft Store, Windows Defender, Xbox, OneDrive,<br>
+                Windows Subsystem For Linux, WindowsToGo, Cortana, RetailDemoContent, SmartScreen,<br>
+                WindowsMixedReality, Будильники, Кино и ТВ, Медиаплеер,<br>
+                Карты, Диктофон, Люди, Погода, Новости, Почта, Календарь, Clipchamp,<br>
+                Microsoft Teams, Microsoft Family, Quick Assist, Dev Home, Solitaire Collection,<br>
+                Power Automate Desktop, Get Help, Feedback Hub, Outlook, Microsoft Todos<br><br>
+                
+                <h1>Применённые настройки:</h1>
+                <h3>Основное:</h3>
+                Включены скрытые файлы, папки, и диски<br>
+                Включены расширения файлов<br>
+                Отключены виджеты<br>
+                Скрыта кнопка "Галерея"<br>
+                Откреплены закрепления на панели задач<br>
+                Отключён поиск Bing на панели задач<br>
+                По умолчанию открывается "Этот ПК" вместо "Главная"<br>
+                Отключён быстрый запуск<br>
+                Отключена гибернация<br>
+                Отключено залипание клавиш<br>
+                Отключена первоначальная настройка Microsoft Edge<br>
+                Отключена задержка контекстного меню<br>
+                Отключена автоперезагрузка при синем экране смерти<br>
+                Включена иконка "Этот Компьютер" на рабочем столе<br>
+                Включён буфер обмена<br>
+                Убрана подпись "Ярлык" у новых ярлыков<br>
+                Отключено требование интернета в первоначальной настройке<br>
+                Разрешен вход в локальный аккаунт<br>
+                Автоматически введён 30 дневной ключ продукта<br>
+                Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
+                Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                На панели задач добавлена кнопка "Завершить задачу" в ПКМ по программе<br>
+                Включён DirectPlay<br>
+                Интегрированны NET Framework 2.0, 3.0, 3.5.<br>
+                Удалён центр обновления системы<br>
+                Удалёны системы восстановления<br><br>
+        
+                <h3>Телеметрия:</h3>
+                Запрещена диагностика установленных приложений<br>
+                Запрещена телеметрия за активацией системы<br>
+                Запрещена публикация активности пользователя<br>
+                Запрещён сбор информации о пользователе<br>
+                Запрещён сбор информации об устройстве пользователя<br>
+                Запрещён автоматической вход в аккаунт OneDrive<br>
+                Запрещён сбор информации о производительности системы<br>
+                Запрещено эксперементирование над системой пользователя<br>
+                Отключена отправка результатов поиска пользователя<br>
+                Отключена активация управления голосом<br>
+                Отключена тихая установка рекламных приложений<br>
+                Отключён сбор информации о голосе пользователя при использовании функций ввода голосом<br><br>
+        
+                <h1>Прочие изменения:</h1>
+                Интегрированны все обновления по июнь 2023 года.<br>
+                В сборке присутствует два языка: Английский и Русский.<br>
+                Убрана проверка на железо при установке системы.<br>
+                Предустановлен MakuTweaker.<br>
+                В сборке используется изменённое OOBE, в котором включён вход в локальную учётную запись, и скрыты какие либо страницы с рекламой.<br>
+                На рабочем столе имеется приложение "MakuOS 11 Launcher", в котором можно применить Compact OS, и активировать систему.<br><br>
+            </div>
+        </div>
+
+        <div class="accordion-container">
+            <button class="accordion">Как установить Windows?</button>
+            <div class="panel panel2">
+                <div style="text-align: left; padding-left: 20px;">
+                <br>
+                Подробный и понятный туториал как установить Windows уже есть на моём канале - <a href="https://youtu.be/ckCrrp2WuMc" style="text-decoration: underline; color: yellow;">https://youtu.be/ckCrrp2WuMc</a><br>
+                <br>
+                Если вы видите ошибку 0x7E, это значит, что вы запустили установщик системы который должен быть записан на флешку.<br>
+                Обновление Windows с одной на другую это чреватое дело, и зачастую оно вызывает проблемы в дальнейшем.<br>
+                Для того чтобы установить Windows должным образом, есть два популярнейших способа.<br><br>
+                <h1>Первый способ - Rufus:</h1>
+                Перейдите на сайт <a href="https://rufus.ie" style="text-decoration: underline; color: green;">rufus.ie</a>, и <a href="https://github.com/pbatard/rufus/releases/download/v4.6/rufus-4.6.exe" style="text-decoration: underline; color: yellow;">скачайте программу</a>.<br>
+                Далее, в пункте "Устройство" выберите вашу флешку, на 8 ГБ и выше.<br>
+                В пункте "Метод загрузки", справа есть кнопка "Выбрать". Выберите ISO образ MakuOS.
+                Далее, в "Схема раздела" вам нужно указать таблицу разделов вашего SSD. - <a href="https://lifehacker.ru/kak-uznat-gpt-ili-mbr/" style="text-decoration: underline; color: yellow;">Как узнать схему раздела?</a><br>
+                Зачастую, "Целевую систему" и "Файловую систему" можно не трогать. Никакие галочки не нажимайте, и при каких либо диалогах снимайте их.<br>
+                Для начала записи на флешку, нажмите "СТАРТ", и согласитесь на форматирование.<br>
+                Когда прогрессбар дойдёт до 100% и будет "Готов", закройте окно.<br>
+                <br>
+
+                <h2>Выбранный образ ISO содержит отозванный загрузчик UEFI...?</h2>
+                В новых версиях Rufus эта ошибка вылезает абсолютно на всех образах Windows которые НЕ скачаны из сайта Microsoft.<br><br>
+
+                <h1>Второй способ - Ventoy:</h1>
+                Перейдите на сайт <a href="https://www.ventoy.net/" style="text-decoration: underline; color: green;">ventoy.net</a>, и <a href="https://sourceforge.net/projects/ventoy/files/latest/download" style="text-decoration: underline; color: yellow;">скачайте программу</a>.<br>
+                Далее, распакуйте архив куда-либо и запустите файл <strong><em>Ventoy2Disk.exe</em></strong>.<BR>
+                В пункте "Устройство" выберите вашу флешку, на 8 ГБ и выше.<br>
+                Сверху на вкладке "Настройки" обязательно поставьте галочку на Secure Boot Support если он у вас включён.<br><a href="https://remontka.pro/enable-secure-boot/" style="text-decoration: underline; color: yellow;">Как узнать, включён ли Secure Boot?</a><br>
+                Осталось нажать кнопку "Установить", и согласиться на форматирование флешки.<br>После этого, вам останется просто перекинуть ISO файл на уже чистую флешку.<br>
+                <br>
+
+                <h1>После записи образа на флешку</h1>
+                После успешной записи на флешку, запомните размер вашего системного раздела С, и попрощайтесь со своей системой, предварительно сохранив важные файлы и данные, и загрузитесь с флешки.<br>
+                Для этого, откройте меню Пуск, зажмите клавишу Shift, и перезагрузитесь.<br>
+                Затем, выберите USB FDD, или что либо связанное с USB.<br>
+                <br>Всё что вам осталось, это следовать инструкциям установщика Windows.<br>Будьте аккуратны с разделами - если вы хотите переустановить только систему, и сохранить файлы и данные на других разделах:<br>Удалите раздел С, вес которого вы запомнили. (К примеру, если ваш системный раздел весил 80 ГБ, удаляйте тот, что весит 80 ГБ.)<br>А так же микро разделы с весом на 100 - 500 мегабайт. Затем, установите систему на незанятое пространство. Удачи!
+                <br><br>
+            </div>
+        </div>
+
+        <div class="accordion-container">
+            <button class="accordion">Контрольные суммы образа</button>
+            <div class="panel panel3">
+                <br>
+                <h1>CRC32: 2A996EA1</h1><br>
+                <h1>MD5: 1A5044B83DE0D7CD3009E2E2DA6AA7DD</h1><br>
+                <h1>SHA-256: bfb6720bce5e20b241992bdb6b19a6168467b9e72cc34254d0048a436f28a9a5</h1><br>
+                <h1>SHA-1: CFBE02807472DF3C9B78777F743AF1B68845C107</h1><br><br>
+            </div>
+        </div>
+
+        <h1>Скачать:</h1>
+        <a href="https://pixeldrain.com/u/VBRuYnh9" class="download-button" target="_blank">
+            <img src="icons/pixeldrain.png" alt="PixelDrain" class="icon"> PixelDrain
+        </a>
+        <a href="https://drive.google.com/file/d/1ijMbCFe68WCtWhdcv1tELURNdSuxbPlS/view?usp=sharing" class="download-button" target="_blank">
+            <img src="icons/googledrive.png" alt="Google Drive" class="icon"> Google Drive
+        </a>
+        <a href="https://www.mediafire.com/file/sbzudn3bx4kkp3x/MakuOS+11+Lite.iso/file" class="download-button" target="_blank">
+            <img src="icons/mediafire.png" alt="MediaFire" class="icon"> MediaFire
+        </a>
+        <a href="https://t.me/Maku_Library/43" class="download-button" target="_blank">
+            <img src="icons/tg.png" alt="Telegram" class="icon"> Telegram
+        </a>
+        
     </section>
 
         <section id="makuos-10-1809" class="bootleg-section">
