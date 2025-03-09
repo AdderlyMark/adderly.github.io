@@ -1,191 +1,25 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-68MY39SKZ9"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-68MY39SKZ9');
-</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="icon" href="icons/favicon.ico" type="image/x-icon">
-    <title>Софт от Аддерли</title>
-    <link rel="stylesheet" href="builds.css">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>Идёт перенаправление...</title>
+    <link rel="stylesheet" href="styles.css">
 <script>
     let headerHidden = false;
     let logoHidden = false;
-
-    function updateLayout() {
-        const header = document.querySelector('header');
-        const logo = document.querySelector('.logo');
-        const currentWidth = window.innerWidth;
-        if (currentWidth < 1175) {
-            if (!headerHidden) {
-                header.style.display = 'none';
-                headerHidden = true;
-            }
-        } else {
-            if (headerHidden) {
-                header.style.display = 'block';
-                headerHidden = false;
-            }
-        }
-    }
-
-    window.addEventListener('load', updateLayout);
-    window.addEventListener('resize', updateLayout);
 </script>
 
-    <meta property="og:title" content="Сайт Марка Аддерли">
-    <meta property="og:description" content="Здесь вы можете скачать разные программы от Марка Аддерли.">
-<meta name="description" content="Здесь вы можете скачать разные программы от Марка Аддерли.">
-    <meta property="og:image" content="images/favicon.png">
     <link rel="icon" href="images/favicon.png">
+
+ <script>
+window.location.href = "top"
+
+    </script>
 </head>
 <body>
-
-    
-    <h1 class="builds-header">Софт от Аддерли</h1>
-    
-    <script>
-        function scrollToSection(sectionId) {
-            if (sectionId === 'top') {
-                window.scrollTo({
-                    top: 0,
-                    behavior: 'smooth'
-                });
-            } else {
-                const section = document.getElementById(sectionId);
-                if (section) {
-                    const offsetPosition = section.getBoundingClientRect().top + window.pageYOffset - 125;
-                    window.scrollTo({
-                        top: offsetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            }
-        }
-    
-        function togglePanel() {
-    const panel = document.querySelector('.floating-panel');
-    panel.style.display = panel.style.display === 'none' ? 'flex' : 'none';
-    }
-    
-    document.addEventListener('DOMContentLoaded', () => {
-    const panel = document.querySelector('.floating-panel');
-    panel.style.display = 'flex';
-    });
-    </script>
-
-<header>
-        <div class="logo">
-            <a href="index">
-                <img src="icons/favicon.ico" alt="MakuT" class="site-icon">
-                Adderly.Fun
-            </a>
-        </div>
-    <nav>
-        <ul class="first-row">
-            <li><a href="https://adderly.top" class="nav-button">Главная</a></li>
-            <li><a href="https://adderly.top/soft" class="nav-button">Софт от Аддерли</a></li>
-            <li><a href="https://adderly.top/builds" class="nav-button">Сборки от Аддерли</a></li>
-            <li><a href="https://adderly.top/win_pe" class="nav-button">Windows PE от Аддерли</a></li>
-        </ul>
-        <ul class="second-row">
-            <li><a href="https://adderly.top/bio" class="nav-button">Обо мне</a></li>
-            <li><a href="https://adderly.top/progs" class="nav-button">Скачать программы</a></li>
-            <li><a href="https://adderly.top/support" class="nav-button">Поддержать</a></li>
-        </ul>
-</nav>
-<div class="palette-container">
-    <button id="palette-button" class="palette-button">
-        <img src="icons/color.png" alt="Palette Icon" class="palette-icon">
-    </button>
-    <div id="color-picker" class="color-picker hidden">
-        <h4>Выбрать тему:</h4>
-        <div class="color-options">
-            <div class="color-option" style="background-color: #420000" data-color="#000000"></div>
-            <div class="color-option" style="background-color: #420000" data-color="#44280a"></div>
-            <div class="color-option" style="background-color: #420000" data-color="#1c440a"></div>
-            <div class="color-option" style="background-color: #420000" data-color="#0a1f44"></div>
-            <div class="color-option" style="background-color: #420000;" data-color="#0a4441"></div>
-            <div class="color-option" style="background-color: #420000" data-color="#300a44"></div>
-            <div class="color-option" style="background-color: #420000" data-color="#440a34"></div>
-            <div class="color-option" style="background-color: #420000" data-color="#440a0a"></div>
-        </div>
-    </div>
-</div>
-</header>
-
-<header class="mobile-header">
-    <nav>
-        <ul class="mobile-menu">
-            <li><a href="indexm" class="nav-button">Главная</a></li>
-            <li><a href="builds" class="nav-button">Сборки</a></li>
-            <li><a href="support" class="nav-button">Поддержать</a></li>
-        </ul>
-    </nav>
-</header>
-
 <main>
-        
-    <div class="welcome-panel">
-        <h2>Сайт переезжает!</h2>
-        <h1><strong>Закрытие данной страницы это вынужденная мера.<br>Через несколько месяцев истекает домен Adderly.Fun<br>Я купил новый домен на ближайшие 10 лет - <a href="https://adderly.top" target="_blank">Adderly.Top</a>!<br>Теперь все сборки выходят только там!</strong></h1><br>
-        <div class="button-container">
-            <button class="welcome-button" onclick="window.open('https://adderly.top/soft', '_blank')">Перейти на Софт от Аддерли (Adderly.Top)</button>
-        </div>
-
-        </div>
-        
-    </div>
-</section>
 </main>
-
-    <div class="modal" id="modal">
-        <img id="modalImage" src="" alt="Увеличенное изображение">
-    </div>
-
-    <script>
-
-        const images = document.querySelectorAll('.image-gallery img');
-        const modal = document.getElementById('modal');
-        const modalImage = document.getElementById('modalImage');
-
-        images.forEach(image => {
-            image.addEventListener('click', function() {
-                modal.style.display = 'flex';
-                modalImage.src = this.src;
-            });
-        });
-
-        modal.addEventListener('click', function() {
-            modal.style.display = 'none'; 
-        });
-    </script>
-
-<script>
-    document.querySelectorAll('.accordion').forEach((accordion, index) => {
-        accordion.addEventListener('click', function() {
-            const panel = this.nextElementSibling;
-            panel.classList.toggle('open');
-            this.classList.toggle('active');
-            
-            if (panel.style.maxHeight) {
-                panel.style.maxHeight = null;
-            } else {
-                panel.style.maxHeight = panel.scrollHeight + "px";
-            }
-        });
-    });
-                </script>
-
-<footer>
-    <div class="bg-notice" style="position:fixed;z-index:9999;background:#ffc119;bottom:0;text-align:center;color:#000;width:100%;padding:10px 0;font-weight:10;">Сайт переезжает на <a href="https://adderly.top">Adderly.Top</a>. Пожалуйста, обновите закладку сайта и пользуйтесь ним!</div>
-</footer>
 </body>
 </html>
