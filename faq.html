@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68MY39SKZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-68MY39SKZ9');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>Часто задаваемые вопросы...</title>
+    <link rel="stylesheet" href="builds.css">
+<script>
+    let headerHidden = false;
+    let logoHidden = false;
+</script>
+    <meta property="og:title" content="Часто задаваемые вопросы...">
+    <meta property="og:keywords" content="adderly, adderlyfun, adderly fun, adderly top, adderlytop, марк аддерли, аддерли, аддерли фан, аддерли топ, аддерлитоп, сборки от аддерли, сборки от марка аддерли, сборки виндовс, скачать сборки, windows bootlegs, скачать сборку виндовс, скачать windows lite, windows lite, adderlyos, сайт марка аддерли, сайт аддерли, makuos, maku os, makuos 10, makuos 10 lite, makuos 11, GPT, MBR, 0x80070003, 0xC0000005, Как установить Windows, как поставить винду, установить, поставить, виндовс">
+    <meta property="og:description" content="Здесь вы можете прочитать информацию о часто задаваемых вопросах.">
+<meta name="description" content="Здесь вы можете прочитать информацию о часто задаваемых вопросах.">
+<meta name="keywords" content="adderly, adderlyfun, adderly fun, adderly top, adderlytop, марк аддерли, аддерли, аддерли фан, аддерли топ, аддерлитоп, сборки от аддерли, сборки от марка аддерли, сборки виндовс, скачать сборки, windows bootlegs, скачать сборку виндовс, скачать windows lite, windows lite, adderlyos, сайт марка аддерли, сайт аддерли, makuos, maku os, makuos 10, makuos 10 lite, makuos 11, GPT, MBR, 0x80070003, 0xC0000005, Как установить Windows, как поставить винду, установить, поставить, виндовс">
+    <meta property="og:image" content="images/favicon.png">
+    <link rel="icon" href="images/favicon.png">
+
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const paletteButton = document.getElementById('palette-button');
+    const colorPicker = document.getElementById('color-picker');
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    const buttons = document.querySelectorAll('.nav-button');
+    const mobileHeader = document.querySelector('.mobile-header');
+    const floatingButtons = document.querySelectorAll('.floating-button');
+    const downloadButtons = document.querySelectorAll('.download-button');
+    const accordionButtons = document.querySelectorAll('.accordion');
+    const accordionPanels = document.querySelectorAll('.panel');
+    const welcomeButtons = document.querySelectorAll('.welcome-button');
+
+    colorPicker.classList.add('hidden');
+
+    paletteButton.addEventListener('click', () => {
+        colorPicker.classList.toggle('hidden');
+    });
+
+    const colorOptions = document.querySelectorAll('.color-option');
+    colorOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const chosenColor = option.getAttribute('data-color');
+            document.body.style.backgroundColor = chosenColor;
+
+            let headerFooterColor;
+            let buttonColor;
+            if (chosenColor === "#000000") {
+                        headerFooterColor = "#191919";
+                        buttonColor = "#2e2e2e";
+                    } else if (chosenColor === "#44280a") {
+                        headerFooterColor = "#944f00";
+                        buttonColor = "#7a3c02";
+                    } else if (chosenColor === "#1c440a") {
+                        headerFooterColor = "#246301";
+                        buttonColor = "#388e3c";
+                    } else if (chosenColor === "#0a1f44") {
+                        headerFooterColor = "#002b5e";
+                        buttonColor = "#005e92";
+                    } else if (chosenColor === "#0a4441") {
+                        headerFooterColor = "#009688";
+                        buttonColor = "#00796b";
+                    } else if (chosenColor === "#300a44") {
+                        headerFooterColor = "#491066";
+                        buttonColor = "#60038c";
+                    } else if (chosenColor === "#440a34") {
+                        headerFooterColor = "#630549";
+                        buttonColor = "#8a0665";
+                    } else if (chosenColor === "#440a0a") {
+                        headerFooterColor = "#700000";
+                        buttonColor = "#9c0202";
+                    }
+            header.style.backgroundColor = headerFooterColor;
+            footer.style.backgroundColor = headerFooterColor;
+            mobileHeader.style.backgroundColor = headerFooterColor;
+            floatingButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+            buttons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+
+            downloadButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+            accordionButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+            accordionPanels.forEach(panel => {
+            panel.style.backgroundColor = headerFooterColor;
+        });
+            
+            welcomeButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+
+            colorPicker.classList.add('hidden');
+            localStorage.setItem('themeColor', chosenColor);
+        });
+    });
+
+    const savedColor = localStorage.getItem('themeColor');
+    if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+        let headerFooterColor;
+        let buttonColor;
+
+        if (savedColor === "#000000") {
+                    headerFooterColor = "#191919";
+                    buttonColor = "#2e2e2e";
+                } else if (savedColor === "#44280a") {
+                    headerFooterColor = "#944f00";
+                    buttonColor = "#7a3c02";
+                } else if (savedColor === "#1c440a") {
+                    headerFooterColor = "#246301";
+                    buttonColor = "#388e3c";
+                } else if (savedColor === "#0a1f44") {
+                    headerFooterColor = "#002b5e";
+                    buttonColor = "#005e92";
+                } else if (savedColor === "#0a4441") {
+                    headerFooterColor = "#009688";
+                    buttonColor = "#00796b";
+                } else if (savedColor === "#300a44") {
+                    headerFooterColor = "#491066";
+                    buttonColor = "#60038c";
+                } else if (savedColor === "#440a34") {
+                    headerFooterColor = "#630549";
+                    buttonColor = "#8a0665";
+                } else if (savedColor === "#440a0a") {
+                    headerFooterColor = "#700000";
+                    buttonColor = "#9c0202";
+                }
+
+        header.style.backgroundColor = headerFooterColor;
+        footer.style.backgroundColor = headerFooterColor;
+        mobileHeader.style.backgroundColor = headerFooterColor; 
+        buttons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+
+        downloadButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+        accordionButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+        accordionPanels.forEach(panel => {
+            panel.style.backgroundColor = headerFooterColor;
+        });
+        floatingButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+        welcomeButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+    }
+});
+    </script>
+
+</head>
+<body>
+    <h1 class="builds-header" style="margin-bottom: 20px;">Часто задаваемые вопросы по поводу сборок...</h1>
+
+    <section style="max-width: 1200px; margin: 0 auto; padding: 00px; text-align: justify;">
+    <h1 style="text-align: center;">Как установить Windows?</h1>
+    <h2 style="text-align: center;">
+        <a href="https://youtu.be/ckCrrp2WuMc?si=CONCZPTVvHPsm_mb" style="text-decoration: underline; color: inherit;">
+            В моём ролике я подробно рассказал о том, как можно установить Windows.
+        </a>
+    </h2><br><br>
+    <h1 style="text-align: center;">We couldn't create a new partition or locate an existing one.../<br>Не удалось создать новый или найти существующий раздел...</h1>
+    <h2 style="text-align: center;">Для того чтобы решить эту проблему, есть несколько решений:</h2>
+    <h2 style="text-align: center;">1 - Удалите раздел на котором вы устанавливаете систему. Чтобы он был не просто пустой, а ещё и неразмеченный (Unallocated).</h2>
+    <h2 style="text-align: center;">2 - Установите драйвера для своего диска, с помощью другого ПК, перенеся драйвера на флешку вместе с установщиком MakuOS.</h2>
+    </h2><br><br>
+    <h1 style="text-align: center;">"Угроза удалена, Wacatac" в MakuOS Launcher, что это?</h1>
+    <h2 style="text-align: center;">Фейк детект.</h2>
+    <h2 style="text-align: center;">Если антивирус у вас удалил программу, её можно скачать в         <a href="https://t.me/maku_library" style="text-decoration: underline; color: inherit;">
+        MakuLib в Telegram</a></h2>
+        <h2 style="text-align: center;">(В течении февраля проблема с фейковыми обнаружениями скорее всего будет исправлена)</h2>
+        <br><br>
+
+    <h1 style="text-align: center;">Ошибка на 69-71% 0xC0000005...</h1>
+    <h2 style="text-align: center;">Для того чтобы решить эту проблему, есть несколько решений:</h2>
+    <h2 style="text-align: center;">1 - Вставьте флешку именно в USB 2.0 порт, не в 3.</h2>
+    <h2 style="text-align: center;">2 - Попробуйте начать установку заново, это действительно может помочь.</h2>
+    <h2 style="text-align: center;">3 - Людям так же помогает отключение Secure Boot во время установки.</h2>
+    <h2 style="text-align: center;">4 - Включение CSM в BIOS с небольшим шансом так же может решить проблему.</h2>
+    <h2 style="text-align: center;">5 - Самое популярное решение - не использовать Ventoy, и записать флешку заново с помощью Rufus.</h2><br><br>
+
+    <h1 style="text-align: center;">Ошибка 0x80070003</h1>
+    <h2 style="text-align: center;">Для того чтобы решить эту проблему, есть несколько решений:</h2>
+    <h2 style="text-align: center;">1 - Проблема может быть в неисправной работе флешки.</h2>
+    <h2 style="text-align: center;">2 - Людям так же помогает отключение Secure Boot во время установки.</h2>
+    <h2 style="text-align: center;">3 - Включение CSM в BIOS с небольшим шансом так же может решить проблему.</h2>
+    <h2 style="text-align: center;">4 - Ни в коем случае не использовать Ventoy, и писать флешку с помощью Rufus.</h2><br><br>
+    
+    <h1 style="text-align: center;">После конца установки снова запускается установщик</h1>
+    <h2 style="text-align: center;">Вытащите флешку из USB порта, она вам больше не нужна.</h2><br><br>
+
+    <h1 style="text-align: center;">У меня диск GPT, или MBR?</h1>
+    <h2 style="text-align: center;">
+        <a href="https://youtu.be/ckCrrp2WuMc?si=CONCZPTVvHPsm_mb&t=121" style="text-decoration: underline; color: inherit;">
+            В том же ролике я подробно рассказал о том, как узнать таблицу разделов.
+        </a>
+    </h2>
+    <h2 style="text-align: center;">Если у вас русская система, и вы видите звёздочку правее, у вас всё равно GPT!</h2><br><br>
+
+    <h1 style="text-align: center;">У меня старый компьютер, какую мне установить Windows?</h1>
+    <h2 style="text-align: center;">Если у вас условный Intel Core i5 4 поколения или процессор 2014 года,<br>можете пробовать Windows 11 Lite.</h2>
+    <h2 style="text-align: center;">Если же у вас устройство слабее, Windows 11 крайне не рекомендуется,<br>а установка 24H2 даже не будет возможна.</h2>
+    <h2 style="text-align: center;">Если у вас мощный и современный компьютер/ноутбук,<br>Lite сборки устанавливать не нужно, они не дадут прирост.</h2><br><br>
+
+    <h1 style="text-align: center;">Как вернуть Windows Defender, и что использовать вместо него?</h1>
+    <h2 style="text-align: center;">В Windows 11 22H2 до тех пор пока не будет переделан MakuOS Launcher будет удален Windows Defender.</h2>
+    <h2 style="text-align: center;">
+        В качестве альтернативы я рекомендую использовать сканнер 
+        <a href="https://kichkas.biz/progi/249-adwcleaner-721-na-russkom.html" style="text-decoration: underline; color: inherit;">
+            ADW Cleaner
+        </a>
+        и антивирус 
+        <a href="https://kichkas.biz/progi/page,1,7,196-malwarebytes-anti-malware-premium-klyuch.html" style="text-decoration: underline; color: inherit;">
+            Malwarebytes
+        </a>.
+        Они платные, но я предоставил ссылку на репаки.
+    </h2>
+    
+    <h2 style="text-align: center;">У меня в планах на март создать программу для отключения антивируса вручную.</h2><br><br>
+</section>
+    <script>
+        function scrollToSection(sectionId) {
+            if (sectionId === 'top') {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            } else {
+                const section = document.getElementById(sectionId);
+                if (section) {
+                    const offsetPosition = section.getBoundingClientRect().top + window.pageYOffset - 125;
+                    window.scrollTo({
+                        top: offsetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        }
+    
+        function togglePanel() {
+    const panel = document.querySelector('.floating-panel');
+    panel.style.display = panel.style.display === 'none' ? 'flex' : 'none';
+    }
+    
+    document.addEventListener('DOMContentLoaded', () => {
+    const panel = document.querySelector('.floating-panel');
+    panel.style.display = 'flex';
+    });
+    </script>
+
+    <header>
+        <div class="logo">
+            <a href="index">
+                <img src="images/favicon.png" alt="MakuT" class="site-icon">
+                Adderly.Top
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index">Главная</a></li>
+                <li><a href="builds">Сборки</a></li>
+                <li><a href="makutweaker">MakuTweaker</a></li>
+                <li><a href="makupedia">MakuPedia</a></li>
+                <li><a href="progs">Программы</a></li>
+                <li><a href="support">Поддержать</a></li>
+            </ul>
+        </nav>
+
+        <div class="palette-container">
+            <button id="palette-button" class="palette-button">
+                <img src="icons/color.png" alt="Palette Icon" class="palette-icon">
+            </button>
+            <div id="color-picker" class="color-picker hidden">
+                <h4>Выбрать тему:</h4>
+                <div class="color-options">
+                    <div class="color-option" style="background-color: #000000;" data-color="#000000"></div>
+                    <div class="color-option" style="background-color: #44280a;" data-color="#44280a"></div>
+                    <div class="color-option" style="background-color: #1c440a;" data-color="#1c440a"></div>
+                    <div class="color-option" style="background-color: #0a1f44;" data-color="#0a1f44"></div>
+                    <div class="color-option" style="background-color: #0a4441;" data-color="#0a4441"></div>
+                    <div class="color-option" style="background-color: #300a44;" data-color="#300a44"></div>
+                    <div class="color-option" style="background-color: #440a34;" data-color="#440a34"></div>
+                    <div class="color-option" style="background-color: #440a0a;" data-color="#440a0a"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<header class="mobile-header">
+    <nav>
+        <ul class="mobile-menu">
+            <li><a href="index" class="nav-button">Главная</a></li>
+            <li><a href="soft" class="nav-button">Софт</a></li>
+            <li><a href="support" class="nav-button">Поддержать</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+</main>
+
+    <div class="modal" id="modal">
+        <img id="modalImage" src="" alt="Увеличенное изображение">
+    </div>
+<footer>
+    <a href="https://t.me/adderly324" class="social-link" target="_blank" rel="noopener noreferrer">
+        <img src="icons/tg.png" alt="Telegram Icon" class="social-icon">
+    </a>
+    <a href="https://youtube.com/@MakuAdarii" class="social-link" target="_blank" rel="noopener noreferrer">
+        <img src="icons/yt.png" alt="YouTube Icon" class="social-icon">
+    </a>
+    <a href="https://www.boosty.to/adderly" class="social-link" target="_blank" rel="noopener noreferrer">
+        <img src="icons/boosty.jpg" alt="Boosty Icon" class="social-icon">
+    </a>
+    <p>&copy; 2025 Adderly.Top // Марк Аддерли</p>
+</footer>
+</body>
+</html>

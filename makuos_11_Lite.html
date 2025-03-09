@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-68MY39SKZ9"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-68MY39SKZ9');
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>Сборки от Аддерли - MakuOS 11 22H2 Lite</title>
+    <link rel="stylesheet" href="builds.css">
+<script>
+    let headerHidden = false;
+    let logoHidden = false;
+</script>
+
+    <meta property="og:title" content="Сайт Марка Аддерли">
+    <meta property="og:keywords" content="adderly, adderlyfun, adderly fun, adderly top, adderlytop, марк аддерли, аддерли, аддерли фан, аддерли топ, аддерлитоп, сборки от аддерли, сборки от марка аддерли, сборки виндовс, скачать сборки, windows bootlegs, скачать сборку виндовс, скачать windows lite, windows lite, adderlyos, сайт марка аддерли, сайт аддерли, makuos, maku os, makuos 10, makuos 10 lite, makuos 11, makuos 11 22h2, макуос, makuos, windows 11 22h2 Lite, makuos 11 lite">
+    <meta property="og:description" content="Скачать сборку MakuOS 11 22H2 Lite на основе Windows 11 22H2">
+<meta name="description" content="Здесь вы можете скачать разные сборки от Марка Аддерли.">
+<meta name="keywords" content="adderly, adderlyfun, adderly fun, adderly top, adderlytop, марк аддерли, аддерли, аддерли фан, аддерли топ, аддерлитоп, сборки от аддерли, сборки от марка аддерли, сборки виндовс, скачать сборки, windows bootlegs, скачать сборку виндовс, скачать windows lite, windows lite, adderlyos, сайт марка аддерли, сайт аддерли, makuos, maku os, makuos 10, makuos 10 lite, makuos 11, makuos 11 22h2, макуос, makuos, windows 11 22h2 Lite, makuos 11 lite">
+    <meta property="og:image" content="images/favicon.png">
+    <link rel="icon" href="images/favicon.png">
+
+ <script>
+document.addEventListener('DOMContentLoaded', () => {
+    const paletteButton = document.getElementById('palette-button');
+    const colorPicker = document.getElementById('color-picker');
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    const buttons = document.querySelectorAll('.nav-button');
+    const mobileHeader = document.querySelector('.mobile-header');
+    const floatingButtons = document.querySelectorAll('.floating-button');
+    const downloadButtons = document.querySelectorAll('.download-button');
+    const accordionButtons = document.querySelectorAll('.accordion');
+    const accordionPanels = document.querySelectorAll('.panel');
+    const accordionButtons1 = document.querySelectorAll('.accordion1');
+    const accordionPanels1 = document.querySelectorAll('.panel1');
+    const welcomeButtons = document.querySelectorAll('.welcome-button');
+
+    colorPicker.classList.add('hidden');
+
+    paletteButton.addEventListener('click', () => {
+        colorPicker.classList.toggle('hidden');
+    });
+
+    const colorOptions = document.querySelectorAll('.color-option');
+    colorOptions.forEach(option => {
+        option.addEventListener('click', () => {
+            const chosenColor = option.getAttribute('data-color');
+            document.body.style.backgroundColor = chosenColor;
+
+            let headerFooterColor;
+            let buttonColor;
+            if (chosenColor === "#000000") {
+                        headerFooterColor = "#191919";
+                        buttonColor = "#2e2e2e";
+                    } else if (chosenColor === "#44280a") {
+                        headerFooterColor = "#944f00";
+                        buttonColor = "#7a3c02";
+                    } else if (chosenColor === "#1c440a") {
+                        headerFooterColor = "#246301";
+                        buttonColor = "#388e3c";
+                    } else if (chosenColor === "#0a1f44") {
+                        headerFooterColor = "#002b5e";
+                        buttonColor = "#005e92";
+                    } else if (chosenColor === "#0a4441") {
+                        headerFooterColor = "#009688";
+                        buttonColor = "#00796b";
+                    } else if (chosenColor === "#300a44") {
+                        headerFooterColor = "#491066";
+                        buttonColor = "#60038c";
+                    } else if (chosenColor === "#440a34") {
+                        headerFooterColor = "#630549";
+                        buttonColor = "#8a0665";
+                    } else if (chosenColor === "#440a0a") {
+                        headerFooterColor = "#700000";
+                        buttonColor = "#9c0202";
+                    }
+            header.style.backgroundColor = headerFooterColor;
+            footer.style.backgroundColor = headerFooterColor;
+            mobileHeader.style.backgroundColor = headerFooterColor;
+            floatingButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+            buttons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+
+            downloadButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+            accordionButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+            accordionPanels.forEach(panel => {
+            panel.style.backgroundColor = headerFooterColor;
+            });
+            accordionButtons1.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+            accordionPanels1.forEach(panel => {
+            panel.style.backgroundColor = headerFooterColor;
+            });
+            welcomeButtons.forEach(button => {
+                button.style.backgroundColor = buttonColor;
+                button.style.color = "#ffffff";
+            });
+
+            colorPicker.classList.add('hidden');
+            localStorage.setItem('themeColor', chosenColor);
+        });
+    });
+
+    const savedColor = localStorage.getItem('themeColor');
+    if (savedColor) {
+        document.body.style.backgroundColor = savedColor;
+        let headerFooterColor;
+        let buttonColor;
+
+        if (savedColor === "#000000") {
+                    headerFooterColor = "#191919";
+                    buttonColor = "#2e2e2e";
+                } else if (savedColor === "#44280a") {
+                    headerFooterColor = "#944f00";
+                    buttonColor = "#7a3c02";
+                } else if (savedColor === "#1c440a") {
+                    headerFooterColor = "#246301";
+                    buttonColor = "#388e3c";
+                } else if (savedColor === "#0a1f44") {
+                    headerFooterColor = "#002b5e";
+                    buttonColor = "#005e92";
+                } else if (savedColor === "#0a4441") {
+                    headerFooterColor = "#009688";
+                    buttonColor = "#00796b";
+                } else if (savedColor === "#300a44") {
+                    headerFooterColor = "#491066";
+                    buttonColor = "#60038c";
+                } else if (savedColor === "#440a34") {
+                    headerFooterColor = "#630549";
+                    buttonColor = "#8a0665";
+                } else if (savedColor === "#440a0a") {
+                    headerFooterColor = "#700000";
+                    buttonColor = "#9c0202";
+                }
+
+        header.style.backgroundColor = headerFooterColor;
+        footer.style.backgroundColor = headerFooterColor;
+        mobileHeader.style.backgroundColor = headerFooterColor; 
+        buttons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+
+        downloadButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+        accordionButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+        accordionPanels.forEach(panel => {
+            panel.style.backgroundColor = headerFooterColor;
+        });
+        accordionButtons1.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+        accordionPanels1.forEach(panel => {
+            panel.style.backgroundColor = headerFooterColor;
+        });
+        floatingButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+        welcomeButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+            button.style.color = "#ffffff";
+        });
+    }
+});
+    </script>
+
+</head>
+<body>
+
+    <h1 class="builds-header">MakuOS 11 Lite 22H2 V2 (Windows 11 22H2, 22621.1702)
+    </h1>
+    <h3 class="builds-header1">Windows Defender удалён // Обновлений нет // Pro редакция // Русский язык
+    </h3>
+
+    <header>
+        <div class="logo">
+            <a href="index">
+                <img src="images/favicon.png" alt="MakuT" class="site-icon">
+                Adderly.Top
+            </a>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index">Главная</a></li>
+                <li><a href="builds">Сборки</a></li>
+                <li><a href="makutweaker">MakuTweaker</a></li>
+                <li><a href="makupedia">MakuPedia</a></li>
+                <li><a href="progs">Программы</a></li>
+                <li><a href="support">Поддержать</a></li>
+            </ul>
+        </nav>
+
+        <div class="palette-container">
+            <button id="palette-button" class="palette-button">
+                <img src="icons/color.png" alt="Palette Icon" class="palette-icon">
+            </button>
+            <div id="color-picker" class="color-picker hidden">
+                <h4>Выбрать тему:</h4>
+                <div class="color-options">
+                    <div class="color-option" style="background-color: #000000;" data-color="#000000"></div>
+                    <div class="color-option" style="background-color: #44280a;" data-color="#44280a"></div>
+                    <div class="color-option" style="background-color: #1c440a;" data-color="#1c440a"></div>
+                    <div class="color-option" style="background-color: #0a1f44;" data-color="#0a1f44"></div>
+                    <div class="color-option" style="background-color: #0a4441;" data-color="#0a4441"></div>
+                    <div class="color-option" style="background-color: #300a44;" data-color="#300a44"></div>
+                    <div class="color-option" style="background-color: #440a34;" data-color="#440a34"></div>
+                    <div class="color-option" style="background-color: #440a0a;" data-color="#440a0a"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+<header class="mobile-header">
+    <nav>
+        <ul class="mobile-menu">
+            <li><a href="index" class="nav-button">Главная</a></li>
+            <li><a href="soft" class="nav-button">Софт</a></li>
+            <li><a href="support" class="nav-button">Поддержать</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+        <section id="makuos-11-lite" class="bootleg-section">
+            <div class="bootleg">
+            </div>
+            <div class="image-gallery">
+                <img src="images/bootlegs/makuos11_lite1.png" alt="MakuOS 11 Lite Image 1">
+                <img src="images/bootlegs/makuos11_lite2.png" alt="MakuOS 11 Lite Image 2">
+                <img src="images/bootlegs/makuos11_lite3.png" alt="MakuOS 11 Lite Image 3">
+                <img src="images/bootlegs/makuos11_lite4.png" alt="MakuOS 11 Lite Image 4">
+                <img src="images/bootlegs/makuos11_lite5.png" alt="MakuOS 11 Lite Image 5">
+                <img src="images/bootlegs/makuos11_lite6.png" alt="MakuOS 11 Lite Image 6">
+            </div>
+            <div class="accordion-container">
+                <button class="accordion">Изменения в сборке</button>
+                <div class="panel panel1">
+                    <div style="text-align: left; padding-left: 20px;">
+                <br>
+                <h1>Удалённые приложения:</h1>
+                Microsoft Edge, Microsoft Store, Windows Defender, Xbox, OneDrive,<br>
+                Windows Subsystem For Linux, Windows To Go, Cortana, Retail Demo Content,<br>
+                Windows Mixed Reality, Будильники, Кино и ТВ, Медиаплеер, Терминал,<br>
+                Карты, Диктофон, Люди, Погода, Новости, Почта, Календарь, Clipchamp,<br>
+                Microsoft Teams, Microsoft Family, Quick Assist, Dev Home, Solitaire Collection,<br>
+                Power Automate Desktop, Get Help, Feedback Hub, Outlook, Microsoft Todos,<br>
+                Компоненты OpenSSH, голосового ввода, Windows Hello, RAW и VP9 кодеки<br><br>
+                
+                <h1>Прочие изменения:</h1>
+                Убрана проверка на железо при установке системы.<br>
+                Обновления заблокированы на 22H2 версии.<br>
+                Интегрированы все обновления по 2 февраля 2025 года.<br>
+                Интегрированы Microsoft Visual C++ 2005 - 2022 x86 и x64<br>
+                На рабочем столе есть папка "от Марка Аддерли", в котором находятся установщики браузеров, VLC, MPC-HC,<br>Telegram, Zapret, Steam, Everything, а так же ссылки на библиотеку софта, и <a href="https://t.me/maku_library" target="_blank" style="color: yellow;">Telegram канал с репаками без вирусов</a>.</p>
+
+                В сборке изменено OOBE, в котором был включён вход в локальную учётную запись и скрыты какие либо страницы с рекламой.<br>
+                На рабочем столе имеется приложение "MakuOS Launcher", в котором можно<br>применить различные твики первой необходимости, и активировать систему.<br><br>
+
+                <h1>Применённые настройки:</h1>
+                <h3>Основное:</h3>
+                Включены скрытые файлы, папки, и диски<br>
+                Включены расширения файлов<br>
+                Включена поддержка скриптов PowerShell<br>
+                Включена иконка "Этот Компьютер" на рабочем столе<br>
+                Включена возможность удалить Microsoft Edge<br>
+                Включена максимальная производительность системы<br>
+                Включён буфер обмена<br>
+                Для ускорения быстродействия, было отключено ускорение индексации диска<br>
+                По умолчанию открывается "Этот ПК" вместо "Главная"<br>
+                Разрешен вход в локальный аккаунт<br>
+                Отключены виджеты<br>
+                Отключён браундмауер<br>
+                Отключён SmartScreen<br>
+                Отключён поиск Bing на панели задач<br>
+                Отключён центр обновления системы<br>
+                Отключена дефрагментация дисков<br>
+                Отключено удаленное управление реестром<br>
+                Отключено автошифрование диска с помощью Bitlocker<br>
+                Отключена отправка отчёт об ошибках Windows<br>
+                Отключена служба карт<br>
+                Отключена служба UPnP устройств (она никому не нужна)<br>
+                Отключена служба смарт карт<br>
+                Отключена служба раздачи мобильного интернета<br>
+                Отключена активность лишних фоновых приложений<br>
+                Отключена изоляция ядра<br>
+                Отключено залипание клавиш<br>
+                Отключена задержка контекстного меню<br>
+                Отключена автоперезагрузка при синем экране смерти<br>
+                Отключён сенсорный ввод клавиатуры<br>
+                Отключен получение геолокации для UWP приложений<br>
+                Отключён Content Delivery Manager, который отвечает за предустановку рекламы<br>
+                Отключено требование интернета в первоначальной настройке<br>
+                Автоматически введён 30 дневной ключ продукта<br>
+                Удалён рекламный диалог "Давайте завершим настройку этого устройства"<br>
+                Запрещена установка стандартных мусорных UWP приложений после обновления системы<br>
+                На панели задач добавлена кнопка "Завершить задачу" в ПКМ по программе<br><br>
+        
+                <h3>Телеметрия:</h3>
+                Запрещена диагностика установленных приложений<br>
+                Запрещена публикация активности пользователя<br>
+                Запрещён сбор информации о пользователе<br>
+                Запрещён сбор информации об устройстве пользователя<br>
+                Запрещён автоматической вход в аккаунт OneDrive<br>
+                Запрещён сбор информации о производительности системы<br>
+                Запрещено эксперементирование над системой пользователя<br>
+                Отключена отправка результатов поиска пользователя<br>
+                Отключена активация управления голосом<br>
+                Отключён сбор информации о голосе пользователя при использовании функций ввода голосом<br><br>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion">Как установить Windows?</button>
+                <div class="panel panel3">
+                    <div style="text-align: left; padding-left: 20px;">
+                    <br>
+                    Подробный и понятный туториал как установить Windows уже есть на моём канале - <a href="https://youtu.be/ckCrrp2WuMc" style="text-decoration: underline; color: yellow;">https://youtu.be/ckCrrp2WuMc</a><br>
+                    <br>
+                    Если вы видите ошибку 0x7E, это значит, что вы запустили установщик системы который должен быть записан на флешку.<br>
+                    Обновление Windows с одной на другую это чреватое дело, и зачастую оно вызывает проблемы в дальнейшем.<br>
+                    Для того чтобы установить Windows должным образом, есть два популярнейших способа.<br><br>
+                    <h1>Первый способ - Rufus:</h1>
+                    Перейдите на сайт <a href="https://rufus.ie" style="text-decoration: underline; color: green;">rufus.ie</a>, и <a href="https://github.com/pbatard/rufus/releases/download/v4.6/rufus-4.6.exe" style="text-decoration: underline; color: yellow;">скачайте программу</a>.<br>
+                    Далее, в пункте "Устройство" выберите вашу флешку, на 8 ГБ и выше.<br>
+                    В пункте "Метод загрузки", справа есть кнопка "Выбрать". Выберите ISO образ MakuOS.
+                    Далее, в "Схема раздела" вам нужно указать таблицу разделов вашего SSD. - <a href="https://lifehacker.ru/kak-uznat-gpt-ili-mbr/" style="text-decoration: underline; color: yellow;">Как узнать схему раздела?</a><br>
+                    Зачастую, "Целевую систему" и "Файловую систему" можно не трогать. Никакие галочки не нажимайте, и при каких либо диалогах снимайте их.<br>
+                    Для начала записи на флешку, нажмите "СТАРТ", и согласитесь на форматирование.<br>
+                    Когда прогрессбар дойдёт до 100% и будет "Готов", закройте окно.<br>
+                    <br>
+
+                    <h2>Выбранный образ ISO содержит отозванный загрузчик UEFI...?</h2>
+                    В новых версиях Rufus эта ошибка вылезает абсолютно на всех образах Windows которые НЕ скачаны из сайта Microsoft.<br><br>
+
+                    <h1>Второй способ - Ventoy: ВАЖНО - У многих проблемы с установкой через Ventoy.<br>Лучше используйте первый вариант.</h1>
+                    Перейдите на сайт <a href="https://www.ventoy.net/" style="text-decoration: underline; color: green;">ventoy.net</a>, и <a href="https://sourceforge.net/projects/ventoy/files/latest/download" style="text-decoration: underline; color: yellow;">скачайте программу</a>.<br>
+                    Далее, распакуйте архив куда-либо и запустите файл <strong><em>Ventoy2Disk.exe</em></strong>.<BR>
+                    В пункте "Устройство" выберите вашу флешку, на 8 ГБ и выше.<br>
+                    Сверху на вкладке "Настройки" обязательно поставьте галочку на Secure Boot Support если он у вас включён.<br><a href="https://remontka.pro/enable-secure-boot/" style="text-decoration: underline; color: yellow;">Как узнать, включён ли Secure Boot?</a><br>
+                    Осталось нажать кнопку "Установить", и согласиться на форматирование флешки.<br>После этого, вам останется просто перекинуть ISO файл на уже чистую флешку.<br>
+                    <br>
+
+                    <h1>После записи образа на флешку</h1>
+                    После успешной записи на флешку, запомните размер вашего системного раздела С, и попрощайтесь со своей системой, предварительно сохранив важные файлы и данные, и загрузитесь с флешки.<br>
+                    Для этого, откройте меню Пуск, зажмите клавишу Shift, и перезагрузитесь.<br>
+                    Затем, выберите USB FDD, или что либо связанное с USB.<br>
+                    <br>Всё что вам осталось, это следовать инструкциям установщика Windows.<br>Будьте аккуратны с разделами - если вы хотите переустановить только систему, и сохранить файлы и данные на других разделах:<br>Удалите раздел С, вес которого вы запомнили. (К примеру, если ваш системный раздел весил 80 ГБ, удаляйте тот, что весит 80 ГБ.)<br>А так же микро разделы с весом на 100 - 500 мегабайт. Затем, установите систему на незанятое пространство. Удачи!
+                    <br><br>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion1">Что нового в V2 версии сборки?</button>
+                <div class="panel1 panel4">
+                    <div style="text-align: left; padding-left: 20px;">
+                    <br>
+                    • Был использован другой метод удаления приложений. За счёт этого, система будет стабильнее.<br>
+                    • Был добавлен калькулятор из Windows 7<br>
+                    • Microsoft Store теперь присутствует в сборке!<br>
+                    • Было использовано обновление 1702 вместо 1778.<br>
+                    • Сборка больше не мультиязычная. Сделано это в угоду оптимизации производительности.<br>
+                    • Был глобально переработан MakuOS Launcher. Добавлены функции включения NET Framework,<br>отключения гибернации, и отключения UAC.<br>
+                    • Теперь интегрированы Microsoft Visual C++ 2005 - 2022 x86 и x64<br>
+                    • Появилась папка "от Марка Аддерли", где находятся инсталляторы программ первой необходимости,<br>Zapret, а так же различные ссылки на репаки<br>
+                    • В сборку включён совершенно новый ремейк MakuTweaker<br>
+                    • Включена поддержка скриптов PowerShell<br>
+                    • Для оптимизации работы, была отключено ускорение индексации диска<br>
+                    • Отключено автошифрование диска с помощью Bitlocker<br>
+                    • Отключена дефрагментация дисков<br>
+                    • Отключено удаленное управление реестром<br>
+                    • Отключена отправка отчёт об ошибках Windows<br>
+                    • Отключен получение геолокации для UWP приложений<br>
+                    • Отключена служба карт<br>
+                    • Отключена служба UPnP устройств (она никому не нужна)<br>
+                    • Отключена служба смарт карт<br>
+                    • Отключена служба раздачи мобильного интернета<br>
+                    • Отключена активность лишних фоновых приложений<br>
+                    • Отключена изоляция ядра<br>
+                    • Включена максимальная производительность системы<br>
+                    • Отключён сенсорный ввод клавиатуры<br><br>
+                </div>
+            </div>
+
+            <div class="accordion-container">
+                <button class="accordion1">Контрольные суммы образа</button>
+                <div class="panel1 panel5">
+                    <br>
+                    <h1>CRC32: 47F186AC</h1><br>
+                    <h1>MD5: 93D6DE3BBA8AC9CE433F47767077C77F</h1><br>
+                    <h1>SHA-256: fdfbc242eb05574bb13a82ab1bf2a2d9fa94ef9d6f14d0437651b843ca49f0d7</h1><br>
+                    <h1>SHA-1: 4FCFE32ED4FCB22E27D7327E8DE743B5800160EC</h1><br><br>
+                </div>
+            </div>
+
+            <h1 class="downloads-header">Скачать сборку MakuOS 11 22H2 Lite:</h1>
+            <div class="downloads-container">
+                <a href="https://adderly.top/warninglite" class="download-button" target="_blank" style="min-width: 200px;">
+                    Скачать сборку
+                </a>
+            </div>
+        </section>
+
+</main>
+
+    <div class="modal" id="modal">
+        <img id="modalImage" src="" alt="Увеличенное изображение">
+    </div>
+
+    <script>
+
+        const images = document.querySelectorAll('.image-gallery img');
+        const modal = document.getElementById('modal');
+        const modalImage = document.getElementById('modalImage');
+
+        images.forEach(image => {
+            image.addEventListener('click', function() {
+                modal.style.display = 'flex';
+                modalImage.src = this.src;
+            });
+        });
+
+        modal.addEventListener('click', function() {
+            modal.style.display = 'none'; 
+        });
+    </script>
+
+<script>
+document.querySelectorAll('.accordion').forEach((accordion) => {
+    const panel = accordion.nextElementSibling;
+
+    panel.style.maxHeight = panel.scrollHeight + "px";
+    accordion.classList.add('active');
+    panel.classList.add('open');
+
+    accordion.addEventListener('click', function () {
+        panel.classList.toggle('open');
+        this.classList.toggle('active');
+
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    });
+});
+
+document.querySelectorAll('.accordion1').forEach((accordion, index) => {
+        accordion.addEventListener('click', function() {
+            const panel = this.nextElementSibling;
+            panel.classList.toggle('open');
+            this.classList.toggle('active');
+            
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + "px";
+            }
+        });
+    });
+
+</script>
+
+<script>
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        header.classList.toggle('scrolled', window.pageYOffset > 50);
+    });
+</script>
+
+<footer>
+    <a href="https://t.me/adderly324" class="social-link" target="_blank" rel="noopener noreferrer">
+        <img src="icons/tg.png" alt="Telegram Icon" class="social-icon">
+    </a>
+    <a href="https://youtube.com/@MakuAdarii" class="social-link" target="_blank" rel="noopener noreferrer">
+        <img src="icons/yt.png" alt="YouTube Icon" class="social-icon">
+    </a>
+    <a href="https://www.boosty.to/adderly" class="social-link" target="_blank" rel="noopener noreferrer">
+        <img src="icons/boosty.jpg" alt="Boosty Icon" class="social-icon">
+    </a>
+    <p>&copy; 2025 Adderly.Top // Марк Аддерли</p>
+</footer>
+</body>
+</html>
