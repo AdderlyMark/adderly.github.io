@@ -1,0 +1,262 @@
+.home-page {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --- Header --- */
+.header-section {
+  text-align: center;
+  margin-bottom: 50px;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.status-pill {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot-pulse {
+  width: 6px;
+  height: 6px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0 8px var(--accent-color);
+}
+
+.header-section h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.brand-text {
+  background: linear-gradient(90deg, #fff 0%, var(--accent-color) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 1.1rem;
+  color: #b0b0b0;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 600px;
+}
+
+/* AdBlock Notice - ОРАНЖЕВЫЙ (как просили оставить) */
+.adblock-notice {
+  background: rgba(255, 193, 7, 0.1);
+  border: 1px solid rgba(255, 193, 7, 0.3);
+  color: #e0e0e0;
+  padding: 12px 20px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 0.9rem;
+  text-align: left;
+  max-width: 600px;
+}
+
+.notice-icon {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107; /* Желтая иконка ! */
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* --- Video --- */
+.video-section {
+  width: 100%;
+  max-width: 900px;
+  margin-bottom: 80px;
+}
+
+.video-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* --- Grid --- */
+.nav-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.nav-card {
+  background: var(--surface-color);
+  border: 1px solid #2a2a2a;
+  border-radius: 18px;
+  padding: 0 24px;
+  height: 100px; /* Фиксированная высота */
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  color: var(--text-color);
+  
+  /* Плавная, не резкая анимация */
+  transition: all 0.3s ease-out;
+}
+
+.nav-card:hover {
+  border-color: var(--accent-color);
+  background: rgba(255, 255, 255, 0.03);
+  box-shadow: 0 10px 30px -10px rgba(159, 85, 255, 0.2);
+}
+
+/* Иконка в кнопке - БЕЛАЯ ПО УМОЛЧАНИЮ */
+.card-icon-box {
+  background: #111; /* Темный фон */
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff; /* Белая иконка */
+  flex-shrink: 0;
+  border: 1px solid #333;
+  transition: 0.3s ease;
+}
+
+/* При наведении - ФИОЛЕТОВАЯ */
+.nav-card:hover .card-icon-box {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.card-title {
+  flex-grow: 1;
+  font-weight: 600;
+  font-size: 1.05rem;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.card-arrow {
+  color: #444;
+  transition: 0.3s ease;
+  flex-shrink: 0;
+}
+
+.nav-card:hover .card-arrow {
+  color: var(--accent-color);
+  transform: translateX(4px);
+}
+
+/* Акцентные карточки (MakuTweaker, Boosty) */
+.card-accent {
+  background: rgba(159, 85, 255, 0.05);
+  border-color: rgba(159, 85, 255, 0.2);
+}
+
+.card-accent .card-icon-box {
+  background: rgba(159, 85, 255, 0.15);
+  color: var(--accent-color); /* Иконка фиолетовая */
+  border-color: rgba(159, 85, 255, 0.3);
+}
+
+.card-accent:hover {
+  background: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.card-accent:hover .card-title {
+  color: #fff;
+}
+
+.card-accent:hover .card-icon-box {
+  background: rgba(0,0,0,0.2);
+  color: #fff; /* Белая при полном залитии */
+}
+
+.card-accent:hover .card-arrow {
+  color: #fff;
+}
+
+/* Блик */
+.card-shine {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.05), transparent);
+  transform: skewX(-20deg);
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.nav-card:hover .card-shine {
+  left: 200%;
+  transition: 0.5s;
+}
+
+@media (max-width: 768px) {
+  .header-section h1 { font-size: 2.2rem; }
+  .nav-grid { grid-template-columns: 1fr; gap: 16px; }
+  .nav-card { height: 80px; padding: 0 16px; }
+  .card-icon-box { width: 40px; height: 40px; }
+  .card-title { font-size: 1rem; }
+}

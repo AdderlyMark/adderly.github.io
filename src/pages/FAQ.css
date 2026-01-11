@@ -1,0 +1,163 @@
+.faq-page {
+  padding-top: 100px;
+  padding-bottom: 80px;
+  max-width: 900px; /* Делаем чуть уже для читаемости */
+}
+
+.faq-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.faq-header h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  background: linear-gradient(90deg, #fff 0%, #E0AAFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.faq-header p {
+  color: #a0a0a0;
+  font-size: 1.1rem;
+}
+
+/* Секции */
+.faq-section {
+  margin-bottom: 50px;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+  color: var(--text-color);
+  padding-left: 10px;
+  border-left: 4px solid var(--accent-color);
+}
+
+.section-icon {
+  color: var(--accent-color);
+}
+
+.text-error .section-icon {
+  color: #ff5555; /* Красный для ошибок */
+}
+.text-error {
+  border-left-color: #ff5555;
+}
+
+/* Аккордеон */
+.accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.accordion-item {
+  background: var(--surface-color);
+  border: 1px solid #2a2a2a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-item:hover {
+  border-color: rgba(159, 85, 255, 0.4);
+}
+
+.accordion-item.open {
+  border-color: var(--accent-color);
+  background: rgba(159, 85, 255, 0.05); /* Легкий фиолетовый фон при открытии */
+}
+
+.accordion-trigger {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: none;
+  border: none;
+  color: var(--text-color);
+  cursor: pointer;
+  text-align: left;
+  font-family: inherit;
+  font-size: 1.05rem;
+  font-weight: 500;
+}
+
+.question-text {
+  padding-right: 20px;
+}
+
+.icon-box {
+  background: #111;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  flex-shrink: 0;
+  transition: 0.3s;
+}
+
+.accordion-item.open .icon-box {
+  background: var(--accent-color);
+  color: #fff;
+  transform: rotate(180deg);
+}
+
+/* Контент внутри */
+.accordion-content {
+  overflow: hidden;
+}
+
+.content-inner {
+  padding: 0 20px 24px 20px;
+  color: #ccc;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  white-space: pre-line; /* Чтобы работали переносы строк \n */
+}
+
+.content-inner ul {
+  list-style: none;
+  padding: 0;
+}
+
+.content-inner li {
+  margin-bottom: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+.step-num {
+  color: var(--accent-color);
+  font-weight: bold;
+  min-width: 20px;
+}
+
+/* Credits footer */
+.credits {
+  margin-top: 60px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #888;
+  font-size: 0.9rem;
+  border: 1px dashed #333;
+}
+
+.credits b {
+  color: var(--accent-color);
+}
